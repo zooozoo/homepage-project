@@ -9,13 +9,22 @@
 </head>
 <body>
 <div id="search_section">
-testes
+    Search Test
 </div>
 <div id="news_section">
-    <h3>NAVER NEWS TITLE</h3>
-    {% for items in naver %}
-        <p>{{ items }}</p>
-    {% endfor %}
+
+    <div id="naver_news">
+        <h3>&lt;NAVER&gt; NEWS TITLE</h3>
+        {% for items in naver %}
+            <p>{{ items }}</p>
+        {% endfor %}
+    </div>
+    <div id="daum_news">
+        <h3>&lt;DAUM&gt; NEWS TITLE</h3>
+        {% for items in daum %}
+            <p>{{ items }}</p>
+        {% endfor %}
+    </div>
 </div>
 
 </body>

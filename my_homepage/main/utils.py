@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 # 네이버뉴스 타이틀을 크롤링해서 리스트객체로 반환
 def naver_news_title():
     req = requests.get('http://news.naver.com/main/home.nhn')
@@ -11,4 +12,15 @@ def naver_news_title():
         if item.string:
             s = item.string
             result.append(s)
+    return result
+
+
+def daum_news_title():
+    req = requests.get('http://media.daum.net/')
+    html = req.text
+    soup = BeautifulSoup(html, 'lxml')
+    total_list = soup.find_all('div', 'box_headline')[0]
+    result = []
+    for i in total_list.find_all('a', 'link_txt'):
+        result.append(i.string.strip())
     return result
