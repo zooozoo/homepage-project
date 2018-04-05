@@ -5,27 +5,51 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'my_homepage/main.css' %}"/>
+    <title>NEWS-HOMEPAGE</title>
 </head>
 <body>
-<div id="search_section">
-    Search Test
-</div>
-<div id="news_section">
-
-    <div id="naver_news">
-        <h3>&lt;NAVER&gt; NEWS TITLE</h3>
-        {% for items in naver %}
-            <p>{{ items.title }}</p>
-        {% endfor %}
+<header>
+    <div id="search_section">
+        Search Test
+        <form method="get" action="https://www.google.com/search">
+            <input name="q" type="text" placeholder="Search Google">
+            <input type="submit" value="구글 검색">
+        </form>
+        <form method="get" action="https://search.naver.com/search.naver">
+            <input name="query" type="text" placeholder="Search Naver"/>
+            <input type="submit" value="네이버 검색">
+        </form>
     </div>
-    <div id="daum_news">
-        <h3>&lt;DAUM&gt; NEWS TITLE</h3>
-        {% for items in daum %}
-            <p>{{ items.title }}</p>
-        {% endfor %}
-    </div>
-</div>
+</header>
 
+<nav>
+    <h4>네이버</h4>
+    <h4>다음</h4>
+</nav>
+
+<section>
+    <div id="news_section">
+        <div id="naver_news">
+            <h3>&lt;NAVER&gt; NEWS TITLE</h3>
+            {% for items in naver %}
+                <p>{{ items.title }}</p>
+            {% endfor %}
+        </div>
+        <div id="daum_news">
+            <h3>&lt;DAUM&gt; NEWS TITLE</h3>
+            {% for items in daum %}
+                <p>{{ items.title }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<footer>
+    {% load static %}
+    <img src="{% static "my_homepage/comming-sonn.jpg" %}" alt="test"/>
+</footer>
 </body>
 </html>
