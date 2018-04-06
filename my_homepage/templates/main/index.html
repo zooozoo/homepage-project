@@ -35,13 +35,13 @@
         <div id="naver_news">
             <h3>&lt;NAVER&gt; NEWS TITLE</h3>
             {% for items in naver %}
-                <p>{{ items.title }}</p>
+                <a href="{{ items.link }}"><p>{{ items.title }}</p></a>
             {% endfor %}
         </div>
         <div id="daum_news">
             <h3>&lt;DAUM&gt; NEWS TITLE</h3>
             {% for items in daum %}
-                <p>{{ items.title }}</p>
+                <a href="{{ items.link }}"><p>{{ items.title }}</p></a>
             {% endfor %}
         </div>
     </div>

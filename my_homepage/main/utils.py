@@ -7,11 +7,14 @@ def naver_news_title():
     req = requests.get('http://news.naver.com/main/home.nhn')
     html = req.text
     soup = BeautifulSoup(html, 'lxml')
+
     result = []
     for item in soup.find_all('a', class_='nclicks(hom.headcont)'):
         if item.string:
-            s = item.string
-            result.append(s)
+            string = item.string
+            link = item.get('href')
+            tu = (string, link)
+            result.append(tu)
     return result
 
 
@@ -20,7 +23,11 @@ def daum_news_title():
     html = req.text
     soup = BeautifulSoup(html, 'lxml')
     total_list = soup.find_all('div', 'box_headline')[0]
+
     result = []
-    for i in total_list.find_all('a', 'link_txt'):
-        result.append(i.string.strip())
+    for item in total_list.find_all('a', 'link_txt'):
+        string = item.string.strip()
+        link = item.get('href')
+        tu = (string, link)
+        result.append(tu)
     return result

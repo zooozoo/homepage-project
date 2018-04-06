@@ -14,10 +14,10 @@ def index_page(request):
         naver_news_list = naver_news_title()
         daum_news_list = daum_news_title()
         print('new')
-        for item in naver_news_list:
-            NaverNews.objects.create(title=item)
-        for item in daum_news_list:
-            DaumNews.objects.create(title=item)
+        for title, link in naver_news_list:
+            NaverNews.objects.create(title=title, link=link)
+        for title, link in daum_news_list:
+            DaumNews.objects.create(title=title, link=link)
     naver = NaverNews.objects.all()
     daum = DaumNews.objects.all()
     context = {
