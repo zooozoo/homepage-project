@@ -13,7 +13,6 @@ def index_page(request):
         DaumNews.objects.all().delete()
         naver_news_list = naver_news_title()
         daum_news_list = daum_news_title()
-        print('new')
         for title, link in naver_news_list:
             NaverNews.objects.create(title=title, link=link)
         for title, link in daum_news_list:

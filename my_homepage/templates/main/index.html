@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'my_homepage/main.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}"/>
     <title>NEWS-HOMEPAGE</title>
 </head>
 <body>
@@ -25,31 +25,32 @@
     </div>
 </header>
 
-<nav>
-    <h4>네이버</h4>
-    <h4>다음</h4>
-</nav>
+<div class="header-bar"></div>
 
-<section>
-    <div id="news_section">
-        <div id="naver_news">
-            <h3>&lt;NAVER&gt; NEWS TITLE</h3>
-            {% for items in naver %}
-                <a href="{{ items.link }}"><p>{{ items.title }}</p></a>
-            {% endfor %}
-        </div>
-        <div id="daum_news">
-            <h3>&lt;DAUM&gt; NEWS TITLE</h3>
-            {% for items in daum %}
-                <a href="{{ items.link }}"><p>{{ items.title }}</p></a>
-            {% endfor %}
-        </div>
+<div class="body-item" id="new-select-section">
+    <ul>
+        <li>네이버</li>
+        <li>다음</li>
+    </ul>
+</div>
+
+<div class="body-item" id="news-section">
+    <div class="news-section-item naver_news">
+        <h3>&lt;NAVER&gt; NEWS TITLE</h3>
+        {% for items in naver %}
+            <a class="news-title" href="{{ items.link }}"><h5>{{ items.title }}</h5></a>
+        {% endfor %}
     </div>
-</section>
+    <div class="news-section-item daum_news">
+        <h3>&lt;DAUM&gt; NEWS TITLE</h3>
+        {% for items in daum %}
+            <a class="news-title" href="{{ items.link }}"><h5>{{ items.title }}</h5></a>
+        {% endfor %}
+    </div>
+</div>
 
-<footer>
-    {% load static %}
-    <img src="{% static "my_homepage/comming-sonn.jpg" %}" alt="test"/>
-</footer>
+{#<footer>#}
+{##}
+{#</footer>#}
 </body>
 </html>
