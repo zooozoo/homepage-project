@@ -19,27 +19,13 @@ body::after{
 
 .body-item{
     float: left;
-    /*display: inline-block;*/
 }
 
-#new-select-section {
-    background-color: #5897fb;
-    width: 15%;
-}
-
-ul {
-    list-style-type: none;
-}
-
-#news-section {
+.news-section {
     background-color: hotpink;
     display: inline-block;
-    /*float: left;*/
-}
-
-.news-section-item {
-    float: left;
-    margin-right: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 a {
@@ -47,6 +33,25 @@ a {
     text-decoration: none;
 }
 
-h5 {
+div#news-select-section {
+    background-color: #5897fb;
+    position: relative;
+    width: 13%;
+    padding-bottom: 100%;
+}
+
+ul {
+    position: absolute;
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+
+li {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h5.news-title {
     margin: 5px 5px;
 }

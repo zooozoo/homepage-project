@@ -27,27 +27,26 @@
 
 <div class="header-bar"></div>
 
-<div class="body-item" id="new-select-section">
+<div class="body-item" id="news-select-section">
     <ul>
         <li>네이버</li>
         <li>다음</li>
     </ul>
 </div>
 
-<div class="body-item" id="news-section">
-    <div class="news-section-item naver_news">
-        <h3>&lt;NAVER&gt; NEWS TITLE</h3>
-        {% for items in naver %}
-            <a class="news-title" href="{{ items.link }}"><h5>{{ items.title }}</h5></a>
-        {% endfor %}
-    </div>
-    <div class="news-section-item daum_news">
-        <h3>&lt;DAUM&gt; NEWS TITLE</h3>
-        {% for items in daum %}
-            <a class="news-title" href="{{ items.link }}"><h5>{{ items.title }}</h5></a>
-        {% endfor %}
-    </div>
+<div class="body-item news-section" id="naver_news">
+    <h3>&lt;NAVER&gt; NEWS TITLE</h3>
+    {% for items in naver %}
+        <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
+    {% endfor %}
 </div>
+<div class="body-item news-section" id="daum_news">
+    <h3>&lt;DAUM&gt; NEWS TITLE</h3>
+    {% for items in daum %}
+        <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
+    {% endfor %}
+</div>
+
 
 {#<footer>#}
 {##}
