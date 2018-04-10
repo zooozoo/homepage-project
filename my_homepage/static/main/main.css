@@ -14,30 +14,31 @@ body::after{
     height: 10px;
     background: blue;
     width: auto;
-    margin-left: 0;
+    margin-top: 7px;
+    margin-bottom: 0;
 }
 
 .body-item{
     float: left;
 }
 
+div#news-select-section {
+    background-color: #5897fb;
+    position: relative;
+    width: 13%;
+    padding-bottom: 75%;
+}
+
 .news-section {
     background-color: hotpink;
     display: inline-block;
-    margin-right: 10px;
+    margin-left: 10px;
     margin-bottom: 10px;
 }
 
 a {
     color: black;
     text-decoration: none;
-}
-
-div#news-select-section {
-    background-color: #5897fb;
-    position: relative;
-    width: 13%;
-    padding-bottom: 100%;
 }
 
 ul {
