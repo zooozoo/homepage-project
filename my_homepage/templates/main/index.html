@@ -36,31 +36,36 @@
         </ul>
     </div>
 
-    <span onclick="openNav()">&#9776; 매체선택</span>
+    <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그인</span>
 </header>
 
 <div class="header-bar"></div>
 
-<div class="container-fluid">
-    <div class="col-xl body-item news-section" id="naver_news">
-        <h3>&lt;NAVER&gt; NEWS TITLE</h3>
-        {% for items in naver %}
-            <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
-        {% endfor %}
+<div class="container-fluid news-section">
+    <div class="col-xl news-item">
+        <div class="news-item-wraper">
+            <h3>&lt;NAVER&gt;</h3>
+            {% for items in naver %}
+                <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
+            {% endfor %}
+        </div>
     </div>
-    <div class="col-xl body-item news-section" id="daum_news">
-        <h3>&lt;DAUM&gt; NEWS TITLE</h3>
-        {% for items in daum %}
-            <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
-        {% endfor %}
+    <div class="col-xl news-item">
+        <div class="news-item-wraper">
+            <h3>&lt;DAUM&gt;</h3>
+            {% for items in daum %}
+                <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
+            {% endfor %}
+        </div>
     </div>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
 <script>
     function openNav() {
-        document.getElementById("news-select-section").style.width = "50%";
+        document.getElementById("news-select-section").style.width = "65%";
     }
 
     function closeNav() {
