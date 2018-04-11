@@ -11,46 +11,61 @@
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
     <title>NEWS-HOMEPAGE</title>
 </head>
+
 <body>
 <header>
     <div id="search_section">
-        Search Section
-        <form method="get" action="https://www.google.com/search">
-            <input name="q" type="text" placeholder="Search Google">
-            <input type="submit" value="구글 검색">
-        </form>
-        <form method="get" action="https://search.naver.com/search.naver">
-            <input name="query" type="text" placeholder="Search Naver"/>
-            <input type="submit" value="네이버 검색">
-        </form>
+        <div class="search">
+            <form class="navbar-form" method="get" action="https://search.naver.com/search.naver">
+                <input name="query" type="text" placeholder="Search Naver"/>
+                <input type="submit" class="btn btn-default" value="네이버 검색">
+            </form>
+        </div>
+        <div class="search">
+            <form class="navbar-form" method="get" action="https://www.google.com/search">
+                <input name="q" type="text" placeholder="Search Google">
+                <input type="submit" class="btn btn-default" value="구글 검색">
+            </form>
+        </div>
     </div>
+    <div id="news-select-section">
+        <ul>
+            <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+            <li>네이버</li>
+            <li>다음</li>
+        </ul>
+    </div>
+
+    <span onclick="openNav()">&#9776; 매체선택</span>
 </header>
 
 <div class="header-bar"></div>
 
-<div class="body-item" id="news-select-section">
-    <ul>
-        <li>네이버</li>
-        <li>다음</li>
-    </ul>
+<div class="container-fluid">
+    <div class="col-xl body-item news-section" id="naver_news">
+        <h3>&lt;NAVER&gt; NEWS TITLE</h3>
+        {% for items in naver %}
+            <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
+        {% endfor %}
+    </div>
+    <div class="col-xl body-item news-section" id="daum_news">
+        <h3>&lt;DAUM&gt; NEWS TITLE</h3>
+        {% for items in daum %}
+            <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
+        {% endfor %}
+    </div>
 </div>
-
-<div class="body-item news-section" id="naver_news">
-    <h3>&lt;NAVER&gt; NEWS TITLE</h3>
-    {% for items in naver %}
-        <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
-    {% endfor %}
-</div>
-<div class="body-item news-section" id="daum_news">
-    <h3>&lt;DAUM&gt; NEWS TITLE</h3>
-    {% for items in daum %}
-        <a href="{{ items.link }}"><h5 class="news-title">{{ items.title }}</h5></a>
-    {% endfor %}
-</div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<script>
+    function openNav() {
+        document.getElementById("news-select-section").style.width = "50%";
+    }
 
+    function closeNav() {
+        document.getElementById("news-select-section").style.width = "0";
+    }
+</script>
 </body>
 </html>
