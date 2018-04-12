@@ -32,7 +32,7 @@ div.search {
     margin-right: 10px;
 }
 
-div#news-select-section {
+nav#nav {
     height: 100%;
     width: 0;
     position: fixed;
@@ -50,7 +50,7 @@ div#news-select-section {
 }
 
 ul#news-select-list {
-    display: inline-block;
+    /*display: inline-block;*/
     list-style-type: none;
     width: auto;
     padding: 0;
@@ -81,11 +81,11 @@ span {
 /* On smaller screens, where height is less than 450px,
 change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .news-select-section {
+    #nav {
         padding-top: 15px;
     }
 
-    .news-select-section li {
+    #nav li {
         font-size: 18px;
     }
 }
