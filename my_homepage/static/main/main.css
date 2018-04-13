@@ -42,11 +42,47 @@ nav#nav {
     background-color: #101010;
     overflow-x: hidden;
     padding-top: 60px;
-    transition: 0.5s;
+    transition: 0.3s;
 
     display: inline-block;
     margin: 0;
     opacity: 0.9;
+}
+
+div#nav-item-wraper {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.8s linear, opacity 0.8s linear;
+}
+
+div.login-section {
+    margin-left: 40px;
+}
+
+div.login-section-inner {
+    display: inline-block;
+}
+
+input#username {
+    width: 250px;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+input#password {
+    width: 250px;
+    background-color: white;
+}
+
+button#login-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+button#signup-btn {
+    width: 100%;
+    margin-top: 10px;
+
 }
 
 ul#news-select-list {
@@ -58,8 +94,8 @@ ul#news-select-list {
 
 li a.closebtn {
     position: absolute;
-    top: 10px;
-    right: 40px;
+    top: 3px;
+    right: 19px;
     font-size: 36px;
     margin-left: 50px;
 }

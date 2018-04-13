@@ -30,4 +30,3 @@ def daum_news_title():
         tu = (string, link)
         result.append(tu)
     return result
-

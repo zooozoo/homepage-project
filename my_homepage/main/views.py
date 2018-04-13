@@ -1,8 +1,10 @@
 from datetime import datetime, timezone, timedelta
 
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render
 
 from main.models import NaverNews, DaumNews
+from member.forms import LoginForm
 from .utils import naver_news_title, daum_news_title
 
 
@@ -19,8 +21,10 @@ def index_page(request):
             DaumNews.objects.create(title=title, link=link)
     naver = NaverNews.objects.all()
     daum = DaumNews.objects.all()
+    form = LoginForm()
     context = {
         'naver': naver,
         'daum': daum,
+        'form': form,
     }
     return render(request, 'main/index.html', context=context)

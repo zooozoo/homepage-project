@@ -29,11 +29,32 @@
         </div>
     </div>
     <nav id="nav">
-        <ul id="news-select-list">
-            <li class="news-select-item"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
-            <li class="news-select-item">네이버</li>
-            <li class="news-select-item">다음</li>
-        </ul>
+        <div id="nav-item-wraper">
+            <div class="login-section">
+                <div class="login-section-inner">
+                    <form id="login" action="">
+                        {% for field in form %}
+                            <div class="input-group">
+                                {{ field }}
+                                {{ field.errors }}
+                            </div>
+                        {% endfor %}
+                        <button id="login-btn" class="btn btn-default" type="submit">로그인</button>
+                    </form>
+                    <form id="signup" action="">
+                        <button id="signup-btn" class="btn btn-primary" type="button">회원가입</button>
+                    </form>
+                </div>
+            </div>
+
+            <ul id="news-select-list">
+                <li class="news-select-item"><a href="javascript:void(0)" class="closebtn"
+                                                onclick="closeNav()">&times;</a>
+                </li>
+                <li class="news-select-item">네이버</li>
+                <li class="news-select-item">다음</li>
+            </ul>
+        </div>
     </nav>
 
     <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그인</span>
@@ -73,11 +94,15 @@
 <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
 <script>
     function openNav() {
-        document.getElementById("nav").style.width = "65%";
+        document.getElementById("nav").style.width = "25%";
+        document.getElementById("nav-item-wraper").style.visibility = "visible";
+        document.getElementById("nav-item-wraper").style.opacity = "1";
     }
 
     function closeNav() {
         document.getElementById("nav").style.width = "0";
+        document.getElementById("nav-item-wraper").style.visibility = "hidden";
+        document.getElementById("nav-item-wraper").style.opacity = "0";
     }
 </script>
 </body>
