@@ -1,0 +1,37 @@
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{ form.username}}
+    {{ form.password }}
+    {{ form.non_field_errors }}
+    <button id="login-btn" class="btn btn-default" type="submit">로그인</button>
+</form>
+
+
+
+
+{#<form action="{% url 'login' %}" method="post">#}
+{#    {% csrf_token %}#}
+{#    {% for field in form %}#}
+{#        <div>#}
+{#            {{ field }}#}
+{#            {% if field.errors %}#}
+{#                {% for error in field.errors %}#}
+{#                    <span class="help-block">{{ error }}</span>#}
+{#                {% endfor %}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#    <span class="help-block">{{ form.non_field_errors }}</span>#}
+{##}
+{#    {{ form.non_field_errors }}#}
+{#    <button id="login-btn" class="btn btn-default" type="submit">로그인</button>#}
+{#</form>#}
+
+
+
+
+
+
+
+
+
