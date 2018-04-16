@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: white;
+    position: relative;
 }
 
 header {
@@ -82,7 +83,16 @@ button#login-btn {
 button#signup-btn {
     width: 100%;
     margin-top: 10px;
+}
 
+button#loginpage-login-btn {
+    width: 348px;
+    margin-top: 10px;
+}
+
+button#loginpage-signup-btn {
+    width: 348px;
+    margin-top: 10px;
 }
 
 ul#news-select-list {
@@ -161,10 +171,9 @@ li.news-title {
 
 ul.errorlist {
     margin: 0 0;
-    padding-top: 10px;
-    padding-left: 20px;
+    padding:10px 0 10px 20px;
 }
 
-div.test {
-    background-color: red;
+div#login-page-container {
+    margin-top: 60px;
 }

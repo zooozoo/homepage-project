@@ -19,11 +19,13 @@ class LoginForm(forms.ModelForm):
                 'id': 'username',
                 'class': 'col-sm-8 form-control',
                 'placeholder': 'ID',
+                'aria-describedby': 'usernameHelpBlock',
             }),
             'password': PasswordInput(attrs={
                     'id': 'password',
                     'class': 'col-sm-8 form-control',
                     'placeholder': 'PASSWORD',
+                    'aria-describedby': 'passwordHelpBlock',
             }),
         }
 
