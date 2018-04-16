@@ -1,77 +1,6 @@
-<!doctype html>
-<html lang="kr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% extends "base.html" %}
 
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}"/>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
-    <title>NEWS-HOMEPAGE</title>
-</head>
-
-<body>
-<header>
-    <div id="search_section">
-        <div class="search">
-            <form class="navbar-form" method="get" action="https://search.naver.com/search.naver">
-                <input name="query" type="text" placeholder="Search Naver"/>
-                <input type="submit" class="btn btn-default" value="네이버 검색">
-            </form>
-        </div>
-        <div class="search">
-            <form class="navbar-form" method="get" action="https://www.google.com/search">
-                <input name="q" type="text" placeholder="Search Google">
-                <input type="submit" class="btn btn-default" value="구글 검색">
-            </form>
-        </div>
-    </div>
-    <nav id="nav">
-        <div id="nav-item-wraper">
-            <div class="login-section">
-                <div class="login-section-inner">
-                    {% if user.is_authenticated %}
-                        <h3>welcome {{ user }}</h3>
-                        <form action="{% url 'logout' %}" method="get">
-                            <button id="logout-btn" class="btn btn-block">로그아웃</button>
-                        </form>
-                    {% else %}
-                        <form id="login" action="{% url 'login' %}" method="post">
-                            {% csrf_token %}
-                            {% for field in form %}
-                                <div class="input-group">
-                                    {{ field }}
-                                </div>
-                            {% endfor %}
-                            <button id="login-btn" class="btn btn-default" type="submit">로그인</button>
-                        </form>
-                        <form id="signup" action="">
-                            <button id="signup-btn" class="btn btn-primary" type="button">회원가입</button>
-                        </form>
-                    {% endif %}
-                </div>
-            </div>
-
-            <ul id="news-select-list">
-                <li class="news-select-item"><a href="javascript:void(0)" class="closebtn"
-                                                onclick="closeNav()">&times;</a>
-                </li>
-                <li class="news-select-item">네이버</li>
-                <li class="news-select-item">다음</li>
-            </ul>
-        </div>
-    </nav>
-    {% if user.is_authenticated %}
-        <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그아웃</span>
-    {% else %}
-        <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그인</span>
-    {% endif %}
-</header>
-
-<div class="header-bar"></div>
-
+{% block content %}
 <div class="container-fluid news-section">
     <div class="col-xl news-item">
         <div class="news-item-wraper">
@@ -97,23 +26,5 @@
             </ul>
         </div>
     </div>
-
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
-<script>
-    function openNav() {
-        document.getElementById("nav").style.width = "325px";
-        document.getElementById("nav-item-wraper").style.visibility = "visible";
-        document.getElementById("nav-item-wraper").style.opacity = "1";
-    }
-
-    function closeNav() {
-        document.getElementById("nav").style.width = "0";
-        document.getElementById("nav-item-wraper").style.visibility = "hidden";
-        document.getElementById("nav-item-wraper").style.opacity = "0";
-    }
-</script>
-</body>
-</html>
+{% endblock %}

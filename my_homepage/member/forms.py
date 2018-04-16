@@ -17,12 +17,12 @@ class LoginForm(forms.ModelForm):
             'username': TextInput(attrs={
                 'autofocus': True,
                 'id': 'username',
-                'class': 'form-control',
+                'class': 'col-sm-8 form-control',
                 'placeholder': 'ID',
             }),
             'password': PasswordInput(attrs={
                     'id': 'password',
-                    'class': 'form-control',
+                    'class': 'col-sm-8 form-control',
                     'placeholder': 'PASSWORD',
             }),
         }

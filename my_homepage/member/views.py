@@ -14,8 +14,11 @@ def login_view(request):
             return redirect('/')
     else:
         form = LoginForm()
+    # 'login_page'는 login page의 nav에서 sideabar를 여는 버튼을 home link로 변경하기 위해
+    # header 템플렛에 True를 전달하기 위한 것
     context = {
         'form': form,
+        'login_page': True,
     }
     return render(request, 'member/login.html', context=context)
 

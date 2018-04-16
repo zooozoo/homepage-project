@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <title>NEWS-HOMEPAGE</title>
+</head>
+
+<body>
+<header>
+    {% include "include/header.html" %}
+</header>
+
+<div class="header-bar"></div>
+
+{% block content %}
+{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<script>
+    function openNav() {
+        document.getElementById("nav").style.width = "325px";
+        document.getElementById("nav-item-wraper").style.visibility = "visible";
+        document.getElementById("nav-item-wraper").style.opacity = "1";
+    }
+
+    function closeNav() {
+        document.getElementById("nav").style.width = "0";
+        document.getElementById("nav-item-wraper").style.visibility = "hidden";
+        document.getElementById("nav-item-wraper").style.opacity = "0";
+    }
+</script>
+</body>
+</html>

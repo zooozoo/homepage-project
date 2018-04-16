@@ -159,3 +159,12 @@ li.news-title {
     padding: 2px 0px;
 }
 
+ul.errorlist {
+    margin: 0 0;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+div.test {
+    background-color: red;
+}
