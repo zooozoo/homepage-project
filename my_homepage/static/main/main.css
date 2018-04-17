@@ -66,7 +66,6 @@ div.login-section-inner {
 
 input#username {
     width: 250px;
-    background-color: white;
     margin-bottom: 5px;
 }
 
@@ -76,23 +75,27 @@ input#password {
 }
 
 button#login-btn {
-    width: 100%;
+    width: 167px;
     margin-top: 10px;
 }
 
 button#signup-btn {
-    width: 100%;
+    width: 167px;
     margin-top: 10px;
 }
 
 button#loginpage-login-btn {
-    width: 348px;
+    width: 235px;
     margin-top: 10px;
 }
 
 button#loginpage-signup-btn {
-    width: 348px;
+    width: 235px;
     margin-top: 10px;
+}
+
+button#signuppage-signup-btn {
+    width: 100%;
 }
 
 ul#news-select-list {
@@ -118,7 +121,7 @@ span {
     font-size: 20px;
     cursor: pointer;
     position: absolute;
-    top: 25%;
+    top: 15%;
     margin-left: 12px;
     display: inline-block;
     /*transform: translateY(-50%);*/
@@ -171,9 +174,13 @@ li.news-title {
 
 ul.errorlist {
     margin: 0 0;
-    padding:10px 0 10px 20px;
+    padding: 10px 0 10px 20px;
 }
 
 div#login-page-container {
     margin-top: 60px;
+}
+
+div#signup-wrapper {
+    margin-top: 40px;
 }

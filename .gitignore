@@ -4,6 +4,7 @@
 .idea/
 .config_secret/
 .media/
+pretty_html.html
 
 # Travis CI
 secrets.tar
