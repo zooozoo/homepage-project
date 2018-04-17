@@ -56,31 +56,12 @@ div#nav-item-wraper {
     transition: visibility 0.8s linear, opacity 0.8s linear;
 }
 
-div.login-section {
-    margin-left: 36px;
-}
-
-div.login-section-inner {
-    display: inline-block;
-}
-
-input#username {
-    width: 250px;
-    margin-bottom: 5px;
-}
-
-input#password {
-    width: 250px;
-    background-color: white;
-}
-
 button#login-btn {
-    width: 167px;
-    margin-top: 10px;
+    width: 100%;
 }
 
 button#signup-btn {
-    width: 167px;
+    width: 100%;
     margin-top: 10px;
 }
 

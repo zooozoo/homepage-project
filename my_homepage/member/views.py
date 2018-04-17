@@ -27,12 +27,13 @@ def logout_view(request):
     logout(request)
     return redirect('/')
 
+
 def signup_view(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request,user)
+            login(request, user)
             return redirect('/')
     else:
         form = SignUpForm()

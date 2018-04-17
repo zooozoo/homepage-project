@@ -17,13 +17,13 @@ class LoginForm(forms.ModelForm):
             'username': TextInput(attrs={
                 'autofocus': True,
                 'id': 'username',
-                'class': 'col-sm-8 form-control',
+                'class': 'form-control',
                 'placeholder': 'ID',
                 'aria-describedby': 'usernameHelpBlock',
             }),
             'password': PasswordInput(attrs={
                 'id': 'password',
-                'class': 'col-sm-8 form-control',
+                'class': 'form-control',
                 'placeholder': 'PASSWORD',
                 'aria-describedby': 'passwordHelpBlock',
             }),
