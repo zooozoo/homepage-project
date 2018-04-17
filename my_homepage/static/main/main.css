@@ -84,20 +84,6 @@ button#signup-btn {
     margin-top: 10px;
 }
 
-button#loginpage-login-btn {
-    width: 235px;
-    margin-top: 10px;
-}
-
-button#loginpage-signup-btn {
-    width: 235px;
-    margin-top: 10px;
-}
-
-button#signuppage-signup-btn {
-    width: 100%;
-}
-
 ul#news-select-list {
     /*display: inline-block;*/
     list-style-type: none;
@@ -175,12 +161,4 @@ li.news-title {
 ul.errorlist {
     margin: 0 0;
     padding: 10px 0 10px 20px;
-}
-
-div#login-page-container {
-    margin-top: 60px;
-}
-
-div#signup-wrapper {
-    margin-top: 40px;
 }

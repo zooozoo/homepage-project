@@ -1,0 +1,13 @@
+button#loginpage-login-btn {
+    width: 235px;
+    margin-top: 10px;
+}
+
+button#loginpage-signup-btn {
+    width: 235px;
+    margin-top: 10px;
+}
+
+div#login-page-container {
+    margin-top: 60px;
+}
