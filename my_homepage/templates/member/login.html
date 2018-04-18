@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block content %}
     <div id="login-page-container" class="container">
         <div class="row justify-content-md-center">
@@ -10,7 +9,7 @@
                     {% for field in form %}
                         <div class="form-group has-error">
                             <label for="{{ field.id_for_label }}" class="col-sm-2 control-label">{{ field.label }}
-                                </label>
+                            </label>
                             {{ field }}
                             <small class="help-block">{{ field.errors }}</small>
                         </div>

@@ -53,7 +53,7 @@ nav#nav {
 div#nav-item-wraper {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.8s linear, opacity 0.8s linear;
+    transition: visibility 1s linear, opacity 1s linear;
     position: relative;
 }
 
@@ -66,21 +66,12 @@ button#signup-btn {
     margin-top: 10px;
 }
 
-ul#news-select-list {
-    /*display: inline-block;*/
-    list-style-type: none;
-    width: auto;
-    padding: 0;
-}
-
 span a.closebtn {
     position: absolute;
     top: -55px;
     font-size: 30px;
-}
-
-li.news-select-item {
-    text-align: center;
+    text-decoration: none;
+    color: lightgray;
 }
 
 span {
@@ -91,6 +82,20 @@ span {
     margin-left: 12px;
     display: inline-block;
     /*transform: translateY(-50%);*/
+}
+
+div.logout-section h3 {
+    text-decoration: none;
+}
+
+div.news-select-group-title h5 {
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+form label {
+    color: white;
 }
 
 /* On smaller screens, where height is less than 450px,
@@ -143,3 +148,4 @@ ul.errorlist {
     margin: 0 0;
     padding: 10px 0 10px 20px;
 }
+
