@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from main.models import NewsSelectModel
 from member.forms import LoginForm, SignUpForm
 
 
@@ -33,6 +34,7 @@ def signup_view(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
+            NewsSelectModel.objects.create(user=user)
             login(request, user)
             return redirect('/')
     else:
