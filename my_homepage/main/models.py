@@ -26,3 +26,6 @@ class NewsSelectModel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     naver = models.BooleanField(default=True)
     daum = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'{self.user}\'s news select list'

@@ -39,17 +39,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        {##}
-                        {#                        <div class="row justify-content-center">#}
-                        {#                            <h3>welcome {{ user }}</h3>#}
-                        {#                        </div>#}
-                        {#                        <div class="form-group row justify-content-center">#}
-                        {#                            <a href="{% url "logout" %}"><h3>로그아웃</h3> </a>#}
-                        {#                        </div>#}
-                        {#                        <form class="form-group row justify-content-center" action="{% url 'logout' %}" method="get">#}
-                        {#                            <button id="logout-btn" class="btn btn-light">로그아웃</button>#}
-                        {#                        </form>#}
                     </div>
 
                 {% else %}
@@ -79,23 +68,18 @@
             </div>
             <form class="news-select-form">
                 <div class="form-group row justify-content-center">
-                    <div class="col-sm-5">
+
+                    {% for field in news_select_form %}
+                        <div class="col-sm-5">
                         <div class="custom-control custom-checkbox">
-                            <input id="naver" class="custom-control-input" type="checkbox" value="네이버"
-                                   aria-label="네이버">
-                            <label class="custom-control-label" for="naver">네이버</label>
+                            {{ field }}
+                            <label for="{{ field.id_for_label }}" class="custom-control-label">{{ field.label }}
+                            </label>
                         </div>
                     </div>
-                    <div class="col-sm-5">
-                        <div class="custom-control custom-checkbox">
-                            <input id="daum" class="custom-control-input" type="checkbox" value="네이버"
-                                   aria-label="네이버">
-                            <label class="custom-control-label" for="daum">다음</label>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </form>
-
         </div>
 
     </nav>

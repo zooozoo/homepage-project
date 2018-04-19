@@ -27,4 +27,8 @@
             </div>
         </div>
     </div>
+    {{ news_select_form }}
+    {% for field in news_select_form %}
+        <p>{{ field.name }} {{ field.value }}</p>
+    {% endfor %}
 {% endblock %}
