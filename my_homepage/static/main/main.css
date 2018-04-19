@@ -118,34 +118,29 @@ change the style of the sidenav (less padding and a smaller font size) */
     margin-bottom: 7px;
 }
 
-div.news-item {
-    float: left;
-    background-color: #F4F4F3;
-    display: inline-block;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 6px;
-}
-
-div.news-item-wraper {
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-ul.news-list {
-    padding-left: 16px;
-}
-
-li.news-title {
-    padding: 2px 0px;
-    font-size: 13px;
-}
-
 ul.errorlist {
     margin: 0 0;
     padding: 10px 0 10px 20px;
 }
+
+div.news-title-card-wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div.news-title-card-header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+li.news-title-li {
+    padding: 2px 5px 2px 5px;
+    font-size: 13px;
+}
+
+a.news-title-link {
+    text-decoration: none;
+    color: #6c757d;
+}
+
 
