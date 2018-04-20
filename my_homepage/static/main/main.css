@@ -133,6 +133,10 @@ div.news-title-card-header {
     padding-bottom: 5px;
 }
 
+div.news-title-card-header p {
+    margin-bottom: 0;
+}
+
 li.news-title-li {
     padding: 2px 5px 2px 5px;
     font-size: 13px;
@@ -140,7 +144,7 @@ li.news-title-li {
 
 a.news-title-link {
     text-decoration: none;
-    color: #6c757d;
+    color: #5a6268;
 }
 
 

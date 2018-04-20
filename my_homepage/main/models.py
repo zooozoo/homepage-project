@@ -4,7 +4,7 @@ from django.db import models
 User = get_user_model()
 
 
-class NaverNews(models.Model):
+class Naver(models.Model):
     title = models.CharField(max_length=100)
     link = models.CharField(max_length=100)
     created_time = models.DateTimeField(auto_now=True)
@@ -13,7 +13,7 @@ class NaverNews(models.Model):
         return self.title
 
 
-class DaumNews(models.Model):
+class Daum(models.Model):
     title = models.CharField(max_length=100)
     link = models.CharField(max_length=100)
     created_time = models.DateTimeField(auto_now=True)
@@ -23,7 +23,7 @@ class DaumNews(models.Model):
 
 
 class NewsSelectModel(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     naver = models.BooleanField(default=True)
     daum = models.BooleanField(default=True)
 
