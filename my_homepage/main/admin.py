@@ -1,8 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from main.models import Naver, Daum, NewsSelectModel
+from main.models import NewsTitle, NewsSelectModel
 
-admin.site.register(Naver)
-admin.site.register(Daum)
+admin.site.register(NewsTitle)
 admin.site.register(NewsSelectModel)

@@ -3,55 +3,27 @@
 {% block content %}
     <div class="container-fluid news-section">
         <div class="row">
-            <div class="col-md-3 news-title-card-wrapper">
-                <div class="card">
-                    <div class="card-header news-title-card-header">
-                        <p class="font-weight-bold">NAVER</p>
+            {% for field in news_select_form %}
+                {% if field.value == True %}
+                    <div class="col-md-3 news-title-card-wrapper">
+                        <div class="card">
+                            <div class="card-header news-title-card-header">
+                                <p class="font-weight-bold">{{ field.name }}</p>
+                            </div>
+                            <ul class="list-group list-group-flush news-title-ul">
+                                {% for news in selected_news_objects %}
+                                    {% if field.name == news.pres %}
+                                        <li class="list-group-item list-group-item-action news-title-li">
+                                            <a class="news-title-link" href="{{ news.link }}">{{ news.title }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush news-title-ul">
-                        {% for items in naver %}
-                            <li class="list-group-item list-group-item-action news-title-li">
-                                <a class="news-title-link" href="{{ items.link }}">{{ items.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 news-title-card-wrapper">
-                <div class="card">
-                    <div class="card-header news-title-card-header">
-                        <p class="font-weight-bold">DAUM</p>
-                    </div>
-                    <ul class="list-group list-group-flush news-title-ul">
-                        {% for items in daum %}
-                            <li class="list-group-item list-group-item-action news-title-li">
-                                <a class="news-title-link" href="{{ items.link }}">{{ items.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
-    {% for field in news_select_form %}
-        {% if field.value == True %}
-            <div class="col-md-3 news-title-card-wrapper">
-                <div class="card">
-                    <div class="card-header news-title-card-header">
-                        <p class="font-weight-bold">NAVER</p>
-                    </div>
-                    <ul class="list-group list-group-flush news-title-ul">
-                        {% for items in naver %}
-                            <li class="list-group-item list-group-item-action news-title-li">
-                                <a class="news-title-link" href="{{ items.link }}">{{ items.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            {% else %}
-        {{ field.name }}
-        {% endif %}
-    {% endfor %}
 
 {% endblock %}
