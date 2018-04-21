@@ -1,16 +1,5 @@
 <div class="container-fluid">
     <div class="row justify-content-between">
-
-        {% if user.is_authenticated %}
-            <div class="col-sm-2 align-self-center">
-                <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그아웃</span>
-            </div>
-        {% else %}
-            <div class="col-sm-2 align-self-center">
-                <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그인</span>
-            </div>
-        {% endif %}
-
         {% if login_page is True %}
             <div class="col-sm-2 align-self-center">
                 <span><a href="{% url 'main' %}" style="text-decoration: none; color: black;">
@@ -18,6 +7,15 @@
                 </span>
             </div>
         {% else %}
+            {% if user.is_authenticated %}
+                <div class="col-sm-2 align-self-center">
+                    <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그아웃</span>
+                </div>
+            {% else %}
+                <div class="col-sm-2 align-self-center">
+                    <span onclick="openNav()"><span class="glyphicon glyphicon-plus"></span> 매체선택 | 로그인</span>
+                </div>
+            {% endif %}
             {% include "include/nav.html" %}
         {% endif %}
         <div id="search-section-wrapper" class="col-sm-7 align-self-end">
