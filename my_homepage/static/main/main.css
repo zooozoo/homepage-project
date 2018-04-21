@@ -124,6 +124,7 @@ ul.errorlist {
 }
 
 div.news-title-card-wrapper {
+    padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
 }

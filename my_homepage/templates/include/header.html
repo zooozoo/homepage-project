@@ -27,7 +27,6 @@
             </div>
             <div class="row">
                 {% if user.is_authenticated %}
-
                     <div class="container logout-section">
                         <div class="row justify-content-center">
                             <div class="card text-center" style="width: 18rem">
@@ -40,7 +39,6 @@
                             </div>
                         </div>
                     </div>
-
                 {% else %}
                     <div class="container">
                         <div class="row justify-content-md-center">
@@ -66,18 +64,21 @@
             <div class="row justify-content-center news-select-group-title">
                 <h5 class="font-weight-bold">NEWS SELECT</h5>
             </div>
-            <form class="news-select-form">
+            <form class="news-select-form" action="{% url 'news-select' %}" method="post">
+            {% csrf_token %}
                 <div class="form-group row justify-content-center">
-
                     {% for field in news_select_form %}
                         <div class="col-sm-5">
-                        <div class="custom-control custom-checkbox">
-                            {{ field }}
-                            <label for="{{ field.id_for_label }}" class="custom-control-label">{{ field.label }}
-                            </label>
+                            <div class="custom-control custom-checkbox">
+                                {{ field }}
+                                <label for="{{ field.id_for_label }}" class="custom-control-label">{{ field.label }}
+                                </label>
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
+                </div>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn  btn-outline-light">뉴스선택 완료</button>
                 </div>
             </form>
         </div>

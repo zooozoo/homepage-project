@@ -1,6 +1,8 @@
 from datetime import datetime, timezone, timedelta
 
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
 from main.forms import NewsSelectForm
 from main.models import NewsTitle
@@ -35,3 +37,10 @@ def index_page(request):
         'form': form,
     }
     return render(request, 'main/index.html', context)
+
+@login_required(login_url='/member/login')
+def news_select(request):
+    form = NewsSelectForm(request.POST, instance=request.user.newsselectmodel)
+    if form.is_valid():
+        form.save()
+    return redirect('/')
