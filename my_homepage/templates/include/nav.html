@@ -1,0 +1,68 @@
+<nav id="nav">
+    <div id="nav-item-wraper">
+        <div class="row justify-content-end">
+            <div class="col-3">
+                    <span><a href="javascript:void(0)" class="closebtn"
+                             onclick="closeNav()">&times;</a>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            {% if user.is_authenticated %}
+                <div class="container logout-section">
+                    <div class="row justify-content-center">
+                        <div class="card text-center" style="width: 18rem">
+                            <div class="card-header">
+                                <h3>welcome {{ user }}</h3>
+                            </div>
+                            <div class="card-body">
+                                <a href="{% url "logout" %}" class="btn btn-primary btn-block">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div id="form-wraper" class="col-10">
+                            <form class="form-horizontal" action="{% url 'login' %}" method="post">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <div class="form-group">
+                                        {{ field }}
+                                        <small class="help-block">{{ field.errors }}</small>
+                                    </div>
+                                {% endfor %}
+                                <button type="submit" id="login-btn" class="btn btn-default">로그인</button>
+                            </form>
+                            <form class="form-horizontal" action="{% url 'signup' %}" method="get">
+                                <button type="submit" id="signup-btn" class="btn btn-primary">회원가입</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="row justify-content-center news-select-group-title">
+            <h5 class="font-weight-bold">NEWS SELECT</h5>
+        </div>
+        <form class="news-select-form" action="{% url 'news-select' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group row justify-content-center">
+                {% for field in news_select_form %}
+                    <div class="col-sm-5">
+                        <div class="custom-control custom-checkbox mx-4">
+                            {{ field }}
+                            <label for="{{ field.id_for_label }}"
+                                   class="custom-control-label">{{ field.label }}
+                            </label>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row justify-content-center">
+                <button type="submit" class="btn  btn-outline-light">뉴스선택 완료</button>
+            </div>
+        </form>
+    </div>
+</nav>

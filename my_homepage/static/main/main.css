@@ -15,24 +15,6 @@ header::after {
     clear: both;
 }
 
-div#search_section {
-    float: right;
-    position: relative;
-    top: 4px;
-}
-
-div#search_section::after {
-    content: '';
-    display: block;
-    height: 0;
-    clear: both;
-}
-
-div.search {
-    float: right;
-    margin-right: 10px;
-}
-
 nav#nav {
     height: 100%;
     width: 0;
@@ -66,9 +48,23 @@ button#signup-btn {
     margin-top: 10px;
 }
 
+div#search-section-wrapper {
+    margin-top: 7px;
+    padding-left: 0;
+}
+
+div#search-section-wrapper div.container {
+    padding: 0;
+}
+
+input.search-btn {
+    margin-left: 5px;
+}
+
 span a.closebtn {
     position: absolute;
     top: -55px;
+    right: 40px;
     font-size: 30px;
     text-decoration: none;
     color: lightgray;
@@ -77,11 +73,8 @@ span a.closebtn {
 span {
     font-size: 20px;
     cursor: pointer;
-    position: absolute;
-    top: 15%;
-    margin-left: 12px;
-    display: inline-block;
-    /*transform: translateY(-50%);*/
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 div.logout-section h3 {
