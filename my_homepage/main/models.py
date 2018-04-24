@@ -7,7 +7,7 @@ User = get_user_model()
 class NewsTitle(models.Model):
     pres = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
-    link = models.CharField(max_length=100)
+    link = models.CharField(max_length=200)
     created_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
