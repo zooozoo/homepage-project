@@ -5,6 +5,8 @@
 .config_secret/
 .media/
 pretty_html.html
+Dockerfile
+Dockerfile.base
 
 # Travis CI
 secrets.tar

@@ -1,12 +1,12 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = [
-#     'localhost'
-# ]
+ALLOWED_HOSTS = [
+    'localhost'
+]
 
-#local의 데이터베이스
+# local의 데이터베이스
 DATABASES = config_secret_common["django"]["database-aws-rds"]
 
 STATICFILES_LOCATION = 'static'
