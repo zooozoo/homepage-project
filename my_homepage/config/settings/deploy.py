@@ -3,7 +3,8 @@ from .base import *
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost'
+    'localhost',
+    '.elasticbeanstalk.com',
 ]
 
 # local의 데이터베이스
