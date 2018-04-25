@@ -5,7 +5,9 @@
 .config_secret/
 .media/
 pretty_html.html
-Dockerfile*
+
+# .ebignore
+!.config_secret/
 
 # Travis CI
 secrets.tar
