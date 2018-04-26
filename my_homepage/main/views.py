@@ -23,6 +23,7 @@ def index_page(request):
         data = {
             'naver': user_selected_news.naver,
             'daum': user_selected_news.daum,
+            'chosun': user_selected_news.chosun,
         }
         news_select_form = NewsSelectForm(data, initial=data)
     else:

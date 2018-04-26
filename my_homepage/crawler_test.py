@@ -44,7 +44,7 @@ def chosun_news_title():
     top_news = news_section.find('div', id='top_news').h2
     top_news_tu = (
         'chosun',
-        top_news.find('em').text + '\n' + top_news.find('em').next_sibling.text,
+        top_news.find('em').text + ' ' + top_news.find('em').next_sibling.text,
         top_news.find('a').get('href')
     )
     second_news = news_section.find('dl', id='second_news')
