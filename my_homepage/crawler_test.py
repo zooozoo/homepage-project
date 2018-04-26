@@ -12,7 +12,7 @@ def naver_news_title():
         if item.string:
             string = item.string
             link = item.get('href')
-            tu = (string, link)
+            tu = ('naver', string, link)
             result.append(tu)
     return result
 
@@ -27,6 +27,12 @@ def daum_news_title():
     for item in total_list.find_all('a', 'link_txt'):
         string = item.string.strip()
         link = item.get('href')
-        tu = (string, link)
+        tu = ('daum', string, link)
         result.append(tu)
     return result
+
+
+def all_crawler_function():
+    return naver_news_title() + daum_news_title()
+
+

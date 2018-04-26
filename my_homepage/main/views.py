@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from main.forms import NewsSelectForm
 from main.models import NewsTitle
 from member.forms import LoginForm
-from .utils import naver_news_title, daum_news_title
+from .utils import all_crawler_function
 
 
 # Create your views here.
@@ -15,10 +15,8 @@ def index_page(request):
     if NewsTitle.objects.last() is None or timedelta(minutes=15) < datetime.now(
             timezone.utc) - NewsTitle.objects.last().created_time:
         NewsTitle.objects.all().delete()
-        for title, link in naver_news_title():
-            NewsTitle.objects.create(pres='naver', title=title, link=link)
-        for title, link in daum_news_title():
-            NewsTitle.objects.create(pres='daum', title=title, link=link)
+        for pres, title, link in all_crawler_function():
+            NewsTitle.objects.create(pres=pres, title=title, link=link)
     if request.user.is_authenticated:
         user_selected_news = request.user.newsselectmodel
         selected_news_objects = request.user.newsselectmodel.get_user_news_objects()
@@ -37,6 +35,7 @@ def index_page(request):
         'form': form,
     }
     return render(request, 'main/index.html', context)
+
 
 @login_required(login_url='/member/login')
 def news_select(request):
