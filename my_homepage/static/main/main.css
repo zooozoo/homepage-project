@@ -59,6 +59,13 @@ div#search-section-wrapper div.container {
 
 input.search-btn {
     margin-left: 5px;
+    background-color: #ced4da;
+    color: #383d41;
+}
+
+input.search-btn:hover {
+    background-color: #adb5bd;
+
 }
 
 span a.closebtn {
