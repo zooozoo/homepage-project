@@ -18,6 +18,7 @@ class NewsSelectModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     naver = models.BooleanField(default=True)
     daum = models.BooleanField(default=True)
+    chosun = models.BooleanField(default=True)
 
     def get_user_news_objects(self):
         fields_dict = dict(self.__dict__)

@@ -9,7 +9,8 @@ class NewsSelectForm(forms.ModelForm):
         model = NewsSelectModel
         fields = [
             'naver',
-            'daum'
+            'daum',
+            'chosun'
         ]
         widgets = {
             'naver': CheckboxInput(attrs={
@@ -20,6 +21,11 @@ class NewsSelectForm(forms.ModelForm):
             'daum': CheckboxInput(attrs={
                 'autofocus': True,
                 'id': 'daum',
+                'class': 'custom-control-input',
+            }),
+            'chosun': CheckboxInput(attrs={
+                'autofocus': True,
+                'id': 'chosun',
                 'class': 'custom-control-input',
             }),
         }
