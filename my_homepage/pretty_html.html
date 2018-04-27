@@ -1,2402 +1,444 @@
-<!DOCTYPE HTML>
-<html lang="ko">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-    <meta content="600" http-equiv="refresh"/>
-    <meta content="width=1106" name="viewport"/>
-    <meta content="네이버 뉴스" property="og:title"/>
-    <meta content="website" property="og:type"/>
-    <meta content="http://news.naver.com/main/home.nhn" property="og:url"/>
-    <meta content="http://static.news.naver.net/image/news/ogtag/navernews_200x200_20160804.png" property="og:image"/>
-    <meta content="정치, 경제, 사회, 생활/문화, 세계, IT/과학 등 언론사별, 분야별 뉴스 기사 제공" property="og:description"/>
-    <meta content="summary" name="twitter:card"/>
-    <meta content="네이버 뉴스" name="twitter:title"/>
-    <meta content="네이버 뉴스" name="twitter:site"/>
-    <meta content="네이버 뉴스" name="twitter:creator"/>
-    <meta content="http://static.news.naver.net/image/news/ogtag/navernews_200x200_20160804.png" name="twitter:image"/>
-    <meta content="정치, 경제, 사회, 생활/문화, 세계, IT/과학 등 언론사별, 분야별 뉴스 기사 제공" name="twitter:description"/>
-    <title>네이버 뉴스</title>
-    <link href="http://static.news.naver.net/image/news/2014/favicon/favicon.ico" rel="shortcut icon"
-          type="image/x-icon"/>
-    <link charset="euc-kr" href="http://static.news.naver.net/pnews/resources/20180412_174541/css/common.css"
-          rel="stylesheet" type="text/css"/>
-    <link charset="euc-kr" href="http://static.news.naver.net/pnews/resources/20180412_174541/css/news.css"
-          rel="stylesheet" type="text/css"/>
-    <script charset="euc-kr" src="http://static.news.naver.net/pnews/resources/20180412_174541/js/news.jindo.js"
-            type="text/javascript"></script>
-    <script type="text/javascript">
-        document.domain = 'naver.com';
-        var _MAIN_NEWS_MENU_ID = 'home';
-        var _MAIN_NEWS_SECTION_ID = '100';
-        var ccsrv = 'cc.naver.com';
-        var nsc = 'news.home';
-        var gnb_service = 'news';
-        var gnb_logout = 'http://news.naver.com';
-        var gnb_template = 'gnb_euckr';
-        var gnb_brightness = 1;
-        var gnb_one_naver = 1;
-        var gnb_searchbox = 'on';
-        var gnb_shortnick = 'on';
-
-        var gnb_timestamp = "Mon Apr 16 19:55:29 KST 2018";
-    </script>
-    <script charset="euc-kr" src="http://static.news.naver.net/pnews/resources/20180412_174541/js/news.service.js"
-            type="text/javascript"></script>
-</head>
-<body>
-<div id="wrap">
-    <div id="da_base"></div>
-    <div id="da_stake"></div>
-    <div class="header" id="header">
-        <div id="u_skip">
-            <a href="#lnb" tabindex="1"><span>메인 메뉴로 바로가기</span></a>
-            <a href="#main_content" tabindex="2"><span>본문으로 바로가기</span></a>
-        </div>
-        <div class="snb_area">
-            <div class="snb_inner">
-                <div class="gnb_wrap">
-                    <!-- GNB 마크업 -->
-                    <div id="gnb"></div>
-                    <!-- //GNB 마크업 -->
-                </div>
-                <div id="snb_wrap">
-                    <h1>
-                        <a class="h_logo nclicks(STA.naver)" href="http://www.naver.com/"><span
-                                class="blind">NAVER</span></a> <a class="h_news nclicks(STA.news)"
-                                                                  href="http://news.naver.com/"><span
-                            class="blind">뉴스</span></a>
-                    </h1>
-                    <ul class="snb_related_service">
-                        <li><span class="snb_bdr"></span><a class="nclicks(STA.enter)"
-                                                            href="http://entertain.naver.com/home"><img alt="TV연예"
-                                                                                                        height="19"
-                                                                                                        src="http://static.news.naver.net/image/news/2017/10/snb_h_entertain.png"
-                                                                                                        width="52"/></a>
-                        </li>
-                        <li><span class="snb_bdr"></span><a class="nclicks(STA.sports)"
-                                                            href="http://sports.news.naver.com"><img alt="스포츠"
-                                                                                                     height="19"
-                                                                                                     src="http://static.news.naver.net/image/news/2017/10/snb_h_sports.png"
-                                                                                                     width="48"/></a>
-                        </li>
-                        <li><span class="snb_bdr"></span><a class="nclicks(STA.newsstand)"
-                                                            href="http://newsstand.naver.com"><img alt="뉴스스탠드"
-                                                                                                   height="19"
-                                                                                                   src="http://static.news.naver.net/image/news/2017/10/snb_h_newsstand.png"
-                                                                                                   width="77"/></a></li>
-                        <li><span class="snb_bdr"></span><a class="nclicks(STA.weather)"
-                                                            href="http://weather.naver.com"><img alt="날씨" height="19"
-                                                                                                 src="http://static.news.naver.net/image/news/2017/10/snb_h_weather.png"
-                                                                                                 width="31"/></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="lnb_area">
-            <div class="lnb_inner">
-                <div class="lnb_menu" id="lnb">
-                    <ul>
-                        <li class="lnb_menu_home on"><a class="nclicks(LNB.home)" href="/main/home.nhn"><span
-                                class="tx">뉴스홈</span> <span class="blind">선택됨</span></a></li>
-                        <li><a class="nclicks(LNB.flash)" href="/main/list.nhn?mode=LSD&amp;mid=sec&amp;sid1=001"><span
-                                class="tx">속보</span></a></li>
-                        <li><a class="nclicks(LNB.pol)" href="/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=100"><span
-                                class="tx">정치</span> </a></li>
-                        <li><a class="nclicks(LNB.eco)" href="/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=101"><span
-                                class="tx">경제</span> </a></li>
-                        <li><a class="nclicks(LNB.soc)" href="/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=102"><span
-                                class="tx">사회</span> </a></li>
-                        <li><a class="nclicks(LNB.lif)" href="/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=103"><span
-                                class="tx">생활/문화</span> </a></li>
-                        <li><a class="nclicks(LNB.wor)" href="/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=104"><span
-                                class="tx">세계</span> </a></li>
-                        <li><a class="nclicks(LNB.sci)" href="/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=105"><span
-                                class="tx">IT/과학</span> </a></li>
-                        <li><a class="nclicks(LNB.opi)" href="/main/opinion/home.nhn"><span class="tx">오피니언</span> </a>
-                        </li>
-                        <li><a class="nclicks(LNB.pho)" href="/main/photo/index.nhn?mid=pho"><span class="tx">포토</span>
-                        </a></li>
-                        <li><a class="nclicks(LNB.tv)" href="/main/tv/index.nhn?mid=tvh"><span class="tx">TV</span> </a>
-                        </li>
-                        <li><a class="nclicks(LNB.ranking)"
-                               href="/main/ranking/popularDay.nhn?mid=etc&amp;sid1=111"><span class="tx">랭킹뉴스</span>
-                        </a></li>
-                    </ul>
-                    <form accept-charset="UTF-8" action="https://search.naver.com/search.naver" id="lnb.searchForm"
-                          method="get" name="lnb_searchForm" target="_blank">
-                        <fieldset>
-                            <legend>뉴스 검색</legend>
-                            <input accesskey="s" class="text_index" name="query" style="ime-mode:active;" title="뉴스 검색"
-                                   type="text"/>
-                            <input name="where" type="hidden" value="news"/>
-                            <input name="ie" type="hidden" value="utf8"/>
-                            <input name="sm" type="hidden" value="nws_hty"/>
-                            <button class="btn_search_lnb nclicks(LNB.search)" type="submit"><span class="tx"><span
-                                    class="blind">검색</span></span></button>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="home_timelate">
-        <div class="ht_head">
-            <ul class="ht_tabmnu">
-                <li id="ht_tabmnu_0">
-                    <a href="#" title="신문 헤드라인">신문 헤드라인<span class="ht_ico"></span></a>
-                </li>
-                <li id="ht_tabmnu_1">
-                    <a href="#" title="저녁 방송 뉴스">저녁 방송 뉴스<span class="ht_ico"></span></a>
-                </li>
-            </ul>
-            <ul class="lnb_side" tabindex="0">
-                <li>
-                    <a class="nclicks(nct.right1)" href="http://news.naver.com/main/factcheck/main.nhn" title="팩트체크">팩트체크
-                    </a>
-                </li>
-                <li>
-                    <a class="nclicks(nct.right2)"
-                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=110&amp;gid=1076074"
-                       title="상식in뉴스">상식in뉴스
-                    </a>
-                </li>
-                <li>
-                    <a class="nclicks(nct.right3)" href="http://news.naver.com/main/officeList.nhn" title="언론사 뉴스">언론사
-                        뉴스
-                    </a>
-                </li>
-                <li>
-                    <a class="nclicks(nct.right4)" href="http://newslibrary.naver.com/search/searchByDate.nhn"
-                       target="_blank" title="라이브러리">라이브러리
-                    </a>
-                </li>
-                <li class="end">
-                    <a class="nclicks(nct.right5)" href="http://news.naver.com/main/history/mainnews/index.nhn"
-                       title="이 시각 주요뉴스 배열 이력">기사배열 이력
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="ht_comp ht_paperheadline" id="paperHeadlineRolling" style="display: none;">
-            <h3 class="blind">신문 헤드라인</h3>
-            <ul class="ht_ph_lst" style="display: none;">
-                <!-- 헤드라인 데이터 동적삽입 <li> -->
-            </ul>
-            <div class="ht_nodata_all" style="display: none;">발행된 종이신문이 없거나 신문게재 정보가 입력되지 않았습니다.</div>
-            <div class="ht_navi">
-                <a class="ht_btn_prev nclicks(opt.prev)" href="#"><span class="ht_ico"></span><span
-                        class="blind">이전</span></a>
-                <a class="ht_btn_next nclicks(opt.next)" href="#"><span class="ht_ico"></span><span
-                        class="blind">다음</span></a>
-                <a class="ht_btn_fold nclicks(opt.open)" href="#"><span class="ht_btn_box"><span
-                        class="ht_btn_ico"></span><span class="blind">접기</span></span></a>
-            </div>
-        </div>
-        <div class="ht_comp ht_eveningnews" id="eveningNewsRolling" style="display: none;">
-            <h3 class="blind">저녁 방송 뉴스</h3>
-            <ul class="ht_ph_lst">
-                <!-- 저녁방송뉴스 동적삽입 <li> -->
-            </ul>
-            <div class="ht_navi">
-                <a class="ht_btn_prev nclicks(opt.prev);" href="#"><span class="ht_ico"></span><span
-                        class="blind">이전</span></a>
-                <a class="ht_btn_next nclicks(opt.next)" href="#"><span class="ht_ico"></span><span
-                        class="blind">다음</span></a>
-                <a class="ht_btn_fold nclicks(opt.open)" href="#"><span class="ht_btn_box"><span
-                        class="ht_btn_ico"></span><span class="blind">접기</span></span></a>
-            </div>
-        </div>
+<div class="sec_con">
+    <!-- ##headline_top_big part s --><!-- ##headline_top_big part e -->
+    <!-- ##ele_ticker part s --><!-- $tag CODE=ele_ticker --><!-- ##ele_ticker part e -->
+    <!-- $tag CODE=topHeadArt_tit1 -->
+    <!-- $tag CODE=ele_art_1 -->
+    <!-- $tag CODE=topHeadArt_tit2 -->
+    <!-- $tag CODE=ele_art_2 -->
+    <dl id="second_news">
+        <!-- ##headline_2 part s -->
+        <dd class="thumb" style="width:145px">
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700235.html" id="sec_news_fade_id"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">
+                <img alt="" src="http://image.chosun.com/sitedata/www/section_image/20180427082536287_1.JPG"/>
+                <img alt="" src="http://image.chosun.com/sitedata/www/section_image/20180427082536307_2.JPG"
+                     style="display:none"/>
+            </a>
+        </dd>
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700235.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');"><em></em></a><a
+                href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700235.html"
+                onclick="ga('send', 'event', 'Headline', 'news', 'headTop');"><span class="blue">[정선 르포]</span> 분노와 원망…
+            광부의 빈소는 잠들지 못했다 </a></dt>
+        <dd class="sub_tit"><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700235.html"
+                               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');"></a></dd>
+        <dd class="desc"><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700235.html"
+                            onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">2016년 후 2년만의 광산 매몰사고다이너마이트 폭파
+            시간 못 맞춰 30톤 돌더미 무너지며 3명 사망 “아직 안 죽었어. 나 아직 못 믿겠어”2..</a></dd>
         <script type="text/javascript">
-            _oTopComponentData = {
-                "open": "Y",
-                "target": "liveTvList",
-                "headlineList": [
-                    {
-                        "officeId": "008",
-                        "officeName": "머니투데이",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/008/2017/01/05/logo_008_1_20170105110505.gif' width='206' height='30' alt='머니투데이' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/008/2018/04/16/4038247.jpg?type=nf80_54",
-                        "title": "[MT리포트] 문닫은 조개구이 무한리필...北수산물 반입되면 열릴까",
-                        "summary": "[머니투데이 김민우 기자, 최경민 기자, 김하늬 기자, 강주헌 기자, 백지수 기자] [편집자주] \'남북 경협으로 인한 경제효과 최대 39조원. 신규 고용창출 효과 4만6000명, 부가가치유발 효과 최대 16조원.\' ",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "044",
-                        "officeName": "코리아헤럴드",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/044/2017/01/05/logo_044_1_20170105110505.gif' width='206' height='30' alt='코리아헤럴드' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/044/2018/04/15/199308.jpg?type=nf80_54",
-                        "title": "NK leader meets senior Chinese official ahead of key summits",
-                        "summary": "North Korean leader Kim Jong-un met senior Chinese diplomat Song Tao and discussed “matters of mutual concern,” the Nort",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "009",
-                        "officeName": "매일경제",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/009/2017/01/05/logo_009_1_20170105110505.gif' width='206' height='30' alt='매일경제' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/009/2018/04/15/4133790.jpg?type=nf80_54",
-                        "title": "[단독] 수서·판교에 반값 공공아파트 나온다",
-                        "summary": "신혼부부용 전용면적 60㎡ 3억선에 연내 2~3곳 분양…수도권 4만가구 공급하기로 정부가 수서·판교 등 수도권 \'알짜\' 용지에서 공공분양하는 신혼희망타운(전용면적 40~60㎡) 분양가를 2억~3억원 선에서 책정한다.",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "081",
-                        "officeName": "서울신문",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/081/2017/01/05/logo_081_1_20170105110505.gif' width='206' height='30' alt='서울신문' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/081/2018/04/16/2907974.jpg?type=nf80_54",
-                        "title": "재난 대응력 향상됐지만 안전 한국은 아직 멀었다",
-                        "summary": "[서울신문] “대한민국 안전 개선됐다” 60% 작년 “개선 안 돼” 80%서 변화 “시스템 운용 가치·철학 바뀌어” “지역별 재난관리 체계 구축을” 세월호 참사가 16일로 4주년을 맞았다. 문재인 정부는 박근혜 정부",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "022",
-                        "officeName": "세계일보",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/022/2017/01/05/logo_022_1_20170105110505.gif' width='206' height='30' alt='세계일보' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/022/2018/04/15/3265794.jpg?type=nf80_54",
-                        "title": "[장애인들의 빼앗긴 권리] \"지하철역 앞에서면 막막 휠체어로 이동 너무 불편\"",
-                        "summary": "‘교통약자 이동편의법’에도 장애인 교통수단 이용 제약 / 환승 표시·이동구간 등 복잡 / 전동차·승강장 간격에 ‘위험’/“장애인 택시 5시간 대기도” ‘장애인 축제’인 평창 동계 패럴림픽이 폐막한 지 한 달이 다 돼",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "014",
-                        "officeName": "파이낸셜뉴스",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/014/2017/01/05/logo_014_1_20170105110505.gif' width='206' height='30' alt='파이낸셜뉴스' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/014/2018/04/15/4002331.jpg?type=nf80_54",
-                        "title": "잠실 전셋값 뚝뚝 … 헬리오시티發 역전세 공포",
-                        "summary": "\'헬리오시티\' 입주 공포가 서울 잠실을 강타하고 있다. 최근 \'잠실엘스\' \'리센츠\' 등 잠실 일대 아파트 전셋값이 하루가 다르게 뚝뚝 떨어지는 모습이다. 이들 단지는 투자자 및 수요자가 잠실에서 가장 선호하는 단지임",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "023",
-                        "officeName": "조선일보",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/023/2017/01/05/logo_023_1_20170105110505.gif' width='206' height='30' alt='조선일보' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/023/2018/04/16/3365681.jpg?type=nf80_54",
-                        "title": "GM \"이대로면 20일 법정관리\" 15만 일자리 걸고 벼랑끝 전술",
-                        "summary": "나흘 남았는데… GM·산은·노조, 헛바퀴만 돌고있다 미국 GM 본사가 노사 협상의 데드라인(20일)을 나흘 앞두고 \'벼랑 끝 전술\'을 펼치면서 협상이 교착 상태에 빠졌다. 며칠 내에 돌파구가 마련되지 않아 미국 GM",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "005",
-                        "officeName": "국민일보",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/005/2017/01/05/logo_005_1_20170105110505.gif' width='206' height='30' alt='국민일보' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/005/2018/04/16/1089108.jpg?type=nf80_54",
-                        "title": "[단독] ‘드루킹’, 靑 행정관 자리 요구했다 거절당해 ",
-                        "summary": "댓글 조작 의혹 사건으로 구속된 민주당 당원 김모(48·닉네임 드루킹)씨가 대선 이후 김경수 더불어민주당 의원에게 청와대 행정관 자리를 요구했다가 거절당한 것으로 15일 알려졌다. 사정당국 관계자는 “김씨가 김 의원",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "011",
-                        "officeName": "서울경제",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/011/2017/01/05/logo_011_1_20170105110505.gif' width='206' height='30' alt='서울경제' title='' class='' >",
-                        "thumbnail": "",
-                        "title": "통신요금 결정까지...\'시민단체 허락\' 논란",
-                        "summary": "[서울경제] 통신요금을 결정할 때 정부 외에 시민단체나 소비자단체가 참여하도록 한 법안이 발의되며 통신업계에서도 시민단체의 권력화 우려가 제기된다. 요금 결정의 민주성과 투명성을 높이기 위한 차원이라지만 책임을 지지",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "025",
-                        "officeName": "중앙일보",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/025/2017/01/05/logo_025_1_20170105110505.gif' width='206' height='30' alt='중앙일보' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/025/2018/04/16/2813515.jpg?type=nf80_54",
-                        "title": "[단독] \"대선 때 댓글 단톡방…김경수 곳곳에 등장\"",
-                        "summary": "‘민주당원 댓글 조작 사건’의 주범인 김모(48·인터넷 필명 ‘드루킹’)씨가 지난해 5월 대통령 선거를 전후해 비밀 메신저인 텔레그램으로 수십 개의 단톡방을 만들어 운영해 온 단서를 경찰이 포착했다. 특히 이 중 여",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "018",
-                        "officeName": "이데일리",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/018/2017/01/05/logo_018_1_20170105110505.gif' width='206' height='30' alt='이데일리' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/018/2018/04/16/4079392.jpg?type=nf80_54",
-                        "title": "모처럼 칼자루 쥔 백운규‥삼성 보고서 공개 막나",
-                        "summary": "- 산업부 반도체전문위원회, 16일 비공개 회의 - 삼성 반도체 환경보고서, 국가핵심기술 여부 가려 - 백운규 장관이 삼성 손 들어주나 촉각 백운규 산업통상자원부 장관이 삼성 반도체 공장의 작업환경 보고서 공개를 놓",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "015",
-                        "officeName": "한국경제",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/015/2017/01/05/logo_015_1_20170105110505.gif' width='206' height='30' alt='한국경제' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/015/2018/04/15/3923820.jpg?type=nf80_54",
-                        "title": "쫓겨나는 국책硏 비정규직 박사들",
-                        "summary": "무리한 정규직 전환의 부작용 직능원 120명·KEI 50명 인건비 감당 못해 내보내 다른 곳도 수십명씩 계약 해지 \"비정규직 계약 끝나면 무작정 해지 통보\" [ 고경봉/임도원 기자 ] 정부가 공공부문 비정규직의 정규",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "028",
-                        "officeName": "한겨레",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/028/2017/01/05/logo_028_1_20170105110505.gif' width='206' height='30' alt='한겨레' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/028/2018/04/16/2406391.jpg?type=nf80_54",
-                        "title": " [김훈, 안산에 가다] 분향소 떠나는 아이들, 이 비극은 영결되는가 ",
-                        "summary": "[한겨레] 1년 만에 다시 만난 안산의 가족들 상처 아물었다가 또 도지기도… 교문 옆 떡볶이집 아이들 생명은 저렇게 아름답구나 16일로 세월호 참사는 4주기를 맞는다. 이날 경기도 안산 정부합동분향소 앞에서 4년 만",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "016",
-                        "officeName": "헤럴드경제",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/016/2017/01/05/logo_016_1_20170105110505.gif' width='206' height='30' alt='헤럴드경제' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/016/2018/04/16/1380781.jpg?type=nf80_54",
-                        "title": "[세월호 4년…곳곳 안전불감증]여객선 타보니…대참사 ‘세월’ 잊었나",
-                        "summary": "제주행 안내방송 잡음 심하고 구명조끼 선 꼬여있는 보관함 소화전함 일부는 문도 안열려 지난 13일 오후 7시, 부산에서 출발하는 제주행 여객선. 선장은 매정했다. “구명조끼 사용법은 안내방송을 참조해주시고…. 비상 ",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "029",
-                        "officeName": "디지털타임스",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/029/2017/01/05/logo_029_1_20170105110505.gif' width='206' height='30' alt='디지털타임스' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/029/2018/04/15/2458545.jpg?type=nf80_54",
-                        "title": "‘삼성보고서’ 공개 D-3…기로에 선 반도체산업",
-                        "summary": "법원 첫심리 유보… 금주 재심리 산업부도 오늘 \'핵심기술\' 판정 \'기밀 vs 생명권 우선\' 격론 예상 반도체 기술유출 위기감 고조 반도체 업계의 기술유출 위기감이 고조하고 있다. 고용노동부의 삼성전자 반도체 공장 작",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "353",
-                        "officeName": "중앙SUNDAY",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/353/2018/03/17/logo_353_1_20180317103917.png' width='206' height='30' alt='중앙SUNDAY' title='' class='' >",
-                        "thumbnail": "",
-                        "title": "",
-                        "summary": "",
-                        "publishDate": ""
-                    },
-                    {
-                        "officeId": "277",
-                        "officeName": "아시아경제",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/277/2017/01/05/logo_277_1_20170105110505.gif' width='206' height='30' alt='아시아경제' title='' class='' >",
-                        "thumbnail": "",
-                        "title": "[단독]\'드루킹 사건\' 1년 전 검찰 내사 했었다",
-                        "summary": "선관위, 2017년 3월 제보 받고 수사 의뢰…경찰 관련자 입건 [아시아경제 성기호 기자] 중앙선거관리위원회가 인터넷 댓글조작 혐의로 구속된 더불어민주당 당원 김모씨(필명 드루킹)와 관련된 신고를 지난해 3월 접수해",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "021",
-                        "officeName": "문화일보",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/021/2017/01/05/logo_021_1_20170105110505.gif' width='206' height='30' alt='문화일보' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/021/2018/04/16/2349664.jpg?type=nf80_54",
-                        "title": "“드루킹, 체포직전까지 김경수에 보고했다”",
-                        "summary": "댓글조작 ‘아지트’ 앞 규탄문구 : 16일 경기 파주시 파주출판단지 느릅나무 출판사 앞 계단에서 한 주민이 ‘민주당원 댓글조작 사건’을 규탄하는 문구를 응시하고 있다. 김선규 기자 ufokim@- 민주당원 댓글조작 파문 확산 司正관계자 “메시지 확보” 밝혀 서울경찰청장 “대부분 일방적 金 의원은 읽어보지도 않았다” 警,...",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "469",
-                        "officeName": "한국일보",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/469/2018/01/26/logo_469_1_20180126174326.gif' width='206' height='30' alt='한국일보' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/469/2018/04/15/293553.jpg?type=nf80_54",
-                        "title": "\"일단 안 된다\" 규제 탓... 新서비스 또 좌초",
-                        "summary": "카카오택시 유료화 실패가 남긴 것 승객의 목적지 표시 안한 호출 택시업계 외면에 3일 만에 철회 카톡 대형 플랫폼만 믿고 강행 당국은 시장 수요 무시한 채 규제 우버, 에어비앤비 도입 막을 때처럼 디지털 시대 새 사",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "020",
-                        "officeName": "동아일보",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/020/2017/01/05/logo_020_1_20170105110505.gif' width='206' height='30' alt='동아일보' title='' class='' >",
-                        "thumbnail": "",
-                        "title": "대선때 김경수에 기사 주소-활동내용 보냈다",
-                        "summary": "[동아일보] 경찰, 댓글 여론조작 민주당원과 김경수의 텔레그램 대화 확보 김경수 “지시 안했다… 무리한 인사청탁 거부하자 악의적 활동” 더불어민주당원의 댓글 여론 조작 사건을 수사 중인 경찰은 주범인 김모 씨(49·",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "032",
-                        "officeName": "경향신문",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/032/2017/01/05/logo_032_1_20170105110505.gif' width='206' height='30' alt='경향신문' title='' class='' >",
-                        "thumbnail": "",
-                        "title": "[단독]2013년 여가부 ‘댓글부대’ 성과 나오자 박근혜 정권 때 문체부 ‘댓글 감시시스템’ 구축",
-                        "summary": "ㆍ박, 보좌관 회의서 직접 지시…2016년 총선 여론 동향 파악 ㆍ국정원 특활비 지원 업체에 포털·SNS 실시간 분석 맡겨 문화체육관광부가 2016년 4월 총선을 앞두고 포털과 사회관계망서비스(SNS)의 실시간 동향",
-                        "publishDate": "20180416"
-                    },
-                    {
-                        "officeId": "030",
-                        "officeName": "전자신문",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/030/2017/01/05/logo_030_1_20170105110505.gif' width='206' height='30' alt='전자신문' title='' class='' >",
-                        "thumbnail": "http://imgnews.naver.net/image/origin/030/2018/04/15/2699276.jpg?type=nf80_54",
-                        "title": "\'기술 유출 논란\' 산안법, 지방선거 이슈로 떠오르다",
-                        "summary": "산업안전보건법(산안법) 전부 개정안과 첨단 기업 작업환경측정보고서 정보 공개로 촉발된 국가 핵심 기술 유출 논란이 정치권 쟁점으로 떠올랐다. 여당에 이어 야당도 이 문제를 주요 의제로 삼기로 해 6월 지방선거를 앞두",
-                        "publishDate": "20180416"
-                    }
-                ]
-                ,
-                "liveTvList": [
-                    {
-                        "officeId": "422",
-                        "articleId": "",
-                        "sectionId": "74f",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/422/2018/01/10/logo_422_1_20180110175610.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "연합뉴스TV",
-                        "title": "",
-                        "newsKey": "74f",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/422/2018/01/10/logo_422_48_20180110173410.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "NOT-YET",
-                        "nextLiveTime": "20:55"
-                    },
-                    {
-                        "officeId": "449",
-                        "articleId": "",
-                        "sectionId": "74b",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/449/2018/01/10/logo_449_1_20180110175910.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "채널A",
-                        "title": "",
-                        "newsKey": "74b",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/449/2018/01/10/logo_449_48_20180110173710.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "ON-AIR",
-                        "nextLiveTime": ""
-                    },
-                    {
-                        "officeId": "437",
-                        "articleId": "",
-                        "sectionId": "742",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/437/2018/01/10/logo_437_1_20180110175610.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "JTBC",
-                        "title": "",
-                        "newsKey": "742",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/437/2018/01/10/logo_437_48_20180110173710.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "NOT-YET",
-                        "nextLiveTime": "19:55"
-                    },
-                    {
-                        "officeId": "056",
-                        "articleId": "",
-                        "sectionId": "355",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/056/2018/01/10/logo_056_1_20180110175610.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "KBS 뉴스",
-                        "title": "",
-                        "newsKey": "355",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/056/2018/01/10/logo_056_48_20180110173510.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "NOT-YET",
-                        "nextLiveTime": "21:00"
-                    },
-                    {
-                        "officeId": "214",
-                        "articleId": "",
-                        "sectionId": "370",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/214/2018/01/10/logo_214_1_20180110175710.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "MBC 뉴스",
-                        "title": "",
-                        "newsKey": "370",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/214/2018/01/10/logo_214_48_20180110173610.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "ON-AIR",
-                        "nextLiveTime": ""
-                    },
-                    {
-                        "officeId": "057",
-                        "articleId": "",
-                        "sectionId": "74e",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/057/2018/01/10/logo_057_1_20180110175810.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "MBN",
-                        "title": "",
-                        "newsKey": "74e",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/057/2018/01/10/logo_057_48_20180110173610.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "ON-AIR",
-                        "nextLiveTime": ""
-                    },
-                    {
-                        "officeId": "055",
-                        "articleId": "",
-                        "sectionId": "371",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/055/2018/01/10/logo_055_1_20180110175610.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "SBS 뉴스",
-                        "title": "",
-                        "newsKey": "371",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/055/2018/01/10/logo_055_48_20180110173510.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "ON-AIR",
-                        "nextLiveTime": ""
-                    },
-                    {
-                        "officeId": "448",
-                        "articleId": "",
-                        "sectionId": "750",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/448/2017/12/13/logo_448_1_20171213194113.jpg' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "TV조선",
-                        "title": "",
-                        "newsKey": "750",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/448/2018/01/10/logo_448_48_20180110173610.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "NOT-YET",
-                        "nextLiveTime": "20:55"
-                    },
-                    {
-                        "officeId": "052",
-                        "articleId": "",
-                        "sectionId": "751",
-                        "logoUrl": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/052/2018/01/10/logo_052_1_20180110175810.png' width='206' height='30' alt='' title='' class='' >",
-                        "officeName": "YTN",
-                        "title": "",
-                        "newsKey": "751",
-                        "thumbnail": "<img src='http://mimgnews1.naver.net/image/upload/office_logo/052/2018/01/10/logo_052_48_20180110173510.png' width='255' height='134' alt='' title='' class='' >",
-                        "summary": "",
-                        "onairStatus": "NOT-YET",
-                        "nextLiveTime": "21:50"
-                    }
-                ]
-            };
-        </script>
-    </div>
-    <script type="text/javascript">
-        // page onload 시에 home timelate에서 사용하는 스크립트를 초기화 시켜준다.
-        jindo.$Fn(function () {
-            try {
-                news.home.TopTimelate.Controller.init(_oTopComponentData);
-            } catch (e) {
-            }
-        }).attach(window, "load");
-    </script>
-    <div class="main_space"></div>
-    <div class="main" id="container">
-        <hr/>
-        <div class="main_content main_content_new" id="main_content">
-            <div class="main_component droppable" id="today_main_news">
-                <div class="com_header">
-                    <h4 class="tit_h4 tit_main1"><strong>이 시각 주요뉴스</strong></h4>
-                    <span class="small">최종 <em>2018.04.16 19:54</em></span>
-                </div>
-                <div id="pan_today_main_news">
-                    <div class="newsnow" style="position:relative;">
-                        <div class="newsnow_imgarea">
-                            <a class="nclicks(hom.headcont)"
-                               href="http://news.naver.com/main/photogallery/index.nhn?cid=984668&amp;nh=20180416192236#421_0003320121">
-                                <img alt="" height="190"
-                                     onerror="javascript:this.src='http://static.news.naver.net/image/news/2009/noimage_300x190.png';"
-                                     src="http://imgnews.naver.net/image/upload/item/2018/04/16/192230581_1.jpg?type=f270_166"
-                                     width="300"/>
-                                <div class="newsnow_img_mask">
-                                    <div class="newsnow_img_mask_bg"></div>
-                                    <strong class="r_ico r_pho_medium">포토갤러리 기사</strong>
-                                    <p class="newsnow_img_mask_p">
-                                        영정·위패 전달 받는 세월호 희생자 유가족들</p>
-                                </div>
-                                <div class="newsnow_edge"></div>
-                            </a>
-                        </div>
-                        <ul class="newsnow_txarea" id="text_today_main_news_801001">
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <em class="newsnow_cate as_quick">속보</em><a class="nclicks(hom.headcont)"
-                                                                                href="http://news.naver.com/main/read.nhn?oid=001&amp;sid1=100&amp;aid=0010028136&amp;mid=shm&amp;mode=LSD&amp;nh=20180416195137"><strong>선관위,
-                                    '김기식 셀프후원 의혹'에 "종래범위 벗어나…위법"</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=102&amp;gid=1012477&amp;mid=hot&amp;viewType=pc&amp;cid=984650&amp;nh=20180416192645"><strong>눈물의
-                                        추모 "아들, 딸들아 지켜주지 못해 미안하다"</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/read.nhn?oid=018&amp;sid1=102&amp;aid=0004080063&amp;mid=shm&amp;mode=LSD&amp;nh=20180416181835"><strong>뼈대만
-                                        있는 대입개편안…4개월만에 공론화·최종안 가능할까?</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/read.nhn?oid=008&amp;sid1=101&amp;aid=0004038794&amp;mid=shm&amp;viewType=pc&amp;mode=LSD&amp;nh=20180416180857"><strong>'갑질논란'
-                                        조현민 전무 대기발령…조사 기간 업무 배제</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_division">
-                                    <div class="newsnow_tx_inner newsnow_tx-noellipsis">
-                                        <i class="r_ico r_vod_txt">생중계</i><a class="nclicks(hom.headcont)"
-                                                                             href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=052&amp;aid=0001135793&amp;viewType=pc"><strong>영상</strong></a>
-                                    </div>
-                                    <i class="newsnow_bar"></i>
-                                    <div class="newsnow_tx_inner">
-                                        <a class="nclicks(hom.headcont)"
-                                           href="http://news.naver.com/main/read.nhn?oid=421&amp;sid1=100&amp;aid=0003320025&amp;mid=shm&amp;viewType=pc&amp;mode=LSD&amp;nh=20180416180938"><strong>김경수
-                                            "시민 정치참여 활동, 불법행위 동일시는 모독"</strong></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="newsnow" style="position:relative;display:block;">
-                        <div class="newsnow_imgarea">
-                            <a class="nclicks(hom.headcont)"
-                               href="http://news.naver.com/main/read.nhn?oid=003&amp;sid1=104&amp;aid=0008546921&amp;mid=shm&amp;mode=LSD&amp;nh=20180416182355">
-                                <img alt="" height="190"
-                                     onerror="javascript:this.src='http://static.news.naver.net/image/news/2009/noimage_300x190.png';"
-                                     src="http://imgnews.naver.net/image/upload/item/2018/04/16/182353523_u4ua.jpg?type=f270_166"
-                                     width="300"/>
-                                <div class="newsnow_img_mask">
-                                    <div class="newsnow_img_mask_bg"></div>
-                                    <p class="newsnow_img_mask_p">
-                                        中日경제대화 8년만에 재개…美눈치보는 日과 '온도차'</p>
-                                </div>
-                                <div class="newsnow_edge"></div>
-                            </a>
-                        </div>
-                        <ul class="newsnow_txarea" id="text_today_main_news_428288">
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/read.nhn?oid=003&amp;sid1=100&amp;aid=0008547001&amp;mid=shm&amp;mode=LSD&amp;nh=20180416190936"><strong>靑
-                                        "드루킹측 추천인사, 인사수석실 자체검증···부적합 결론"</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/read.nhn?oid=055&amp;sid1=103&amp;aid=0000631816&amp;mid=shm&amp;mode=LSD&amp;nh=20180416191416"><strong>내일
-                                        일교차 더 벌어져요…중서부 미세먼지↑</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=100&amp;gid=1075875&amp;mid=hot&amp;viewType=pc&amp;cid=1070398&amp;nh=20180416192044"><strong>'외곽팀
-                                        댓글' 국정원 직원·양지회 10명 징역형 구형</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=100&amp;mid=hot&amp;viewType=pc&amp;cid=1045984&amp;nh=20180416190814"><strong>사드기지
-                                        장비반입 놓고 국방부와 반대단체 협상 결렬</strong></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="newsnow_tx_inner">
-                                    <a class="nclicks(hom.headcont)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=101&amp;mid=hot&amp;viewType=pc&amp;cid=1076694&amp;nh=20180416181119"><strong>한국GM
-                                        노사 임단협 교섭 또 결렬…입장차만 확인</strong></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_move">
-                    <span class="move nclicks(hom.order)" title="이동">이동</span>
-                    <a class="up_off nclicks(hom.order)" href="#" title="위로">위로</a>
-                    <a class="down nclicks(hom.order)" href="#" title="아래로">아래로</a>
-                </div>
-            </div>
-            <div class="main_component droppable" id="section_politics">
-                <div class="com_header">
-                    <h4 class="tit_sec"><a class="nclicks(pol.title)"
-                                           href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=100">정치</a>
-                    </h4>
-                    <span class="tit_sub">
-<a class="nclicks(pol.common)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=100&amp;sid2=269">일반</a><span
-                            class="bar"></span>
-<a class="nclicks(pol.party)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=100&amp;sid2=265">국회/정당</a><span
-                            class="bar"></span>
-<a class="nclicks(pol.chung)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=100&amp;sid2=264">청와대</a>
-</span>
-                </div>
-                <div class="com_list">
-                    <dl class="mtype_img">
-                        <dt>
-                            <a class="nclicks('hom.airscont','88000149_000000000000000000622982', 'airsGParam', '0', 'news_sec_v1.0', 'x4EcYUough2rzpLO')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=215&amp;aid=0000622982">
-                                <img alt="" height="140"
-                                     onerror="javascript:this.src='http://static.news.naver.net/image/news/2009/noimage_220x140.png';this.style.width=220;this.style.height=140;"
-                                     src="http://mimgnews1.naver.net/image/origin/215/2018/04/16/622982.jpg?type=nf220_140"
-                                     width="220"/>
-                                <span class="trans_border"></span>
-                            </a>
-                        </dt>
-                        <dd>
-                            <a class="nclicks('hom.airscont','88000149_000000000000000000622982', 'airsGParam', '0', 'news_sec_v1.0', 'x4EcYUough2rzpLO')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=215&amp;aid=0000622982">'드루킹
-                                모른다'던 청와대 "김경수 의원 통해 드루킹 추천 인사 만났다"</a>
-                        </dd>
-                    </dl>
-                    <div class="mtype_list_wide">
-                        <ul class="mlist2 no_bg">
-                            <li>
-                                <a class="nclicks('hom.airscont','88000149_000000000000000000622982', 'airsGParam', '0', 'news_sec_v1.0', 'x4EcYUough2rzpLO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=449&amp;aid=0000150647">
-                                    <strong>야권 “댓글로 흥한 정권, 댓글로 망한다” 공세</strong>
-                                </a>
-                                <span class="writing">채널A</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000149_000000000000000000622982', 'airsGParam', '0', 'news_sec_v1.0', 'x4EcYUough2rzpLO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=001&amp;aid=0010028128">
-                                    <strong>靑 "민정비서관이 드루킹 추천인사 접촉했지만 부적합 판단"(종합)</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">연합뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000149_000000000000000000622982', 'airsGParam', '0', 'news_sec_v1.0', 'x4EcYUough2rzpLO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=421&amp;aid=0003320149">
-                                    <strong>靑 "인사수석실로 '김경수 추천' 들어와…기용 안해"(종합)</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">뉴스1</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000149_000000000000000000622982', 'airsGParam', '0', 'news_sec_v1.0', 'x4EcYUough2rzpLO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=449&amp;aid=0000150641">
-                                    <strong>[단독]‘느릅나무 비누업체’ 관계자도 드루킹 ‘공범’</strong>
-                                </a>
-                                <span class="writing">채널A</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000149_000000000000000000622982', 'airsGParam', '0', 'news_sec_v1.0', 'x4EcYUough2rzpLO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=008&amp;aid=0004038854">
-                                    <strong>드루킹 노회찬 부인 기사에 금품 건네 벌금형</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">머니투데이</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_move">
-                    <span class="move nclick(soc.move)" title="이동">이동</span>
-                    <a class="up nclicks(soc.up)" href="#" title="위로">위로</a>
-                    <a class="down nclicks(soc.down)" href="#" title="아래로">아래로</a>
-                </div>
-            </div>
-            <div class="main_component droppable" id="section_economy">
-                <div class="com_header">
-                    <h4 class="tit_sec"><a class="nclicks(eco.title)"
-                                           href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=101">경제</a>
-                    </h4>
-                    <span class="tit_sub">
-<a class="nclicks(eco.common)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=101&amp;sid2=263">일반</a><span
-                            class="bar"></span>
-<a class="nclicks(eco.finance)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=101&amp;sid2=259">금융</a><span
-                            class="bar"></span>
-<a class="nclicks(eco.domestic)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=101&amp;sid2=310">생활경제</a>
-</span>
-                </div>
-                <div class="com_list">
-                    <div class="mtype_list_wide">
-                        <ul class="mlist2 no_bg">
-                            <li>
-                                <a class="nclicks('hom.airscont','88000385_000000000000000004219918', 'airsGParam', '0', 'news_sec_v1.0', 'Hvk83aqesI5PUbrT')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=277&amp;aid=0004219918">
-                                    <strong>靑 "'드루킹'이 김경수 통해 추천한 인사 접촉했지만 부적합 판단"</strong>
-                                </a>
-                                <span class="writing">아시아경제</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000385_000000000000000004219918', 'airsGParam', '0', 'news_sec_v1.0', 'Hvk83aqesI5PUbrT')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=015&amp;aid=0003924544">
-                                    <strong>'삼성 반도체 환경 보고서'… 국가핵심기술 결론 유보</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">한국경제</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000385_000000000000000004219918', 'airsGParam', '0', 'news_sec_v1.0', 'Hvk83aqesI5PUbrT')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=047&amp;aid=0002186138">
-                                    <strong>법정관리로 한국정부 압박, 노조상대 협박하는 한국지엠</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">오마이뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000385_000000000000000004219918', 'airsGParam', '0', 'news_sec_v1.0', 'Hvk83aqesI5PUbrT')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=015&amp;aid=0003924533">
-                                    <strong>이승행 대표 허위 경력 논란에도… 지퍼, 오는 23일 ICO 강행키로</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">한국경제</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000385_000000000000000004219918', 'airsGParam', '0', 'news_sec_v1.0', 'Hvk83aqesI5PUbrT')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=011&amp;aid=0003271932">
-                                    <strong>규제에 꽉 막힌 암호화폐... 지방정부가 뚫을까</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">서울경제</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_move">
-                    <span class="move nclick(pol.move)" title="이동">이동</span>
-                    <a class="up nclicks(pol.up)" href="#" title="위로">위로</a>
-                    <a class="down nclicks(pol.down)" href="#" title="아래로">아래로</a>
-                </div>
-            </div>
-            <div class="main_component droppable" id="section_society">
-                <div class="com_header">
-                    <h4 class="tit_sec"><a class="nclicks(soc.title)"
-                                           href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=102">사회</a>
-                    </h4>
-                    <span class="tit_sub">
-<a class="nclicks(soc.common)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=102&amp;sid2=257">일반</a><span
-                            class="bar"></span>
-<a class="nclicks(soc.edu)" href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=102&amp;sid2=250">교육</a><span
-                            class="bar"></span>
-<a class="nclicks(soc.labor)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=102&amp;sid2=251">노동</a>
-</span>
-                </div>
-                <div class="com_list">
-                    <dl class="mtype_img">
-                        <dt>
-                            <a class="nclicks('hom.airscont','88156f74_000000000000000000150645', 'airsGParam', '0', 'news_sec_v1.0', 'Rj1VBTUcrjjTub1s')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=102&amp;oid=449&amp;aid=0000150645">
-                                <img alt="" height="140"
-                                     onerror="javascript:this.src='http://static.news.naver.net/image/news/2009/noimage_220x140.png';this.style.width=220;this.style.height=140;"
-                                     src="http://mimgnews1.naver.net/image/origin/449/2018/04/16/150645.jpg?type=nf220_140"
-                                     width="220"/>
-                                <strong class="r_ico r_vod_large">동영상 기사</strong>
-                                <span class="trans_border"></span>
-                            </a>
-                        </dt>
-                        <dd>
-                            <a class="nclicks('hom.airscont','88156f74_000000000000000000150645', 'airsGParam', '0', 'news_sec_v1.0', 'Rj1VBTUcrjjTub1s')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=102&amp;oid=449&amp;aid=0000150645">“조작
-                                흔적 남기지 말라” 드루킹 7단계 매뉴얼</a>
-                        </dd>
-                    </dl>
-                    <div class="mtype_list_wide">
-                        <ul class="mlist2 no_bg">
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f74_000000000000000000150645', 'airsGParam', '0', 'news_sec_v1.0', 'Rj1VBTUcrjjTub1s')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=102&amp;oid=056&amp;aid=0010566706">
-                                    <strong>최고급 민물고기 ‘쏘가리’, 대량 양식 첫 성공</strong>
-                                </a>
-                                <span class="writing">KBS 뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f74_000000000000000000150645', 'airsGParam', '0', 'news_sec_v1.0', 'Rj1VBTUcrjjTub1s')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=102&amp;oid=421&amp;aid=0003320141">
-                                    <strong>세월호 참사 4주기…진도 팽목항에 추모 행렬 이어져</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">뉴스1</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f74_000000000000000000150645', 'airsGParam', '0', 'news_sec_v1.0', 'Rj1VBTUcrjjTub1s')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=102&amp;oid=056&amp;aid=0010566699">
-                                    <strong>박근혜, 법원에 항소포기서 제출…2심 재판도 거부?</strong>
-                                </a>
-                                <span class="writing">KBS 뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f74_000000000000000000150645', 'airsGParam', '0', 'news_sec_v1.0', 'Rj1VBTUcrjjTub1s')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=102&amp;oid=056&amp;aid=0010566698">
-                                    <strong>‘갑질 논란’ 조현민 전무 대기발령…불법 등기임원도 논란</strong>
-                                </a>
-                                <span class="writing">KBS 뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f74_000000000000000000150645', 'airsGParam', '0', 'news_sec_v1.0', 'Rj1VBTUcrjjTub1s')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=102&amp;oid=056&amp;aid=0010566697">
-                                    <strong>‘국회의원 불법 후원’ 혐의 KT 황창규 회장 내일 소환</strong>
-                                </a>
-                                <span class="writing">KBS 뉴스</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_move">
-                    <span class="move nclick(eco.move)" title="이동">이동</span>
-                    <a class="up nclicks(eco.up)" href="#" title="위로">위로</a>
-                    <a class="down nclicks(eco.down)" href="#" title="아래로">아래로</a>
-                </div>
-            </div>
-            <div class="main_component droppable" id="section_life">
-                <div class="com_header">
-                    <h4 class="tit_sec"><a class="nclicks(lif.title)"
-                                           href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=103">생활/문화</a>
-                    </h4>
-                    <span class="tit_sub">
-<a class="nclicks(lif.health)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=103&amp;sid2=241">건강</a><span
-                            class="bar"></span>
-<a class="nclicks(lif.travel)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=103&amp;sid2=237">여행</a><span
-                            class="bar"></span>
-<a class="nclicks(lif.car)" href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=103&amp;sid2=239">자동차</a>
-</span>
-                </div>
-                <div class="com_list">
-                    <dl class="mtype_img">
-                        <dt>
-                            <a class="nclicks('hom.airscont','88156f75_000000000000000000293835', 'airsGParam', '0', 'news_sec_v1.0', 'zCFf6jndSm9U84Zj')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=103&amp;oid=469&amp;aid=0000293835">
-                                <img alt="" height="140"
-                                     onerror="javascript:this.src='http://static.news.naver.net/image/news/2009/noimage_220x140.png';this.style.width=220;this.style.height=140;"
-                                     src="http://mimgnews1.naver.net/image/origin/469/2018/04/16/293835.jpg?type=nf220_140"
-                                     width="220"/>
-                                <span class="trans_border"></span>
-                            </a>
-                        </dt>
-                        <dd>
-                            <a class="nclicks('hom.airscont','88156f75_000000000000000000293835', 'airsGParam', '0', 'news_sec_v1.0', 'zCFf6jndSm9U84Zj')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=103&amp;oid=469&amp;aid=0000293835">손목
-                                많이 쓰는 당신, 운동으로 손목터널증후군 예방하세요</a>
-                        </dd>
-                    </dl>
-                    <div class="mtype_list_wide">
-                        <ul class="mlist2 no_bg">
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f75_000000000000000000293835', 'airsGParam', '0', 'news_sec_v1.0', 'zCFf6jndSm9U84Zj')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=103&amp;oid=025&amp;aid=0002813687">
-                                    <strong>"엄청난 보물을 봤다"…한국 무용 첫 도전한 제임스전</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">중앙일보</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f75_000000000000000000293835', 'airsGParam', '0', 'news_sec_v1.0', 'zCFf6jndSm9U84Zj')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=103&amp;oid=001&amp;aid=0010028080">
-                                    <strong>"20년 만에 뽑는 도쿄필 클라리넷 수석…도전할 수밖에 없었죠"</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">연합뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f75_000000000000000000293835', 'airsGParam', '0', 'news_sec_v1.0', 'zCFf6jndSm9U84Zj')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=103&amp;oid=003&amp;aid=0008546967">
-                                    <strong>손열음, 마리너경 들어주셔요…마에스트로 위한 '모차르트'</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">뉴시스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f75_000000000000000000293835', 'airsGParam', '0', 'news_sec_v1.0', 'zCFf6jndSm9U84Zj')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=103&amp;oid=469&amp;aid=0000293826">
-                                    <strong>승무원들, 승객 사진에 “브로콜리밭” 조롱…에어부산 “죄송하다”</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">한국일보</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88156f75_000000000000000000293835', 'airsGParam', '0', 'news_sec_v1.0', 'zCFf6jndSm9U84Zj')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=103&amp;oid=047&amp;aid=0002186128">
-                                    <strong>월요일엔 월요병, 화요일엔 화병... 터질 게 터졌다</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">오마이뉴스</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_move">
-                    <span class="move nclick(lif.move)" title="이동">이동</span>
-                    <a class="up nclicks(lif.up)" href="#" title="위로">위로</a>
-                    <a class="down nclicks(lif.down)" href="#" title="아래로">아래로</a>
-                </div>
-            </div>
-            <div class="main_component droppable" id="section_world">
-                <div class="com_header">
-                    <h4 class="tit_sec"><a class="nclicks(wor.title)"
-                                           href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=104">세계</a>
-                    </h4>
-                    <span class="tit_sub">
-<a class="nclicks(wor.common)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=104&amp;sid2=322">일반</a><span
-                            class="bar"></span>
-<a class="nclicks(wor.issue)"
-   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=104&amp;cid=845614">지구촌 화제</a>
-</span>
-                </div>
-                <div class="com_list">
-                    <dl class="mtype_img">
-                        <dt>
-                            <a class="nclicks('hom.airscont','88000127_000000000000000008546921', 'airsGParam', '0', 'news_sec_v1.0', 'h0aIrvNmoF0YzBcu')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=104&amp;oid=003&amp;aid=0008546921">
-                                <img alt="" height="140"
-                                     onerror="javascript:this.src='http://static.news.naver.net/image/news/2009/noimage_220x140.png';this.style.width=220;this.style.height=140;"
-                                     src="http://mimgnews1.naver.net/image/origin/003/2018/04/16/8546921.jpg?type=nf220_140"
-                                     width="220"/>
-                                <span class="trans_border"></span>
-                            </a>
-                        </dt>
-                        <dd>
-                            <a class="nclicks('hom.airscont','88000127_000000000000000008546921', 'airsGParam', '0', 'news_sec_v1.0', 'h0aIrvNmoF0YzBcu')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=104&amp;oid=003&amp;aid=0008546921">中日경제대화
-                                8년만에 재개…美눈치보는 日과 '온도차'</a>
-                        </dd>
-                    </dl>
-                    <div class="mtype_list_wide">
-                        <ul class="mlist2 no_bg">
-                            <li>
-                                <a class="nclicks('hom.airscont','88000127_000000000000000008546921', 'airsGParam', '0', 'news_sec_v1.0', 'h0aIrvNmoF0YzBcu')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=104&amp;oid=001&amp;aid=0010028008">
-                                    <strong>북중 '훈풍'속 시진핑 방북설 고개…북미정상회담 후 가능성</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">연합뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000127_000000000000000008546921', 'airsGParam', '0', 'news_sec_v1.0', 'h0aIrvNmoF0YzBcu')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=104&amp;oid=001&amp;aid=0010027996">
-                                    <strong>日, 원전사고 후쿠시마 방사선량측정기 철거방침…시민 반발</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">연합뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000127_000000000000000008546921', 'airsGParam', '0', 'news_sec_v1.0', 'h0aIrvNmoF0YzBcu')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=104&amp;oid=025&amp;aid=0002813677">
-                                    <strong>[뉴스분석]추락하는 아베, 위기의 본질은 오만이다</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">중앙일보</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000127_000000000000000008546921', 'airsGParam', '0', 'news_sec_v1.0', 'h0aIrvNmoF0YzBcu')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=104&amp;oid=214&amp;aid=0000826455">
-                                    <strong>[MBC World] 트럼프의 '원포인트 공습'…효과는?</strong>
-                                </a>
-                                <span class="writing">MBC 뉴스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000127_000000000000000008546921', 'airsGParam', '0', 'news_sec_v1.0', 'h0aIrvNmoF0YzBcu')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=104&amp;oid=277&amp;aid=0004219805">
-                                    <strong>"여성을 고깃덩어리 취급" 회고록 출간 앞두고 '트럼프vs 코미' 전면전</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">아시아경제</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_move">
-                    <span class="move nclick(wor.move)" title="이동">이동</span>
-                    <a class="up nclicks(wor.up)" href="#" title="위로">위로</a>
-                    <a class="down nclicks(wor.down)" href="#" title="아래로">아래로</a>
-                </div>
-            </div>
-            <div class="main_component droppable" id="section_it">
-                <div class="com_header">
-                    <h4 class="tit_sec"><a class="nclicks(sci.title)"
-                                           href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=105">IT/과학</a>
-                    </h4>
-                    <span class="tit_sub">
-<a class="nclicks(sci.mobile)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=105&amp;sid2=731">모바일</a><span
-                            class="bar"></span>
-<a class="nclicks(sci.comm)" href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=105&amp;sid2=227">통신</a><span
-                            class="bar"></span>
-<a class="nclicks(sci.internet)"
-   href="http://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid1=105&amp;sid2=226">인터넷</a>
-</span>
-                </div>
-                <div class="com_list">
-                    <dl class="mtype_img">
-                        <dt>
-                            <a class="nclicks('hom.airscont','88000107_000000000000000003924550', 'airsGParam', '0', 'news_sec_v1.0', 'DiEVSqeZq1LjVTUO')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&amp;oid=015&amp;aid=0003924550">
-                                <img alt="" height="140"
-                                     onerror="javascript:this.src='http://static.news.naver.net/image/news/2009/noimage_220x140.png';this.style.width=220;this.style.height=140;"
-                                     src="http://mimgnews1.naver.net/image/origin/015/2018/04/16/3924550.jpg?type=nf220_140"
-                                     width="220"/>
-                                <span class="trans_border"></span>
-                            </a>
-                        </dt>
-                        <dd>
-                            <a class="nclicks('hom.airscont','88000107_000000000000000003924550', 'airsGParam', '0', 'news_sec_v1.0', 'DiEVSqeZq1LjVTUO')"
-                               href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&amp;oid=015&amp;aid=0003924550">유전자검사
-                                항목 늘린다며… DTC업체 자격요건 강화하겠다는 정부</a>
-                        </dd>
-                    </dl>
-                    <div class="mtype_list_wide">
-                        <ul class="mlist2 no_bg">
-                            <li>
-                                <a class="nclicks('hom.airscont','88000107_000000000000000003924550', 'airsGParam', '0', 'news_sec_v1.0', 'DiEVSqeZq1LjVTUO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&amp;oid=029&amp;aid=0002458821">
-                                    <strong>CFO 장기부재에 `회계 구멍`…옐로모바일 감사의견 `거절`</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">디지털타임스</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000107_000000000000000003924550', 'airsGParam', '0', 'news_sec_v1.0', 'DiEVSqeZq1LjVTUO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&amp;oid=092&amp;aid=0002135491">
-                                    <strong>옐로모바일, 작년 영업익 189억...“감사의견 거절”</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">ZDNet Korea</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000107_000000000000000003924550', 'airsGParam', '0', 'news_sec_v1.0', 'DiEVSqeZq1LjVTUO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&amp;oid=008&amp;aid=0004038819">
-                                    <strong>KT텔레캅, SG생활안전 무인경비사업 인수(상보)</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">머니투데이</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000107_000000000000000003924550', 'airsGParam', '0', 'news_sec_v1.0', 'DiEVSqeZq1LjVTUO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&amp;oid=009&amp;aid=0004134612">
-                                    <strong>옛 엔도어즈 마지막 작품 ‘영군’도 넥슨 품 떠난다</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">매일경제</span>
-                            </li>
-                            <li>
-                                <a class="nclicks('hom.airscont','88000107_000000000000000003924550', 'airsGParam', '0', 'news_sec_v1.0', 'DiEVSqeZq1LjVTUO')"
-                                   href="http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&amp;oid=029&amp;aid=0002458813">
-                                    <strong>유료방송시장 파편화… M&amp;A 가속화 전망</strong>
-                                </a>
-                                <i class="icon_photo">포토</i>
-                                <span class="writing">디지털타임스</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_move">
-                    <span class="move nclick(sci.move)" title="이동">이동</span>
-                    <a class="up nclicks(sci.up)" href="#" title="위로">위로</a>
-                    <a class="down nclicks(sci.down)" href="#" title="아래로">아래로</a>
-                </div>
-            </div>
-            <div class="space" id="home_space" style="display:none"></div>
-            <div class="home_move" id="home_phantom" style="left:500px; top:220px; display:none;">
-                <div class="shadow"></div>
-                <div class="main_content_new">
-                    <div class="main_component"></div>
-                </div>
-            </div>
-            <div class="airs">
-                <div class="airs_info">
-                    <p class="airs_info_inner">섹션별 뉴스는 <i class="airs_info_icon_airs">AiRS</i><span
-                            class="airs_info_text"><b>추천</b>으로 구성된 뉴스를 제공합니다.</span></p>
-                </div>
-            </div>
-        </div>
-        <hr/>
-        <div class="main_aside">
-            <div class="da">
-                <div id="da_280240" name="da_280240">
-                    <iframe align="center" border="0" data-veta-preview="news_home_1" frameborder="0" height="240"
-                            id="f280240" marginheight="0" marginwidth="0" name="f280240" scrolling="no"
-                            src="http://veta.naver.com/fxshow?su=SU10001" title="배너광고" width="280"></iframe>
-                </div>
-            </div>
-            <div class="section section_wide">
-                <h4><a class="nclicks(rig.ranking)" href="/main/ranking/popularDay.nhn">가장 많이 본 뉴스</a></h4>
-                <div class="category">
-                    <div id="right.ranking_category_a" style="display:none">
-<span class="cate_a">
-<a class="tab2 nclicks(rig.ranking)" href="#" id="right.ranking_tab_100" onclick="return false;">정치</a>
-<a class="tab3 nclicks(rig.ranking)" href="#" id="right.ranking_tab_101" onclick="return false;">경제</a>
-<a class="tab4 nclicks(rig.ranking)" href="#" id="right.ranking_tab_102" onclick="return false;">사회</a>
-</span>
-                    </div>
-                    <div id="right.ranking_category_b" style="display:none">
-<span class="cate_b">
-<a class="tab1 nclicks(rig.ranking)" href="#" id="right.ranking_tab_103" onclick="return false;">생활/문화</a>
-<a class="tab2 nclicks(rig.ranking)" href="#" id="right.ranking_tab_104" onclick="return false;">세계</a>
-<a class="tab3 nclicks(rig.ranking)" href="#" id="right.ranking_tab_105" onclick="return false;">IT/과학</a>
-</span>
-                    </div>
-                    <a class="btn_prev nclicks(rig.ranking)" href="#" id="right.ranking_btn_prev"
-                       onclick="return false;"><span class="blind">이전</span></a>
-                    <a class="btn_next nclicks(rig.ranking)" href="#" id="right.ranking_btn_next"
-                       onclick="return false;"><span class="blind">다음</span></a>
-                </div>
-                <div id="right.ranking_contents"></div>
-                <div id="ranking_100" style="display:none">
-                    <h5 class="blind">정치</h5>
-                    <ul class="type16">
-                        <li><span class="rank"><em>1</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=421&amp;aid=0003320025&amp;date=20180416&amp;type=1&amp;rankingSeq=1&amp;rankingSectionId=100"
-                               title='김경수 "시민 정치참여 활동, 불법행위 동일시는 모독"(상보)'>김경수 "시민 정치참여 활동, 불법행위 동일시는 모독"(상보)</a></li>
-                        <li><span class="rank"><em>2</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=421&amp;aid=0003319665&amp;date=20180416&amp;type=1&amp;rankingSeq=2&amp;rankingSectionId=100"
-                               title='이재명 "트위터08__hkkim, 아내 아냐"…27개 항목 반박'>이재명 "트위터08__hkkim, 아내 아냐"…27개 항목 반박</a></li>
-                        <li><span class="rank"><em>3</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=052&amp;aid=0001135793&amp;date=20180416&amp;type=2&amp;rankingSeq=3&amp;rankingSectionId=100"
-                               title='[현장영상] 김경수 의원 2차 기자회견 "확인 안 된 사실들 무책임하게 보도"'>[현장영상] 김경수 의원 2차 기자회견 "확인 안 된 사실들
-                                무책임하게 보도"</a></li>
-                        <li><span class="rank"><em>4</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=025&amp;aid=0002813645&amp;date=20180416&amp;type=1&amp;rankingSeq=4&amp;rankingSectionId=100"
-                               title="박근혜 전 대통령, 항소 포기서 제출…검찰 중심으로 심리">박근혜 전 대통령, 항소 포기서 제출…검찰 중심으로 심리</a></li>
-                        <li><span class="rank"><em>5</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=003&amp;aid=0008546421&amp;date=20180416&amp;type=1&amp;rankingSeq=5&amp;rankingSectionId=100"
-                               title="이병기 &quot;최경환에 '예산 협조' 전화…고마워서 1억 줬다&quot;">이병기 "최경환에 '예산 협조' 전화…고마워서 1억 줬다"</a>
-                        </li>
-                        <li><span class="rank"><em>6</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=421&amp;aid=0003319459&amp;date=20180416&amp;type=1&amp;rankingSeq=6&amp;rankingSectionId=100"
-                               title='"미풍 보단 태풍 가능성 커"…김기식·댓글의혹 정국 전망'>"미풍 보단 태풍 가능성 커"…김기식·댓글의혹 정국 전망</a></li>
-                        <li><span class="rank"><em>7</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=421&amp;aid=0003319073&amp;date=20180416&amp;type=1&amp;rankingSeq=7&amp;rankingSectionId=100"
-                               title="'성추행 의혹' 정봉주 내일 오후 2시 피고소인 경찰출석 (종합)">'성추행 의혹' 정봉주 내일 오후 2시 피고소인 경찰출석 (종합)</a>
-                        </li>
-                        <li><span class="rank"><em>8</em></span>
-                            <a class="nclicks(rig.rankpol)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=006&amp;aid=0000091582&amp;date=20180416&amp;type=1&amp;rankingSeq=8&amp;rankingSectionId=100"
-                               title="TV조선 김경수 댓글 의혹 보도 강한 반발에 “양심과 상식 따른 것”">TV조선 김경수 댓글 의혹 보도 강한 반발에 “양심과 상식 따른 것”</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="ranking_101" style="display:none">
-                    <h5 class="blind">경제</h5>
-                    <ul class="type16">
-                        <li><span class="rank"><em>1</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=008&amp;aid=0004038794&amp;date=20180416&amp;type=1&amp;rankingSeq=1&amp;rankingSectionId=101"
-                               title="'갑질논란' 조현민 전무 대기발령…조사 기간 업무 배제">'갑질논란' 조현민 전무 대기발령…조사 기간 업무 배제</a></li>
-                        <li><span class="rank"><em>2</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=008&amp;aid=0004038772&amp;date=20180416&amp;type=0&amp;rankingSeq=2&amp;rankingSectionId=101"
-                               title="대한항공, '갑질논란' 조현민 전무 대기발령(1보)">대한항공, '갑질논란' 조현민 전무 대기발령(1보)</a></li>
-                        <li><span class="rank"><em>3</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=001&amp;aid=0010027993&amp;date=20180416&amp;type=1&amp;rankingSeq=3&amp;rankingSectionId=101"
-                               title="한국GM 노사 임단협 교섭 또 결렬…입장차만 확인">한국GM 노사 임단협 교섭 또 결렬…입장차만 확인</a></li>
-                        <li><span class="rank"><em>4</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=009&amp;aid=0004134510&amp;date=20180416&amp;type=1&amp;rankingSeq=4&amp;rankingSectionId=101"
-                               title="하락전조? 증여?…중형보다 싼 대형 아파트">하락전조? 증여?…중형보다 싼 대형 아파트</a></li>
-                        <li><span class="rank"><em>5</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=001&amp;aid=0010027315&amp;date=20180416&amp;type=1&amp;rankingSeq=5&amp;rankingSectionId=101"
-                               title="내일부터 주택대출 금리 또 오른다…코픽스 7개월째 상승">내일부터 주택대출 금리 또 오른다…코픽스 7개월째 상승</a></li>
-                        <li><span class="rank"><em>6</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=014&amp;aid=0004003121&amp;date=20180416&amp;type=1&amp;rankingSeq=6&amp;rankingSectionId=101"
-                               title="4월 아파트거래 '미스터리'.. 둘다 신고날짜 기준으로 셌다는데 국토부 &quot;206건&quot;  서울시 &quot;2941건&quot;">4월
-                                아파트거래 '미스터리'.. 둘다 신고날짜 기준으로 셌다는데 국토부 "206건" 서울시 "2941건"</a></li>
-                        <li><span class="rank"><em>7</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=119&amp;aid=0002252502&amp;date=20180416&amp;type=1&amp;rankingSeq=7&amp;rankingSectionId=101"
-                               title="다주택자의 '똘똘한 한 채' 집중…고가 아파트 거래 반짝 증가">다주택자의 '똘똘한 한 채' 집중…고가 아파트 거래 반짝 증가</a></li>
-                        <li><span class="rank"><em>8</em></span>
-                            <a class="nclicks(rig.rankeco)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=277&amp;aid=0004219562&amp;date=20180416&amp;type=1&amp;rankingSeq=8&amp;rankingSectionId=101"
-                               title='김기식 "저축은행, 금리 年 20% 넘으면 존재 이유 없다"'>김기식 "저축은행, 금리 年 20% 넘으면 존재 이유 없다"</a></li>
-                    </ul>
-                </div>
-                <div id="ranking_102" style="display:none">
-                    <h5 class="blind">사회</h5>
-                    <ul class="type16">
-                        <li><span class="rank"><em>1</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=003&amp;aid=0008546912&amp;date=20180416&amp;type=1&amp;rankingSeq=1&amp;rankingSectionId=102"
-                               title='요양원 인질극 전말…복지사 "심장 멎을 것 같던 3시간"'>요양원 인질극 전말…복지사 "심장 멎을 것 같던 3시간"</a></li>
-                        <li><span class="rank"><em>2</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=008&amp;aid=0004038689&amp;date=20180416&amp;type=1&amp;rankingSeq=2&amp;rankingSectionId=102"
-                               title="검찰, '성추행·인사보복' 안태근 전 검찰국장에 구속영장">검찰, '성추행·인사보복' 안태근 전 검찰국장에 구속영장</a></li>
-                        <li><span class="rank"><em>3</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=277&amp;aid=0004219815&amp;date=20180416&amp;type=1&amp;rankingSeq=3&amp;rankingSectionId=102"
-                               title="[포토] 눈물 흘리는 유가족">[포토] 눈물 흘리는 유가족</a></li>
-                        <li><span class="rank"><em>4</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=003&amp;aid=0008546715&amp;date=20180416&amp;type=1&amp;rankingSeq=4&amp;rankingSectionId=102"
-                               title='"이제는 고통 없이 편히 쉬길" 세월호 정부 합동 영결·추도식'>"이제는 고통 없이 편히 쉬길" 세월호 정부 합동 영결·추도식</a></li>
-                        <li><span class="rank"><em>5</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=003&amp;aid=0008546602&amp;date=20180416&amp;type=1&amp;rankingSeq=5&amp;rankingSectionId=102"
-                               title='[종합][일문일답]김진경단장 "대입제도개편 교육부안과 다를수도"'>[종합][일문일답]김진경단장 "대입제도개편 교육부안과 다를수도"</a></li>
-                        <li><span class="rank"><em>6</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=011&amp;aid=0003271637&amp;date=20180416&amp;type=1&amp;rankingSeq=6&amp;rankingSectionId=102"
-                               title="'홍콩서 가족살해 혐의' 韓 초콜릿업체 대표, 구치소서 목매 숨져">'홍콩서 가족살해 혐의' 韓 초콜릿업체 대표, 구치소서 목매 숨져</a>
-                        </li>
-                        <li><span class="rank"><em>7</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=047&amp;aid=0002186100&amp;date=20180416&amp;type=1&amp;rankingSeq=7&amp;rankingSectionId=102"
-                               title="하나씩 불린 250명의 이름... 오열하는 시민들">하나씩 불린 250명의 이름... 오열하는 시민들</a></li>
-                        <li><span class="rank"><em>8</em></span>
-                            <a class="nclicks(rig.ranksoc)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=079&amp;aid=0003090753&amp;date=20180416&amp;type=1&amp;rankingSeq=8&amp;rankingSectionId=102"
-                               title="국민참여형 대입 개편 공론화, 본격 시동 ">국민참여형 대입 개편 공론화, 본격 시동 </a></li>
-                    </ul>
-                </div>
-                <div id="ranking_103" style="display:none">
-                    <h5 class="blind">생활/문화</h5>
-                    <ul class="type16">
-                        <li><span class="rank"><em>1</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=422&amp;aid=0000313521&amp;date=20180416&amp;type=2&amp;rankingSeq=1&amp;rankingSectionId=103"
-                               title="[날씨] 퇴근길 공기 깨끗…내일도 맑고 따뜻">[날씨] 퇴근길 공기 깨끗…내일도 맑고 따뜻</a></li>
-                        <li><span class="rank"><em>2</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=421&amp;aid=0003319871&amp;date=20180416&amp;type=1&amp;rankingSeq=2&amp;rankingSectionId=103"
-                               title='"700m 걸었더니 마일리지 80원…걸어서 좋고, 교통비도 벌고"'>"700m 걸었더니 마일리지 80원…걸어서 좋고, 교통비도 벌고"</a>
-                        </li>
-                        <li><span class="rank"><em>3</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=025&amp;aid=0002813661&amp;date=20180416&amp;type=1&amp;rankingSeq=3&amp;rankingSectionId=103"
-                               title='"옥한흠 목사, 오목사에 담임직 넘겨줄 때도 부산고·경희대 나온 줄 알았다"'>"옥한흠 목사, 오목사에 담임직 넘겨줄 때도 부산고·경희대 나온 줄
-                                알았다"</a></li>
-                        <li><span class="rank"><em>4</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=469&amp;aid=0000293578&amp;date=20180416&amp;type=1&amp;rankingSeq=4&amp;rankingSectionId=103"
-                               title="신혼 4개월에 대화 실종… 힘들면 떠나라는 남편">신혼 4개월에 대화 실종… 힘들면 떠나라는 남편</a></li>
-                        <li><span class="rank"><em>5</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=001&amp;aid=0010027681&amp;date=20180416&amp;type=1&amp;rankingSeq=5&amp;rankingSectionId=103"
-                               title="붉은 빛깔의 홍도화 만개">붉은 빛깔의 홍도화 만개</a></li>
-                        <li><span class="rank"><em>6</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=032&amp;aid=0002864233&amp;date=20180416&amp;type=1&amp;rankingSeq=6&amp;rankingSectionId=103"
-                               title="“좋은 만큼 위험한 등산, ‘이 사람’은 더 위험해요”">“좋은 만큼 위험한 등산, ‘이 사람’은 더 위험해요”</a></li>
-                        <li><span class="rank"><em>7</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=030&amp;aid=0002699524&amp;date=20180416&amp;type=1&amp;rankingSeq=7&amp;rankingSectionId=103"
-                               title="'SUV'가 수입차 승부 가른다…'재규어·지프·폭스바겐' 전략 신차 공세">'SUV'가 수입차 승부 가른다…'재규어·지프·폭스바겐' 전략 신차
-                                공세</a></li>
-                        <li><span class="rank"><em>8</em></span>
-                            <a class="nclicks(rig.ranklif)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=469&amp;aid=0000293773&amp;date=20180416&amp;type=1&amp;rankingSeq=8&amp;rankingSectionId=103"
-                               title="대법 “목사후보생으로 일반편입 오정현, 목사 자격 없다”… 사랑의교회 내분 가속">대법 “목사후보생으로 일반편입 오정현, 목사 자격 없다”…
-                                사랑의교회 내분 가속</a></li>
-                    </ul>
-                </div>
-                <div id="ranking_104" style="display:none">
-                    <h5 class="blind">세계</h5>
-                    <ul class="type16">
-                        <li><span class="rank"><em>1</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=025&amp;aid=0002813677&amp;date=20180416&amp;type=1&amp;rankingSeq=1&amp;rankingSectionId=104"
-                               title="[뉴스분석]추락하는 아베, 위기의 본질은 오만이다">[뉴스분석]추락하는 아베, 위기의 본질은 오만이다</a></li>
-                        <li><span class="rank"><em>2</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=003&amp;aid=0008546921&amp;date=20180416&amp;type=1&amp;rankingSeq=2&amp;rankingSectionId=104"
-                               title="中日경제대화 8년만에 재개…美눈치보는 日과 '온도차'">中日경제대화 8년만에 재개…美눈치보는 日과 '온도차'</a></li>
-                        <li><span class="rank"><em>3</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=032&amp;aid=0002864149&amp;date=20180416&amp;type=1&amp;rankingSeq=3&amp;rankingSectionId=104"
-                               title='트럼프와 코미의 전면전..."역겨운 인간" 대 "마피아 두목"'>트럼프와 코미의 전면전..."역겨운 인간" 대 "마피아 두목"</a></li>
-                        <li><span class="rank"><em>4</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=001&amp;aid=0010027621&amp;date=20180416&amp;type=1&amp;rankingSeq=4&amp;rankingSectionId=104"
-                               title='"러시아, 시리아공습 미국·영국 겨냥 사이버전쟁 개시"'>"러시아, 시리아공습 미국·영국 겨냥 사이버전쟁 개시"</a></li>
-                        <li><span class="rank"><em>5</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=421&amp;aid=0003319706&amp;date=20180416&amp;type=1&amp;rankingSeq=5&amp;rankingSectionId=104"
-                               title='中·日경제대화 "무역전쟁, 세계에 심각한 영향"(종합)'>中·日경제대화 "무역전쟁, 세계에 심각한 영향"(종합)</a></li>
-                        <li><span class="rank"><em>6</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=001&amp;aid=0010026322&amp;date=20180416&amp;type=1&amp;rankingSeq=6&amp;rankingSectionId=104"
-                               title="건물 사라진 자리에 돌무더기만…시리아 공습 전후 위성사진">건물 사라진 자리에 돌무더기만…시리아 공습 전후 위성사진</a></li>
-                        <li><span class="rank"><em>7</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=421&amp;aid=0003319812&amp;date=20180416&amp;type=1&amp;rankingSeq=7&amp;rankingSectionId=104"
-                               title="日, 美와 정상회담 앞두고 '골머리'">日, 美와 정상회담 앞두고 '골머리'</a></li>
-                        <li><span class="rank"><em>8</em></span>
-                            <a class="nclicks(rig.rankwor)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=081&amp;aid=0002908174&amp;date=20180416&amp;type=1&amp;rankingSeq=8&amp;rankingSectionId=104"
-                               title="[여기는 중국] ‘9년간’ 따돌림 피해 입은 여학생의 ‘사이다 복수’">[여기는 중국] ‘9년간’ 따돌림 피해 입은 여학생의 ‘사이다 복수’</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="ranking_105" style="display:none">
-                    <h5 class="blind">IT/과학</h5>
-                    <ul class="type16">
-                        <li><span class="rank"><em>1</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=014&amp;aid=0004003144&amp;date=20180416&amp;type=1&amp;rankingSeq=1&amp;rankingSectionId=105"
-                               title="호불호 갈린 '노치 디스플레이' 흥행할까">호불호 갈린 '노치 디스플레이' 흥행할까</a></li>
-                        <li><span class="rank"><em>2</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=030&amp;aid=0002699684&amp;date=20180416&amp;type=1&amp;rankingSeq=2&amp;rankingSectionId=105"
-                               title="[이슈분석]킬러 로봇 해프닝이 남긴 과제...AI·로봇 활용 국제 윤리 기준 만들어야">[이슈분석]킬러 로봇 해프닝이 남긴 과제...AI·로봇 활용
-                                국제 윤리 기준 만들어야</a></li>
-                        <li><span class="rank"><em>3</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=469&amp;aid=0000293762&amp;date=20180416&amp;type=1&amp;rankingSeq=3&amp;rankingSectionId=105"
-                               title="구글홈 상륙.. AI 스피커 격전 예고">구글홈 상륙.. AI 스피커 격전 예고</a></li>
-                        <li><span class="rank"><em>4</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=011&amp;aid=0003271746&amp;date=20180416&amp;type=1&amp;rankingSeq=4&amp;rankingSectionId=105"
-                               title='"애플, 특허 침해" 소송 건 韓 벤처'>"애플, 특허 침해" 소송 건 韓 벤처</a></li>
-                        <li><span class="rank"><em>5</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=025&amp;aid=0002813656&amp;date=20180416&amp;type=1&amp;rankingSeq=5&amp;rankingSectionId=105"
-                               title='[단독] "사랑이 뭐야" AI에 물으면 책 문장·페이지 다 알려준다'>[단독] "사랑이 뭐야" AI에 물으면 책 문장·페이지 다 알려준다</a>
-                        </li>
-                        <li><span class="rank"><em>6</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=584&amp;aid=0000000685&amp;date=20180416&amp;type=1&amp;rankingSeq=6&amp;rankingSectionId=105"
-                               title="금강에 사는 민물고기 '종어'에 사례금 30만원 걸린 이유?">금강에 사는 민물고기 '종어'에 사례금 30만원 걸린 이유?</a></li>
-                        <li><span class="rank"><em>7</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=009&amp;aid=0004134339&amp;date=20180416&amp;type=1&amp;rankingSeq=7&amp;rankingSectionId=105"
-                               title="지구 문명은 우주에서 몇단계 수준에 해당할까">지구 문명은 우주에서 몇단계 수준에 해당할까</a></li>
-                        <li><span class="rank"><em>8</em></span>
-                            <a class="nclicks(rig.ranksci)"
-                               href="/main/ranking/read.nhn?mid=etc&amp;sid1=111&amp;rankingType=popular_day&amp;oid=009&amp;aid=0004134549&amp;date=20180416&amp;type=1&amp;rankingSeq=8&amp;rankingSectionId=105"
-                               title="카톡 얼굴사진 믿고 돈 보냈는데…`메신저피싱` 주의보">카톡 얼굴사진 믿고 돈 보냈는데…`메신저피싱` 주의보</a></li>
-                    </ul>
-                </div>
-            </div>
-            <script type="text/javascript">
-                var ranking_selectedSectionId = '';
-                var ranking_listAllSection = jindo.$A(['100', '101', '102', '103', '104', '105']);
-                var ranking_listPrevSection = ranking_listAllSection.slice(0, 3);
-
-                function ranking_switch_category(event) {
-                    if (jindo.$Element('right.ranking_category_a').visible()) {
-                        ranking_select_section('103');
-                    } else {
-                        ranking_select_section('100');
-                    }
-                }
-
-                jindo.$A(['prev', 'next']).forEach(function (v, i, o) {
-                    jindo.$Fn(ranking_switch_category, window).attach(jindo.$Element(jindo.$('right.ranking_btn_' + v)), 'click');
-                });
-
-                function ranking_select_tab(sectionId) {
-                    if (ranking_listPrevSection.has(sectionId)) {
-                        jindo.$Element('right.ranking_category_b').hide();
-                        jindo.$Element('right.ranking_category_a').show();
-                    } else {
-                        jindo.$Element('right.ranking_category_a').hide();
-                        jindo.$Element('right.ranking_category_b').show();
-                    }
-                    jindo.$('right.ranking_tab_' + sectionId).innerHTML = "<strong>" + ranking_select_section_name(sectionId) + "</strong>";
-                    jindo.$Element('right.ranking_tab_' + sectionId).addClass('is_click');
-                    if (ranking_selectedSectionId) {
-                        jindo.$('right.ranking_tab_' + ranking_selectedSectionId).innerHTML = ranking_select_section_name(ranking_selectedSectionId);
-                        jindo.$Element('right.ranking_tab_' + ranking_selectedSectionId).removeClass('is_click');
-                    }
-                    ranking_selectedSectionId = sectionId;
-                }
-
-                function ranking_select_section(sectionId) {
-                    if (!ranking_listAllSection.has(sectionId)) {
-                        sectionId = '100';
-                    }
-                    jindo.$('right.ranking_contents').innerHTML = jindo.$('ranking_' + sectionId).innerHTML;
-                    ranking_select_tab(sectionId);
-                }
-
-                function ranking_select_section_name(sectionId) {
-                    var selectSectionName = "정치";
-                    switch (sectionId) {
-                        case '100' :
-                            selectSectionName = "정치";
-                            break;
-                        case '101' :
-                            selectSectionName = "경제";
-                            break;
-                        case '102' :
-                            selectSectionName = "사회";
-                            break;
-                        case '103' :
-                            selectSectionName = "생활/문화";
-                            break;
-                        case '104' :
-                            selectSectionName = "세계";
-                            break;
-                        case '105' :
-                            selectSectionName = "IT/과학";
-                            break;
-                        default :
-                            selectSectionName = "정치";
-                    }
-                    return selectSectionName;
-                }
-
-                function ranking_tab_handler(event) {
-                    var sectionId = jindo.$Event(event).element.id.replace('right\.ranking_tab_', '');
-                    if (sectionId) {
-                        ranking_select_section(sectionId);
-                    }
-                }
-
-                ranking_listAllSection.forEach(function (v, i, o) {
-                    jindo.$Fn(ranking_tab_handler, window).attach(jindo.$Element(jindo.$('right.ranking_tab_' + v)), 'mouseover');
-                });
-                ranking_select_section('200');
-            </script>
-            <div class="section" style="margin-bottom:20px;">
-                <h4>TODAY</h4>
-                <div class="today" id="today_content">
-                    <div class="hr_wrap">
-                        <h5 class="h_today1"><a class="nclicks(rig.today)"
-                                                href="http://news.naver.com/main/ombudsman/index.nhn">공지</a></h5>
-                        <ul>
-                            <li><a class="nclicks(rig.today)"
-                                   href="http://news.naver.com/main/ombudsman/readView.nhn?notiId=411">
-                                <strong>검색제휴 및 콘텐츠, 스탠드제휴<br/>신청 안내</strong>
-                                <img alt="new" class="icon" height="8"
-                                     src="http://static.news.naver.net/image/news/2009/ico_n_8x8.gif" width="8"/></a>
-                            </li>
-                            <li><a class="nclicks(rig.today)"
-                                   href="http://news.naver.com/main/ombudsman/readView.nhn?notiId=409">
-                                <strong>PC 랭킹뉴스 개편</strong>
-                                <img alt="new" class="icon" height="8"
-                                     src="http://static.news.naver.net/image/news/2009/ico_n_8x8.gif" width="8"/></a>
-                            </li>
-                            <li><a class="nclicks(rig.today)"
-                                   href="http://news.naver.com/main/ombudsman/readView.nhn?notiId=405">
-                                섹션홈/뉴스홈 AiRS 뉴스 적용
-                            </a></li>
-                        </ul>
-                    </div>
-                    <div class="hr_wrap">
-                        <h5 class="h_today2"><a class="nclicks(rig.today)"
-                                                href="https://search.naver.com/search.naver?where=nexearch&amp;sm=nws_nex&amp;fbm=1&amp;ie=utf8&amp;query=%EC%98%A4%EB%8A%98+%EB%82%A0%EC%94%A8">날씨</a>
-                        </h5>
-                        <ul>
-                            <li><a class="nclicks(rig.today)"
-                                   href="https://search.naver.com/search.naver?where=nexearch&amp;sm=mns_nex&amp;fbm=1&amp;ie=utf8&amp;query=%EC%98%A4%EB%8A%98+%EB%82%A0%EC%94%A8"
-                                   target="_blank">
-                                실시간 기상 정보 확인하기
-                            </a></li>
-                        </ul>
-                    </div>
-                    <div class="hr_wrap">
-                        <h5 class="h_today4"><a class="nclicks(rig.today)"
-                                                href="https://search.naver.com/search.naver?where=nexearch&amp;query=%B6%EC%BA%B0+%BF%EE%BC%BC&amp;sm=mns_nex">운세</a>
-                        </h5>
-                        <ul>
-                            <li><a class="nclicks(rig.today)"
-                                   href="https://search.naver.com/search.naver?where=nexearch&amp;query=%B6%EC%BA%B0+%BF%EE%BC%BC&amp;sm=mns_nex"
-                                   target="_blank">
-                                오늘의 띠별 운세 확인하기
-                            </a></li>
-                        </ul>
-                    </div>
-                    <table cellpadding="0" cellspacing="0" class="type02"
-                           summary="오늘의 코스피 지수와 코스닥 지수의 상승/하락폭과 등락율을 제공합니다.">
-                        <caption class="blind">코스피,코스닥 지수</caption>
-                        <col width="45"/>
-                        <col/>
-                        <col width="56"/>
-                        <col width="62"/>
-                        <tbody>
-                        <tr>
-                            <th scope="row"><a class="b nclicks(rig.today)"
-                                               href="http://finance.naver.com/sise/sise_index.nhn?code=KOSPI"
-                                               target="_blank">코스피</a></th>
-                            <td class="t11">2,457.49</td>
-                            <td class="t11 up"><img alt="상승" class="icon" height="6"
-                                                    src="http://static.news.naver.net/image/news/2009/ico_up.gif"
-                                                    width="7"/> 2.42
-                            </td>
-                            <td class="t11 c8">+0.10%</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><a class="b nclicks(rig.today)"
-                                               href="http://finance.naver.com/sise/sise_index.nhn?code=KOSDAQ"
-                                               target="_blank">코스닥</a></th>
-                            <td class="t11">896.89</td>
-                            <td class="t11 up"><img alt="상승" class="icon" height="6"
-                                                    src="http://static.news.naver.net/image/news/2009/ico_up.gif"
-                                                    width="7"/> 5.02
-                            </td>
-                            <td class="t11 c8">+0.56%</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <form action="http://finance.naver.com/search/search.nhn" method="get" name="right.today.stockForm"
-                          onsubmit="return stock_search_3059(); return false;" target="_blank">
-                        <fieldset>
-                            <legend>증권 종목검색</legend>
-                            <label class="blind" for="stockTodaySearchQuery_3059">검색어 입력</label>
-                            <input class="text02" id="stockTodaySearchQuery_3059" name="query" type="text"/>
-                            <input alt="종목검색" class="btn nclicks(rig.today)"
-                                   src="http://static.news.naver.net/image/news/2009/btn_search_stock.gif"
-                                   type="image"/>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-            <script type="text/javascript">
-                function stock_search_3059() {
-                    var obj = jindo.$('stockTodaySearchQuery_3059');
-                    var query = obj.value.replace(/[ ]/g, "");
-                    obj.value = query;
-                    if (query == '') {
-                        alert("검색 조건이 없습니다.");
-                        return false;
-                    }
-                }
-            </script>
-            <div class="section">
-                <h4>만평</h4>
-                <div class="img_rolling v1" id="rightMenuPhoto4_1056234">
-                    <div class="_1" style="display: none;">
-                        <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#469_0000293521">
-                            <img alt="4월16일자 만평" height="183"
-                                 src="http://mimgnews1.naver.net/image/origin/469/2018/04/15/293521.jpg?type=nf183_183"
-                                 width="183"/>
-                            <span class="trans_border"></span>
-                            <span class="text_inner">
-<span class="text_area"></span>
-<span class="text"><span class="dsc">한국일보</span><span class="vm"></span></span>
-</span>
-                        </a>
-                    </div>
-                    <div class="_2" style="display: none;">
-                        <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#032_0002864062">
-                            <img alt="[김용민의 그림마당]2018년 4월 16일" height="183"
-                                 src="http://mimgnews1.naver.net/image/origin/032/2018/04/15/2864062.jpg?type=nf183_183"
-                                 width="183"/>
-                            <span class="trans_border"></span>
-                            <span class="text_inner">
-<span class="text_area"></span>
-<span class="text"><span class="dsc">경향신문</span><span class="vm"></span></span>
-</span>
-                        </a>
-                    </div>
-                    <div class="_3" style="display: none;">
-                        <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#081_0002908061">
-                            <img alt="[서울만평] 조기영 세상터치" height="183"
-                                 src="http://mimgnews1.naver.net/image/origin/081/2018/04/16/2908061.jpg?type=nf183_183"
-                                 width="183"/>
-                            <span class="trans_border"></span>
-                            <span class="text_inner">
-<span class="text_area"></span>
-<span class="text"><span class="dsc">서울신문</span><span class="vm"></span></span>
-</span>
-                        </a>
-                    </div>
-                    <div class="_4" style="display: none;">
-                        <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#032_0002864063">
-                            <img alt="[장도리]2018년 4월 16일" height="183"
-                                 src="http://mimgnews1.naver.net/image/origin/032/2018/04/15/2864063.jpg?type=nf183_183"
-                                 width="183"/>
-                            <span class="trans_border"></span>
-                            <span class="text_inner">
-<span class="text_area"></span>
-<span class="text"><span class="dsc">경향신문</span><span class="vm"></span></span>
-</span>
-                        </a>
-                    </div>
-                    <ul style="display: none;">
-                    </ul>
-                    <ul class="_temp" style="display: none;">랜덤으로 섞기 전 임시 위치
-                        <li class="_1">
-                            <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#469_0000293521"><img
-                                    alt="4월16일자 만평" height="45"
-                                    src="http://mimgnews1.naver.net/image/origin/469/2018/04/15/293521.jpg?type=nf60_45"
-                                    width="60"/>
-                                <span class="trans_border2"></span></a>
-                        </li>
-                        <li class="_2">
-                            <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#032_0002864062"><img
-                                    alt="[김용민의 그림마당]2018년 4월 16일" height="45"
-                                    src="http://mimgnews1.naver.net/image/origin/032/2018/04/15/2864062.jpg?type=nf60_45"
-                                    width="60"/>
-                                <span class="trans_border2"></span></a>
-                        </li>
-                        <li class="_3">
-                            <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#081_0002908061"><img
-                                    alt="[서울만평] 조기영 세상터치" height="45"
-                                    src="http://mimgnews1.naver.net/image/origin/081/2018/04/16/2908061.jpg?type=nf60_45"
-                                    width="60"/>
-                                <span class="trans_border2"></span></a>
-                        </li>
-                        <li class="_4">
-                            <a href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307#032_0002864063"><img
-                                    alt="[장도리]2018년 4월 16일" height="45"
-                                    src="http://mimgnews1.naver.net/image/origin/032/2018/04/15/2864063.jpg?type=nf60_45"
-                                    width="60"/>
-                                <span class="trans_border2"></span></a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="more_link" href="http://news.naver.com/main/cartoongallery/index.nhn?mid=pho&amp;sid2=307"
-                   title="만평 더보기"><img alt="만평 더보기" height="13"
-                                       src="http://static.news.naver.net/image/news/2009/txt_more_link2.gif"
-                                       width="33"/></a>
-            </div>
-            <script type="text/javascript">
-                (function () {
-                    rightMenuPhoto4 = {
-                        _weHighLighted: null,
-                        _nIntervarlId: null,
-                        init: function (sId) {
-                            this.elContainer = jindo.$(sId);
-                            if (!this.elContainer) {
-                                return;
-                            }
-                            this.assign();
-                            this.shuffle();
-                            this.attach();
-                            this.start();
-                        },
-                        assign: function () {
-                            this.waDiv = jindo.$ElementList(jindo.$$('div', this.elContainer));
-                            this.weUl = jindo.$Element(jindo.$$.getSingle('ul', this.elContainer));
-                        },
-                        shuffle: function () {
-                            var weUl = this.weUl;
-                            var waLiTemp = jindo.$A(jindo.$$('ul._temp li', this.elContainer));
-                            var waShuffledLi = waLiTemp.shuffle();
-                            waShuffledLi.forEach(function (v, i, a) {
-                                weUl.append(v);
-                            });
-                            this.change(waShuffledLi.get(0));
-                            weUl.show();
-                        },
-                        attach: function () {
-                            var aLi = jindo.$$('li', this.weUl.$value());
-                            jindo.$Fn(this.choose, this).attach(aLi, 'mouseenter');
-                            jindo.$Fn(this.start, this).attach(this.elContainer, 'mouseleave');
-                            jindo.$Fn(this.stop, this).attach(this.elContainer, 'mouseenter');
-                        },
-                        choose: function (event) {
-                            this.change(event.currentElement);
-                        },
-                        change: function (el) {
-                            this.showDivByClassName(jindo.$S(el.className.replace('on', '')).trim().toString());
-                            this.toggleHighlight(el);
-                        },
-                        showDivByClassName: function (sClassName) {
-                            var sCssQuery = 'div.' + sClassName;
-                            var weDiv = jindo.$Element(jindo.$$.getSingle(sCssQuery, this.elContainer));
-                            this.waDiv.hide();
-                            weDiv.show();
-                        },
-                        toggleHighlight: function (el) {
-                            if (this._weHighLighted) {
-                                this._weHighLighted.removeClass('on');
-                            }
-                            this._weHighLighted = jindo.$Element(el);
-                            this._weHighLighted.addClass('on');
-                        },
-                        start: function (event) {
-                            var self = this;
-                            this._nIntervarlId = setInterval(function () {
-                                self.next();
-                            }, 5000);
-                        },
-                        stop: function (event) {
-                            if (this._nIntervarlId) {
-                                clearInterval(this._nIntervarlId);
-                                this._nIntervarlId = null;
-                            }
-                        },
-                        next: function () {
-                            var weLi = this.weUl.child(function (v) {
-                                return v.hasClass('on');
-                            })[0];
-                            var weNextLi = weLi.next();
-                            if (!weNextLi) {
-                                weNextLi = this.weUl.first();
-                            }
-                            this.change(weNextLi.$value());
-                        }
-                    }
-                    rightMenuPhoto4.init('rightMenuPhoto4_1056234');
-                })();
-            </script>
-            <div class="section">
-                <h4><a class="nclicks(rig.text)" href="http://news.naver.com/main/opinion/home.nhn">오피니언</a></h4>
-                <ul class="type02">
-                    <li><span class="fs11">[<span>오늘의 사설</span>]</span>
-                        <a class="nclicks(rig.text)" href="http://news.naver.com/main/opinion/todayEditorial.nhn">매체별 사설
-                            모음
-                        </a>
-                    </li>
-                    <li><span class="fs11">[<span>오늘의 칼럼</span>]</span>
-                        <a class="nclicks(rig.text)" href="http://news.naver.com/main/opinion/todayColumn.nhn">매체별 칼럼 모음
-                        </a>
-                    </li>
-                    <li><span class="fs11">[<span>언론사별 사설</span>]</span>
-                        <a class="nclicks(rig.text)"
-                           href="http://news.naver.com/main/opinion/officialEditorial.nhn"><strong>민주당원 '댓글조작 의혹'
-                            논란</strong><img alt="new" class="icon" height="8"
-                                            src="http://static.news.naver.net/image/news/2009/ico_n_8x8.gif" width="8"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nclicks(rig.text)" href="http://news.naver.com/main/opinion/writerColumns.nhn">필진별 칼럼
-                            리스트 모아보기
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nclicks(rig.text)" href="http://news.naver.com/main/opinion/themeColumns.nhn">연재별 칼럼
-                            리스트 모아보기
-                        </a>
-                    </li>
-                </ul>
-                <a class="more_link nclicks(rig.text)" href="http://news.naver.com/main/opinion/home.nhn"><img
-                        alt="오피니언 더보기" height="13" src="http://static.news.naver.net/image/news/2009/txt_more_link2.gif"
-                        width="33"/></a>
-            </div>
-            <div class="section">
-                <div class="sc_mov" id="right_photo_large_container977894">
-                    <h4>핫이슈</h4>
-                    <div class="photo_slide _flicking_pause">
-                        <ul class="slide_lst _flicking_area">
-                            <li>
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;gid=1075323"
-                                   title="남북 관계와 한반도 정세">
-                                    <img alt="남북 관계와 한반도 정세" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2018/01/03/182022967_33.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;gid=1075323"
-                                       title="남북 관계와 한반도 정세">남북 관계와 한반도 정세</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=102&amp;gid=1012477&amp;cid=984650"
-                                   title="세월호 4주기">
-                                    <img alt="세월호 4주기" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2018/04/16/161000603_1.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=102&amp;gid=1012477&amp;cid=984650"
-                                       title="세월호 4주기">세월호 4주기</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;gid=1075875&amp;cid=1070398"
-                                   title="MB 다스 의혹 등 검찰 수사">
-                                    <img alt="MB 다스 의혹 등 검찰 수사" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2018/03/14/100718986_35.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;gid=1075875&amp;cid=1070398"
-                                       title="MB 다스 의혹 등 검찰 수사">MB 다스 의혹 등 검찰 수사</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=101&amp;cid=996387"
-                                   title="글로벌 경제 리포트">
-                                    <img alt="글로벌 경제 리포트" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2016/06/10/110419343_6.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=101&amp;cid=996387"
-                                       title="글로벌 경제 리포트">글로벌 경제 리포트</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mode=hot&amp;sid1=102&amp;cid=1077043"
-                                   title="각계 #미투 확산">
-                                    <img alt="각계 #미투 확산" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2018/02/23/141119434_2.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mode=hot&amp;sid1=102&amp;cid=1077043"
-                                       title="각계 #미투 확산">각계 #미투 확산</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;gid=1051906&amp;cid=1060622"
-                                   title="'박근혜·최순실' 재판">
-                                    <img alt="'박근혜·최순실' 재판" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2017/09/06/184445458_Untitled-2.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;gid=1051906&amp;cid=1060622"
-                                       title="'박근혜·최순실' 재판">'박근혜·최순실' 재판</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;cid=1077611"
-                                   title="대통령 개헌안 발의">
-                                    <img alt="대통령 개헌안 발의" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2018/03/20/152126131_Untitled-2.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;cid=1077611"
-                                       title="대통령 개헌안 발의">대통령 개헌안 발의</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=101&amp;cid=1074429&amp;dummy=1712211554"
-                                   title="가상화폐 둘러싼 논란">
-                                    <img alt="가상화폐 둘러싼 논란" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2017/12/21/155523708_0002388917_001_20171129171510602.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=101&amp;cid=1074429&amp;dummy=1712211554"
-                                       title="가상화폐 둘러싼 논란">가상화폐 둘러싼 논란</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=104&amp;gid=1035341"
-                                   title="美 '트럼프 시대'">
-                                    <img alt="美 '트럼프 시대'" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2016/12/26/170250768_6.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=104&amp;gid=1035341"
-                                       title="美 '트럼프 시대'">美 '트럼프 시대'</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=101&amp;cid=957181"
-                                   title="부동산 시장 리포트">
-                                    <img alt="부동산 시장 리포트" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2016/12/26/170450535_8.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=101&amp;cid=957181"
-                                       title="부동산 시장 리포트">부동산 시장 리포트</a>
-                                </p>
-                            </li>
-                            <li style="display:none">
-                                <a class="_flicking_pause nclicks(rig.biroll)"
-                                   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=104&amp;cid=334823"
-                                   title="세계와 생각 나누기">
-                                    <img alt="세계와 생각 나누기" height="136"
-                                         src="http://imgnews.naver.net/image/upload/item/2017/11/03/174429953_PYH2017102220720034000_P2_20171030103958300.jpg"
-                                         width="242"/><span class="mask"></span>
-                                </a>
-                                <p class="txt">
-                                    <a class="_flicking_pause nclicks(rig.biroll)"
-                                       href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=104&amp;cid=334823"
-                                       title="세계와 생각 나누기">세계와 생각 나누기</a>
-                                </p>
-                            </li>
-                        </ul>
-                        <a class="btns btn_lft _flicking_prev _flicking_pause nclicks(rig.biroll)" href="#">이전</a>
-                        <a class="btns btn_rgt _flicking_next _flicking_pause nclicks(rig.biroll)" href="#">다음</a>
-                    </div>
-                    <div class="pg_num_area _flicking_pause">
-                        <em class="pg_num pg_num_on _flicking_pause" title="현재 페이지">1</em>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">2</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">3</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">4</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">5</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">6</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">7</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">8</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">9</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">10</a>
-                        <a class="pg_num _flicking_pause nclicks(rig.biroll)" href="#">11</a>
-                    </div>
-                </div>
-            </div>
-            <script defer="defer" type="text/javascript">
-                var interverFlicking = new news.right.PhotoLargeRolling({
-                    sContainerId: 'right_photo_large_container977894',
-                    sPageAreaClassName: '_flicking_area',
-                    sNextClassName: '_flicking_next',
-                    sPrevClassName: '_flicking_prev',
-                    sPauseAreaClassName: '_flicking_pause',
-                    sPageNumberAreaClassName: 'pg_num_area',
-                    bAuto: true,
-                    nInterval: 5000
-                });
-            </script>
-            <div class="section" style="margin-bottom:20px;">
-<span class="cate_navi index_cate_navi">
-<img alt="이전" class="nclicks(rig.column)" height="14" id="BUTTON_ROLLING_PREV_937107"
-     src="http://static.news.naver.net/image/news/2009/btn_rolling_prev2.gif" style="cursor:pointer" width="13"/>
-<img alt="다음" class="nclicks(rig.column)" height="14" id="BUTTON_ROLLING_NEXT_937107"
-     src="http://static.news.naver.net/image/news/2009/btn_rolling_next2.gif" style="cursor:pointer" width="13"/>
-</span>
-                <div class="column" id="includebox_937107">
-<span id="ROLLING_IMG_937107_0">
-<h4>전문기자 칼럼</h4>
-<div class="column_thumb">
-<a class="nclicks(rig.column)"
-   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=110&amp;cid=1064777"><img
-        alt="곽노필 기자의 미래창" height="90" src="http://imgnews.naver.net/image/upload/item/2018/01/26/153804545_1.jpg"
-        width="244"/><span class="trans_border"></span></a>
-</div>
-<h5>
-<a class="nclicks(rig.column)"
-   href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=110&amp;cid=1064777">
-곽노필 기자의 미래창</a>
-</h5>
-</span>
-                    <ul class="type02" id="ROLLING_TEXT_937107_0">
-                    </ul>
-                </div>
-            </div>
-            <script type="text/javascript">
-                var rolling_937107;
-
-                function executeRolling937107() {
-                    var items = new Array();
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1037805'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&mid=hot&cid=1064777&nh=20180126153805"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/153804545_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1064777" >'
-                        + '\uACFD\uB178\uD544 \uAE30\uC790\uC758 \uBBF8\uB798\uCC3D</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '939360'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&dummy=1712051504&mid=hot&cid=891791&nh=20180126153838"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/153837278_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&mid=hot&cid=891791&nh=20171201095844&dummy=1712051504" >'
-                        + '\uD604\uBB38\uD559 \uAE30\uC790\uC758 \uB3C8\uB418\uB294 \uC911\uAD6D\uACBD\uC81C</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1026945'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&mid=hot&cid=1008884&nh=20180126153906"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/153905062_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1008884" >'
-                        + '\uCD5C\uC740\uC218 \uAE30\uC790\uC758 \uBBF8\uB798\uC774\uC57C\uAE30</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1025795'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&dummy=1712081723&mid=hot&cid=1064672&nh=20180126153931"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/153930029_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1064672&dummy=1712081723" >'
-                        + '\uAE40\uC778\uC218 \uAE30\uC790\uC758 \uC0AC\uB78C\uC774\uB2C8\uAE4C \uACBD\uC601\uC774\uB2E4</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '939092'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&dummy=1711271013&mid=hot&cid=1064671&nh=20180115211222"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2017/12/12/144813188_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1064671&dummy=1711271013" >'
-                        + '\uAE40\uC885\uCCA0 \uAE30\uC790\uC758 \uD4E8\uC804 \uB9AC\uB354\uC2ED&\uB864\uBAA8\uB378</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1048718'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=103&mid=hot&cid=1047810&nh=20180126154010"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/154009022_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=103&cid=1047810" >'
-                        + '\uBC30\uD55C\uCCA0 \uAE30\uC790\uC758 \uD55C\uAD6D\uCD08\uC0C1\uD654 \uD1BA\uC544\uBCF4\uAE30</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1001407'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&mid=hot&cid=1000701&nh=20180126154039"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/154037735_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1000701" >'
-                        + '\uC548\uB450\uC6D0 \uAE30\uC790\uC758 \uBA3C \uB4EF \uAC00\uAE4C\uC6B4 \uBC29\uC0B0\uC5C5\uCCB4 \uBCA0\uC77C \uBC97\uAE30\uAE30</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1059499'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=103&gid=1014464&dummy=1712051517&mid=hot&nh=20180117173757"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2017/12/12/145001994_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=103&gid=1014464&dummy=1712051517" >'
-                        + '\uC591\uC120\uC544 \uAE30\uC790\uC758 \uC0DD\uC0DD\uC721\uC544</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '943322'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&mid=hot&cid=948201&nh=20180115211211"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2017/12/12/145034224_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=948201" >'
-                        + '\uC624\uCCA0\uC6B0 \uAE30\uC790\uC758 \uACFC\uD559\uC77D\uAE30</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1050160'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&dummy=1709181122&mid=hot&cid=1047811&nh=20180126154139"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/154137699_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1047811&dummy=1709181122" >'
-                        + '\uC774\uADFC\uC6B0 \uAE30\uC790\uC758 \uACBD\uC81C\uD559\uC73C\uB85C \uC138\uC0C1\uC77D\uAE30</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1028311'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&mid=hot&cid=1024480&nh=20180115211157"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2017/12/12/145148920_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1024480" >'
-                        + '\uC774\uC9C4\uC6B0 \uAE30\uC790\uC758 \uC808\uBCBD\uAC00(\u7D76\u58C1\u6B4C)</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1054732'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&mid=hot&cid=952414&nh=20180115211151"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2017/11/27/103100206_inputTemplate_24938999.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=952414" >'
-                        + '\uC815\uC9C4\uAC74 \uAE30\uC790\uC758 \uBA38\uB2C8 \uC778\uC0AC\uC774\uD2B8</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '1037807'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=103&mid=hot&cid=74098&nh=20180129154049"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2017/11/27/102908909_inputTemplate_49511945.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=103&cid=74098" >'
-                        + '\uACFD\uC724\uC12D \uAE30\uC790\uC758 \uC0AC\uC9C4\uB9C8\uC744</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    items.push(new news.common.RollingItem({
-                        'componentId': '937107'
-                        , 'id': '958508'
-                        , 'imgSrc': '<h4>전문기자 칼럼</h4>'
-                        + '<div class="column_thumb"><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?sid1=110&dummy=1712011714&mid=hot&cid=1014465&nh=20180126154242"'
-                        + '>'
-                        + '<img src="http://imgnews.naver.net/image/upload/item/2018/01/26/154240607_1.jpg" width="244" height="90" alt=""  id="IMG_ROLLING_IMG_937107_0" />'
-                        + '<span class="trans_border"></span></a></div>'
-                        + '<h5 ><a class="nclicks(rig.column)" href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1014465&dummy=1712011714" >'
-                        + '\uCD5C\uAE30\uC131\uC758 \uD5C8\uBE0C\u8ECA</a>'
-                        + ' '
-                        + ' </h5>'
-                        , 'textSrc': ' '
-                    }));
-                    rolling_937107 = new news.common.Rolling({
-                        'rollingItems': items,
-                        'showId': 'ROLLING',
-                        'rollingCount': 1,
-                        'interval': 0,
-                        'isEffectAppear': false
-                    });
-                }
-
-                executeRolling937107();
-                jindo.$('BUTTON_ROLLING_PREV_' + 937107).onclick = function () {
-                    rolling_937107.backRolling(rolling_937107);
-                }
-                jindo.$('BUTTON_ROLLING_NEXT_' + 937107).onclick = function () {
-                    rolling_937107.rolling(rolling_937107);
-                }
-            </script>
-            <div class="section">
-                <a class="nclicks(rig.banner)" href="http://news.naver.com/main/assembly/index.nhn" target="_blank">
-                    <img alt="열린생각 함께하는 대한민국 국회" border="0" class="banner" height="60"
-                         src="http://imgnews.naver.net/image/upload/item/2017/01/09/172553264_banner_assembly.gif"
-                         width="244"/></a>
-            </div>
-            <div class="section" style="margin-bottom:20px;">
-                <h4><a class="nclicks(rig.text)" href="/main/ombudsman/index.nhn">서비스 안내</a></h4>
-                <ul class="type02">
-                    <li>
-                        <a class="nclicks(rig.text)"
-                           href="http://news.naver.com/main/ombudsman/errorArticleList.nhn?mid=omb">고침 기사 모음
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nclicks(rig.text)"
-                           href="http://news.naver.com/main/ombudsman/revisionArticleList.nhn?mid=omb">정정·반론·추후 보도 기사 모음
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nclicks(rig.text)"
-                           href="http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&amp;sid1=100&amp;cid=909906&amp;decorator=ombudsman&amp;confirm=true">불공정
-                            선거 보도 기사 모음
-                        </a>
-                    </li>
-                </ul>
-                <a class="more_link nclicks(rig.text)" href="/main/ombudsman/index.nhn"><img alt="서비스 안내 더보기"
-                                                                                             height="13"
-                                                                                             src="http://static.news.naver.net/image/news/2009/txt_more_link2.gif"
-                                                                                             width="33"/></a>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="index">
-        <div class="index_inner">
-            <div class="floating_btn">
-                <div class="floating_inner">
-                    <a class="floating_btn_back" href="javascript:history.back();"><span class="blind">이젠 페이지</span></a>
-                    <a class="floating_btn_top" href="#"
-                       onclick="window.scrollTo(0,0);oWebAccessibilityUtil.moveFocus(document.getElementById('da_base'));return false;"><span
-                            class="blind">맨위로</span></a>
-                </div>
-            </div>
-            <div class="index_tab" id="index.press_category">
-                <a class="spr stit nclicks(fot.press)" href="#" id="index.press.btn">언론사 목록<span class="loading"
-                                                                                                 style="display:none;">로딩 중</span></a>
-                <div class="index_content is_hidden" id="index.press.area"></div>
-                <a class="spr stit2 nclicks(fot.section)" href="#" id="index.category.btn">분야별 목록<span class="loading"
-                                                                                                       style="display:none;">로딩 중</span></a>
-                <div class="index_content02 is_hidden" id="index.category.area"></div>
-            </div>
-            <div class="index_myscrap">
-                <a class="spr nclicks(fot.scrap)" href="/main/scrap/index.nhn">마이스크랩</a>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div id="footer">
-        <ul>
-            <li class="first"><a class="nclicks(fot.agreement)" href="http://www.naver.com/rules/service.html">이용약관</a>
-            </li>
-            <li><a class="nclicks(fot.guide)" href="/main/ombudsman/index.nhn">서비스 안내</a></li>
-            <li><a class="nclicks(fot.editor)" href="/main/ombudsman/edit.nhn?mid=omb">기사배열 원칙 책임자 : 유봉석</a></li>
-            <li>청소년 보호 책임자 : 정연아</li>
-            <li><strong><a class="nclicks(fot.privacy)"
-                           href="http://www.naver.com/rules/privacy.html">개인정보처리방침</a></strong></li>
-            <li><a class="nclicks(fot.disclaimer)" href="http://www.naver.com/rules/disclaimer.html">책임의 한계와 법적고지</a>
-            </li>
-            <li><a class="nclicks(fot.help)" href="#" onclick="news.external.OPS.helpNews(); return false;">뉴스 고객센터</a>
-            </li>
-        </ul>
-        <p class="copyright">본 콘텐츠의 저작권은 제공처 또는 네이버에 있으며 이를 무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.</p>
-        <address class="address_nhn">
-            <a class="logo nclicks(fot.naver)" href="http://www.navercorp.com/" target="_blank"><span class="blind">NAVER</span></a>
-            <em>Copyright ©</em>
-            <a class="nclicks(fot.navercorp)" href="http://www.navercorp.com/" target="_blank">NAVER Corp.</a>
-            <span>All Rights Reserved.</span>
-        </address>
-        <!-- -->
-    </div>
-    <script type="text/javascript">
-
-
-        new news.lnb.NewsSearchController('lnb.searchForm');
-
-
-        //var lnb_weatherRolling = new news.lnb.LineRolling('lnb.weather',{size:26,moveSize:3,moveInterval:30});
-        var lnb_mainnewsRolling = new news.lnb.LineRolling('lnb.mainnews', {
-            size: 17,
-            moveSize: 2,
-            moveInterval: 30,
-            isRandomStart: true
-        });
-        var lnb_Rolling = new news.lnb.SynchronizedRolling({interval: 3000});
-        //lnb_Rolling.push(lnb_weatherRolling);
-        lnb_Rolling.push(lnb_mainnewsRolling);
-        lnb_Rolling.start();
-
-
-        var index_tab = new news.index.TabController('index.press_category');
-        index_tab.add(new news.index.Tab('index.press.btn', 'stit', 'index.press.area', '/main/ajax/bottomIndex/press.nhn'));
-        index_tab.add(new news.index.Tab('index.category.btn', 'stit2', 'index.category.area', '/main/ajax/bottomIndex/category.nhn'));
-        jindo.$Fn(index_tab.toggle, index_tab).attach(index_tab.tabs.keys(), 'click');
-
-
-        (function () {
-            news.right.RightSideFloatingManager.init();
-        })();
-
-
-        news.home.DragController.init();
-
-
-        lcs_do();
-
-
-        news.startup();
-
-
-        jindo.$Fn(function () {
-            var welSkip = jindo.$Element("u_skip");
-            if (welSkip === null) {
-                return;
-            }
-            welSkip.delegate("click", "a", function (weEvent) {
-                weEvent.stopDefault();
-                var elTarget = jindo.$(weEvent.element.href.split("#")[1]);
-                oWebAccessibilityUtil.moveFocus(elTarget);
+            var secnews_fade = $('#sec_news_fade_id').bxSlider({
+                mode: 'fade',
+                randomStart: true,
+                preloadImages: 'all',
+                infiniteLoop: true,
+                pager: false,
+                controls: false,
+                auto: true,
+                pause: 3000,
+                slideSelector: '#sec_news_fade_id > img'
             });
-        }).attach(window, "load");
+        </script>
+        <div class="topsecart_spe_box">
+            <dd class="rel"><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700322.html"
+                               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');"><span
+                    class="red">[단독]</span> 정선 광산 매몰사고는 인재… "발파 전 확인 없었다"</a></dd>
+        </div>
+        <!-- ##headline_2 part e -->
+    </dl><!-- second_news -->
+    <!-- ##news_ticker part s --><!-- ##news_ticker part e -->
+    <!-- ##headline_3 part s -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700418.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">백악관, 극비리에 만난 폼페이오·김정은 사진 공개 <img
+                    src="http://image.chosun.com/cs/201103/photo_icon.gif"/></a> <span class="name">김남희 기자</span></dt>
+        <dd class="rel"><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700252.html">트럼프 "美·北, 3~4개
+            날짜 5곳 장소 놓고 협상중"</a></dd>
+    </dl>
+    <!-- ##headline_3 part e -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700535.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">매티스 "전쟁은 최후의 수단… 北과 외교 결실 기대"</a> <span
+                class="name">박수현 기자</span></dt>
+    </dl>
+    <!-- ##headline_5 part s -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700453.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">"北주민, 남북회담 사실 몰라… 입도 뻥긋 못하는 분위기"</a> <span
+                class="name">배정원 기자</span></dt>
+    </dl>
+    <!-- ##headline_5 part e -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700145.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">작년 국민 놀라게 한 '포항 5.4 지진' 원인 밝혀졌다</a> <span
+                class="name">이영완 과학전문기자</span></dt>
+    </dl>
+    <!-- ##headline_7 part s -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700310.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">김경수 "드루킹 공세, 내 인지도 높여줘… 홍준표에 감사"</a> <span
+                class="name">윤형준 기자</span></dt>
+        <dd class="rel"><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700265.html">"검찰이 영장 기각"
+            "경찰이 기밀누설"… 낯 뜨거운 '김경수 핑퐁'</a></dd>
+        <dd class="rel"><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700093.html">김경수를 성역처럼… 검경,
+            영장 건건마다 폭탄 돌리기</a></dd>
+    </dl>
+    <!-- ##headline_7 part e -->
+    <!-- ##headline_8 part s -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://biz.chosun.com/site/data/html_dir/2018/04/27/2018042700306.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');" target="cs_new" title="(새창)">MB-혼외자,
+                여가수-임신… 황당 연관검색어 올리는 포털 속내</a> <span class="name">성호철 기자</span></dt>
+    </dl>
+    <!-- ##headline_8 part e -->
+    <!-- ##sec_photo_side0_1 part s -->
+    <dl class="art_list_item">
+        <dd class="thumb" style="width:145px;">
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700198.html" id="mid_news_fade_id"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">
+                <img alt="" src="http://image.chosun.com/sitedata/www/section_image/20180427082525005_1.jpg"/>
+            </a>
+        </dd>
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700198.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">독일군 공습도 견뎠는데… 세월 앞에 무너지는 '런던 명물'</a></dt>
+        <dd class="desc"><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700198.html"
+                            onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">1941년 독일군 공습도 견뎌냈던 이 건물도 세월을
+            이기지는 못했다. 1834년 대화재 이후 약 30년에 걸쳐 새로 지었을 때에는 난방용 증기관(管)과 에어컨도 갖춘 당대 최고의 고딕 양식 건물이었다. 그러나 이제 ..</a></dd>
+    </dl>
+    <!-- ##sec_photo_side0_1 part e -->
+    <div class="editorial_roll" id="editorial_roll_id">
+        <!-- ##headline_opi_col part s -->
+        <!-- #assign para = "?editorial01" -->
+        <dl class="art_list_item">
+            <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603471.html"
+                   onclick="ga('send', 'event', 'Headline', 'contents', 'opinion');"><span class="red">[사설]</span> 북핵
+                폐기로 민족사에 남을 남북 정상회담 바란다</a></dt>
+            <dd class="desc" style="display:none"><a
+                    href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603471.html"
+                    onclick="ga('send', 'event', 'Headline', 'contents', 'opinion');">..</a></dd>
+            <!-- 617 -->
+        </dl>
+        <!-- #assign para = "?editorial02" -->
+        <dl class="art_list_item">
+            <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603473.html"
+                   onclick="ga('send', 'event', 'Headline', 'contents', 'opinion');"><span class="red">[사설]</span> '드루킹
+                사건'을 둘러싼 권력 忠犬 검경의 아귀다툼</a></dt>
+            <dd class="desc" style="display:none"><a
+                    href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603473.html"
+                    onclick="ga('send', 'event', 'Headline', 'contents', 'opinion');">..</a></dd>
+            <!-- 617 -->
+        </dl>
+        <!-- #assign para = "?editorial03" -->
+        <dl class="art_list_item">
+            <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603475.html"
+                   onclick="ga('send', 'event', 'Headline', 'contents', 'opinion');"><span class="red">[사설]</span> 중국이
+                반도체 생산국 되면 한국 경제에 벌어질 일</a></dt>
+            <dd class="desc" style="display:none"><a
+                    href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603475.html"
+                    onclick="ga('send', 'event', 'Headline', 'contents', 'opinion');">..</a></dd>
+            <!-- 617 -->
+        </dl>
+        <!-- ##headline_opi_col part e -->
+    </div>
+    <!-- ##headline_opi_col2 part s --><!-- ##headline_opi_col2 part e -->
+    <!-- 2016 US election news special start -->
+    <style>
+        .wrap_ue_news {
+            margin-top: 20px;
+            display: none
+        }
 
+        .ue_news_tit {
+            margin-bottom: -60px
+        }
 
-        document.documentElement.setAttribute('data-useragent', navigator.userAgent);
-    </script>
+        .ue_news_img_box {
+            overflow: hidden;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: solid 1px #d7d7d7;
+        }
+
+        dl.ue_news_thumb {
+            float: left;
+            width: 192px;
+            margin-left: 12px;
+        }
+
+        dl.ue_news_thumb:first-child {
+            margin-left: 0;
+        }
+
+        dl.ue_news_thumb dd.thumb {
+            position: relative;
+        }
+
+        dl.ue_news_thumb dd.thumb img {
+            width: 192px;
+            height: 113px;
+        }
+
+        dl.ue_news_thumb dd.thumb em {
+            position: absolute;
+            height: 22px;
+            padding: 0 5px;
+            top: 0px;
+            left: 0px;
+            background: url('http://image.chosun.com/main/201505/cs_ue_thumb_labelbg.png');
+            background-size: cover;
+            font-size: 13px;
+            color: #fff;
+        }
+
+        dl.ue_news_thumb dd.thumb em a {
+            color: #fff
+        }
+
+        dl.ue_news_thumb dt {
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: bold
+        }
+    </style>
+    <div class="wrap_ue_news">
+        <div class="ue_news_tit">
+            <img alt="스페셜 이슈 - 미 대선 특집" src="http://image.chosun.com/main/201505/cs_ue_mid_tit.png"/>
+        </div>
+        <dl class="art_list_item">
+            <dt>
+                <a href="http://news.chosun.com/site/data/html_dir/2016/11/09/2016110900256.html"
+                   onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">뉴햄프셔주 3곳 첫 개표… 클린턴(25표) vs.
+                    트럼프(32표)</a> <span class="name">뉴욕=김덕한 특파원</span></dt>
+        </dl>
+        <div class="ue_news_img_box">
+            <dl class="ue_news_thumb">
+                <dd class="thumb"><a href="http://thestory.chosun.com/site/data/html_dir/2016/11/07/2016110701179.html"><img
+                        alt="" src="http://image.chosun.com/sitedata/www/section_image/20161108150503482.jpg"/></a>
+                </dd>
+                <dt><a href="http://thestory.chosun.com/site/data/html_dir/2016/11/07/2016110701179.html">힐러리·트럼프 지지율
+                    추이 </a></dt>
+            </dl>
+            <dl class="ue_news_thumb">
+                <dd class="thumb"><a href="http://news.chosun.com/site/data/html_dir/2016/11/04/2016110401548.html"><img
+                        alt="" src="http://image.chosun.com/sitedata/www/section_image/20161108145522157.jpg"/></a>
+                </dd>
+                <dt><a href="http://news.chosun.com/site/data/html_dir/2016/11/04/2016110401548.html">그들의 인생 타임라인</a>
+                </dt>
+            </dl>
+            <dl class="ue_news_thumb">
+                <dd class="thumb"><a href="http://news.chosun.com/site/data/html_dir/2016/11/03/2016110301521.html"><img
+                        alt="" src="http://image.chosun.com/sitedata/www/section_image/20161108145903298.jpg"/></a>
+                </dd>
+                <dt><a href="http://news.chosun.com/site/data/html_dir/2016/11/03/2016110301521.html">美 대통령 선거 방식 Q&amp;A</a>
+                </dt>
+            </dl>
+        </div>
+    </div><!-- wrap_ue_news -->
+    <!-- 2016 US election news special end -->
+    <!-- ##headline_9 part s -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700097.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">"文지지층 '달빛기사단'도 드루킹처럼 여론 조작했다"</a> <span
+                class="name">이슬비 기자</span></dt>
+    </dl>
+    <!-- ##headline_9 part e -->
+    <!-- ##headline_10 part s -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700299.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">"중국에 통절한 책임, 속죄"… 침통한 김정은, 무슨 일?</a> <span
+                class="name">이용수 기자</span></dt>
+    </dl>
+    <!-- ##headline_10 part e -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://biz.chosun.com/site/data/html_dir/2018/04/26/2018042602547.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');" target="cs_new" title="(새창)">부동산 통제 안되는 北…
+                초고층 주상복합·투기 등장</a> <span class="name">이진혁 기자</span></dt>
+    </dl>
+    <!-- ##headline_12 part s -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://biz.chosun.com/site/data/html_dir/2018/04/27/2018042700271.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');" target="cs_new" title="(새창)">한국GM, 10년간 국내
+                공장 유지… 정부는 8100억 지원</a> <span class="name">금원섭 기자</span></dt>
+    </dl>
+    <!-- ##headline_12 part e -->
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603513.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');"><em><span class="blue">[김영진의 뉴스 저격]</span>
+            </em></a>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603513.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">현대차 노조 비판한 사회학자가 포스코는 극찬한 이유</a> <span
+                class="name">김영진 경제부 차장</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603432.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">"영화 '어벤져스3' 오역한 번역가 퇴출" 靑청원</a> <span
+                class="name">이다비 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt>
+            <a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700194.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">전세계 살인 38% 발생… 전쟁터보다 위험한 이곳</a> <span
+                class="name">최원국 기자</span></dt>
+    </dl>
+    <div class="art_list_blue_bg">
+        <!-- ##sec_ddang_side_1 part s -->
+        <style>
+            .art_list_blue_bg {
+                margin-top: 15px;
+                padding: 15px 20px 8px;
+                background: #edf1f4
+            }
+
+            .art_list_blue_bg dl.art_list_item {
+                margin-top: 0
+            }
+
+            .art_list_blue_bg dl.art_list_item + dl {
+                margin-top: 13px;
+            }
+        </style>
+        <dl class="art_list_item">
+            <dd class="thumb"><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603095.html"
+                                 onclick="ga('send', 'event', 'Headline', 'news', 'realty');"><img alt=""
+                                                                                                   src="http://image.chosun.com/sitedata/www/section_image/20180427081948470_1.jpg"/></a>
+            </dd>
+            <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603095.html"
+                   onclick="ga('send', 'event', 'Headline', 'news', 'realty');"><img alt="땅집GO"
+                                                                                     src="http://image.chosun.com/news/2016/zipgo_re.png"/>
+                근생으로 바꿨더니…효자된 다가구 반지하</a></dt>
+            <dd class="desc"><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603095.html"
+                                onclick="ga('send', 'event', 'Headline', 'news', 'realty');"></a></dd>
+            <dd class="rel"><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603120.html">GTX A노선
+                신한은행컨소시엄이 품었다…우선협상자로 선정</a></dd>
+            <dd class="rel"><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042601605.html">1분기 전국 아파트
+                준공 역대 최대…15만4000가구 입주</a></dd>
+            <dd class="rel"><a href="http://news.chosun.com/site/data/html_dir/2018/04/24/2018042403253.html">[매물] 서울
+                역세권 대로변 코너 신축 4층 건물 31억원</a></dd>
+        </dl>
+        <!-- ##sec_ddang_side_1 part e -->
+        <!-- ##ddang_zip_go_art part s -->
+        <dl class="art_list_item">
+            <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603097.html"
+                   onclick="ga('send', 'event', 'Headline', 'news', 'realty');">집안을 구한말 분위기로 확 바꾼 22평 빌라</a> <span
+                    class="name">이지은 인턴기자</span></dt>
+        </dl>
+        <!-- ##ddang_zip_go_art part e -->
+    </div>
+    <!-- ##headline_art2 part s -->
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700101.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">유럽 갈 때도 미국만큼 깐깐하게 신원검증한다</a> <span
+                class="name">파리=손진석 특파원</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700049.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">재벌·시한부·불륜… '드라마 왕국' MBC 몰락하나</a> <span
+                class="name">이해인 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700103.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">한국당 "강성권 여직원, 외압 때문에 성폭행 진술 번복"</a> <span
+                class="name">최연진 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700308.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">기자협회 "TV조선 압수수색 시도 중단하라"</a> <span
+                class="name">박상기 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700117.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">하명 수사의 결말… KT 이석채 결국 무죄</a> <span
+                class="name">신수지 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042602239.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">검찰, '느릅나무' 한번 가보지도 않고 무혐의 결론냈다</a> <span
+                class="name">오경묵 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042602296.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');"><span class="red">[단독]</span> 보이스피싱 상습범,
+            여경과 '잘못된 만남' <img alt="동영상" src="http://image.chosun.com/cs/201103/video_icon.gif"/></a> <span class="name">안소영 기자</span>
+        </dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/26/2018042603579.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">아들 망칠 뻔한 죄… '헬리콥터 아빠', 반성문 쓰다</a> <span
+                class="name">양지호 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700196.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">42년 된 미국판 '살인의 추억' 범인 잡고보니…</a> <span
+                class="name">정우영 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700132.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">손주 교육에 적극 동참… '학조부모회'도 있어요</a> <span
+                class="name">유소연 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700134.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">국내 시판 모든 담배에 '흡연 유도 향' 성분 들어가</a> <span
+                class="name">최원우 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700122.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">골든타임 출동 위해… 소방 표지, 눈에 띄게 바꼈다 <img
+                src="http://image.chosun.com/cs/201103/photo_icon.gif"/></a> <span class="name">백수진 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://news.chosun.com/site/data/html_dir/2018/04/27/2018042700147.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">대학·종합병원 2인실, 절반 값으로… 하루 9만원대</a> <span
+                class="name">김동섭 보건복지전문기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://health.chosun.com/site/data/html_dir/2018/04/27/2018042700178.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">노인에 나타나는 근감소증, 종아리 둘레만으로 진단 가능</a> <span
+                class="name">김수진 헬스조선 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://health.chosun.com/site/data/html_dir/2018/04/27/2018042700186.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">쉴 새 없이 게임·SNS… 고독의 틈 메우다 중독의 늪 빠진다</a>
+            <span class="name">한희준 헬스조선 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://health.chosun.com/site/data/html_dir/2018/04/27/2018042700184.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">안구건조증은 스마트폰 때문? 의외의 원인 따로 있다!</a> <span
+                class="name">이금숙 헬스조선 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://health.chosun.com/site/data/html_dir/2018/04/27/2018042700149.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');">고혈압·당뇨병엔 담배가 毒인데… 흡연율 더 높다</a> <span
+                class="name">한희준 헬스조선 기자</span></dt>
+    </dl>
+    <dl class="art_list_item">
+        <dt><a href="http://newsteacher.chosun.com/site/data/html_dir/2018/04/26/2018042600084.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headTop');" target="cs_new"><img alt="신문선생"
+                                                                                                  src="http://image.chosun.com/news/2016/nie_icon.png"/>
+            1989년 몰타 유람선서 냉전 종식 알린 이 사람들</a> <span class="name">윤서원 이대부고 역사 교사</span></dt>
+    </dl>
+    <!-- ##headline_art2 part e -->
+    <!-- ##headline_biz part s -->
+    <dl class="art_list_item">
+        <dt><a href="http://biz.chosun.com/site/data/html_dir/2018/04/26/2018042603369.html"
+               onclick="ga('send', 'event', 'Headline', 'news', 'headBiz');" target="cs_new">오늘을 마지막으로 5만원대 되는 삼성전자, 살까?
+            말까?</a> <span class="name">김유정 기자</span></dt>
+    </dl>
+    <!-- ##headline_biz part e -->
+    <!-- ##headline_art3 part s --><!-- ##headline_art3 part e -->
+    <div class="sec_headline_more">
+        <a href="#sec_po_so_int" id="sec_headline_more_id"
+           onclick="ga('send', 'event', 'Headline', 'link', 'headmore');">더보기</a>
+    </div>
 </div>
-</body>
-</html>

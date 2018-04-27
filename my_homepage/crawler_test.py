@@ -41,16 +41,27 @@ def chosun_news_title():
     news_section = soup.find(class_='sec_con')
 
     result = []
-    top_news = news_section.find('div', id='top_news').h2
-    top_news_tu = (
-        'chosun',
-        top_news.find('em').text + ' ' + top_news.find('em').next_sibling.text,
-        top_news.find('a').get('href')
-    )
+    top_news = news_section.find('div', id='top_news')
+    if not top_news:
+        news_section = soup.find('section', id='sec_headline')
+        top_news = news_section.find_all('a', onclick="ga('send', 'event', 'Headline', 'news', 'Top');")[0]
+        top_news_tu = (
+            'chosun',
+            top_news.text,
+            top_news.get('href')
+        )
+    else:
+        top_news_tu = (
+            'chosun',
+            top_news.find('em').text + ' ' + top_news.find('em').next_sibling.text,
+            top_news.find('a').get('href')
+        )
+    result.append(top_news_tu)
+
     second_news = news_section.find('dl', id='second_news')
     second_news_tu = ('chosun', second_news.dt.text, second_news.a.get('href'))
-    result.append(top_news_tu)
     result.append(second_news_tu)
+
     for item in news_section.find_all('dl', class_='art_list_item')[0:8]:
         string = item.dt.a.text
         link = item.dt.a.get('href')
@@ -61,3 +72,7 @@ def chosun_news_title():
 
 def all_crawler_function():
     return naver_news_title() + daum_news_title() + chosun_news_title()
+
+
+for i in chosun_news_title():
+    print(i)
