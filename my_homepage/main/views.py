@@ -18,21 +18,15 @@ def index_page(request):
         for pres, title, link in all_crawler_function():
             NewsTitle.objects.create(pres=pres, title=title, link=link)
     if request.user.is_authenticated:
-        user_selected_news = request.user.newsselectmodel
         selected_news_objects = request.user.newsselectmodel.get_user_news_objects()
-        data = {
-            'naver': user_selected_news.naver,
-            'daum': user_selected_news.daum,
-            'chosun': user_selected_news.chosun,
-        }
-        news_select_form = NewsSelectForm(data, initial=data)
+        news_select_form = NewsSelectForm(instance=request.user.newsselectmodel)
     else:
-        news_select_form = NewsSelectForm()
         selected_news_objects = NewsTitle.objects.all()
+        news_select_form = NewsSelectForm()
     form = LoginForm()
     context = {
-        'selected_news_objects': selected_news_objects,
-        'news_select_form': news_select_form,
+        'selected_news_objects': selected_news_objects, # index에 뉴스 타이틀 뽑아오는데에 사용
+        'news_select_form': news_select_form, # news_select_section 에 check_box 뽑아오는데에 사용
         'form': form,
     }
     return render(request, 'main/index.html', context)
