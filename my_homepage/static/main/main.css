@@ -57,9 +57,13 @@ div#search-section-wrapper div.container {
     padding: 0;
 }
 
+div.checkbox-cover {
+    margin-left: 57px;
+}
+
 input.search-btn {
     margin-left: 5px;
-    background-color: #ced4da;
+    background-color: lightgray;
     color: #383d41;
 }
 
@@ -94,7 +98,7 @@ div.news-select-group-title h5 {
     margin-bottom: 20px;
 }
 
-form label {
+form label.news-selection-label {
     color: white;
 }
 

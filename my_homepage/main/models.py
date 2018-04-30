@@ -18,7 +18,12 @@ class NewsSelectModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     naver = models.BooleanField(default=True)
     daum = models.BooleanField(default=True)
-    chosun = models.BooleanField(default=True)
+    chosun = models.BooleanField(default=True, verbose_name='조선일보')
+    joongang = models.BooleanField(default=True, verbose_name='중앙일보')
+    donga = models.BooleanField(default=True, verbose_name='동아일보')
+    hani = models.BooleanField(default=True, verbose_name='한겨레')
+    ohmy = models.BooleanField(default=True, verbose_name='오마이뉴스')
+    khan = models.BooleanField(default=True, verbose_name='경향신문')
 
     def get_user_news_objects(self):
         fields_dict = dict(self.__dict__)

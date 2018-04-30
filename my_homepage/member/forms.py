@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model, authenticate, login
 from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserCreationForm
 from django.forms import TextInput, PasswordInput, EmailInput
 
-
 User = get_user_model()
 
 
@@ -76,6 +75,50 @@ class SignUpForm(UserCreationForm):
             'email': EmailInput(attrs={
                 'autofocus': True,
                 'id': 'signup-email',
+                'class': 'form-control',
+                'placeholder': 'EMAIL',
+                'aria-describedby': 'emailHelpBlock',
+            }),
+        }
+
+
+class UserForm(forms.ModelForm):
+    password1 = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'autofocus': True,
+            'id': 'userinfo-password1',
+            'class': 'form-control',
+            'placeholder': 'PASSWORD1',
+            'aria-describedby': 'password1HelpBlock',
+        }
+    ))
+    password2 = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'autofocus': True,
+            'id': 'userinfo-password2',
+            'class': 'form-control',
+            'placeholder': 'PASSWORD2',
+            'aria-describedby': 'password2HelpBlock',
+        }
+    ))
+
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+        ]
+        widgets = {
+            'username': TextInput(attrs={
+                'disabled': True,
+                'autofocus': True,
+                'id': 'disabledTextInput',
+                'class': 'form-control',
+                'aria-describedby': 'usernameHelpBlock',
+            }),
+            'email': EmailInput(attrs={
+                'autofocus': True,
+                'id': 'userinfo-email',
                 'class': 'form-control',
                 'placeholder': 'EMAIL',
                 'aria-describedby': 'emailHelpBlock',
