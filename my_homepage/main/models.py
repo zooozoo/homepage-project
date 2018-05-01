@@ -24,6 +24,7 @@ class NewsSelectModel(models.Model):
     hani = models.BooleanField(default=True, verbose_name='한겨레')
     ohmy = models.BooleanField(default=True, verbose_name='오마이뉴스')
     khan = models.BooleanField(default=True, verbose_name='경향신문')
+    kbs = models.BooleanField(default=True, verbose_name='kbs')
 
     def get_user_news_objects(self):
         fields_dict = dict(self.__dict__)

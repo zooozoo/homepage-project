@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.contrib.auth import login, logout, get_user_model
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -7,6 +7,7 @@ from main.models import NewsSelectModel
 from member.forms import LoginForm, SignUpForm, UserForm
 
 User = get_user_model()
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -49,9 +50,10 @@ def signup_view(request):
 
 def change_user_info(request):
     if request.method == 'POST':
+        test = request.POST
         return HttpResponse('test')
-    user = User.objects.first()
-    form = UserForm(instance=user)
+
+    form = UserForm(instance=request.user)
     context = {
         'form': form,
         'home_button': True

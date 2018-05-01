@@ -83,24 +83,45 @@ class SignUpForm(UserCreationForm):
 
 
 class UserForm(forms.ModelForm):
-    password1 = forms.CharField(widget=forms.TextInput(
-        attrs={
-            'autofocus': True,
-            'id': 'userinfo-password1',
-            'class': 'form-control',
-            'placeholder': 'PASSWORD1',
-            'aria-describedby': 'password1HelpBlock',
-        }
-    ))
-    password2 = forms.CharField(widget=forms.TextInput(
-        attrs={
-            'autofocus': True,
-            'id': 'userinfo-password2',
-            'class': 'form-control',
-            'placeholder': 'PASSWORD2',
-            'aria-describedby': 'password2HelpBlock',
-        }
-    ))
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        field_list = ['username', 'email']
+        for field in field_list:
+            self.fields[field].required = False
+
+    old_password = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={
+                'autofocus': True,
+                'id': 'userinfo-old-password',
+                'class': 'form-control',
+                'placeholder': '기존 비밀번호',
+                'aria-describedby': 'oldpasswordHelpBlock',
+            })
+    )
+    new_password1 = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={
+                'autofocus': True,
+                'id': 'userinfo-new-password1',
+                'class': 'form-control',
+                'placeholder': '새 비밀번호',
+                'aria-describedby': 'newpassword1HelpBlock',
+            }),
+    )
+    new_password2 = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={
+                'autofocus': True,
+                'id': 'userinfo-new-password2',
+                'class': 'form-control',
+                'placeholder': '새 비밀번호 확인',
+                'aria-describedby': 'newpassword2HelpBlock',
+            }),
+    )
 
     class Meta:
         model = User
@@ -110,6 +131,7 @@ class UserForm(forms.ModelForm):
         ]
         widgets = {
             'username': TextInput(attrs={
+                'readonly': True,
                 'disabled': True,
                 'autofocus': True,
                 'id': 'disabledTextInput',

@@ -88,7 +88,7 @@ def joongang_news_title():
 
     # 메인기사
     main_article_section = soup.find('div', class_='clt')
-    for item in main_article_section.find_all('strong', class_='headline')[:4]:
+    for item in main_article_section.find_all('strong', class_='headline')[:5]:
         string = item.text
         link = item.a.get('href')
         tu = ('joongang', string, link)
@@ -212,9 +212,33 @@ def khan_news_title():
     return result
 
 
+def kbs_nes_title():
+    req = requests.get('http://news.kbs.co.kr/common/main.html')
+    html = req.content
+    soup = BeautifulSoup(html, 'lxml')
+
+    result = []
+    # top news
+    top_news = soup.find('div', class_='headline_top')
+    for item in top_news.find_all('li'):
+        string = item.img['alt']
+        link = 'http://news.kbs.co.kr' + item.a.get('href')
+        tu = ('kbs', string, link)
+        result.append(tu)
+
+    # head lines
+    head_line = soup.find('div', class_='headline_blk_list1')
+    for item in head_line.find_all('a')[:7]:
+        string = item.text.strip()
+        link = 'http://news.kbs.co.kr' + item.get('href')
+        tu = ('kbs', string, link)
+        result.append(tu)
+    return result
+
+
 def all_crawler_function():
     return naver_news_title() + daum_news_title() + chosun_news_title() \
            + joongang_news_title() + donga_news_title() + hani_news_title() \
-           + ohmy_news_title() + khan_news_title()
+           + ohmy_news_title() + khan_news_title() + kbs_nes_title()
 
 # 언론사 추가시 main의 NesSelectModel에 필드 추가 및 forms에 필드와 위젯 추가

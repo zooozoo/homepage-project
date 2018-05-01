@@ -35,7 +35,7 @@ nav#nav {
 div#nav-item-wraper {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 1.5s linear, opacity 1.5s linear;
+    transition: visibility 3s linear, opacity 3s linear;
     position: relative;
 }
 
