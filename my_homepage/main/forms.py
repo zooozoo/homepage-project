@@ -17,6 +17,8 @@ class NewsSelectForm(forms.ModelForm):
             'ohmy',
             'khan',
             'kbs',
+            'sbs',
+            'mbc',
         ]
         widgets = {
             'naver': CheckboxInput(attrs={
@@ -62,6 +64,16 @@ class NewsSelectForm(forms.ModelForm):
             'kbs': CheckboxInput(attrs={
                 'autofocus': True,
                 'id': 'kbs',
+                'class': 'custom-control-input',
+            }),
+            'sbs': CheckboxInput(attrs={
+                'autofocus': True,
+                'id': 'sbs',
+                'class': 'custom-control-input',
+            }),
+            'mbc': CheckboxInput(attrs={
+                'autofocus': True,
+                'id': 'mbc',
                 'class': 'custom-control-input',
             }),
         }

@@ -1,4 +1,5 @@
-from django.contrib.auth import login, logout, get_user_model
+from django.contrib.auth import login, logout, get_user_model, update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -48,12 +49,16 @@ def signup_view(request):
     return render(request, 'member/signup.html', context)
 
 
+@login_required(login_url='/member/login')
 def change_user_info(request):
     if request.method == 'POST':
-        test = request.POST
-        return HttpResponse('test')
-
-    form = UserForm(instance=request.user)
+        form = UserForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.instance)
+            return redirect('/member/change-user-info')
+    else:
+        form = UserForm(instance=request.user)
     context = {
         'form': form,
         'home_button': True

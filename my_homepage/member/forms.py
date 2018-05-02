@@ -89,20 +89,9 @@ class UserForm(forms.ModelForm):
         for field in field_list:
             self.fields[field].required = False
 
-    old_password = forms.CharField(
-        required=False,
-        widget=forms.TextInput(
-            attrs={
-                'autofocus': True,
-                'id': 'userinfo-old-password',
-                'class': 'form-control',
-                'placeholder': '기존 비밀번호',
-                'aria-describedby': 'oldpasswordHelpBlock',
-            })
-    )
     new_password1 = forms.CharField(
         required=False,
-        widget=forms.TextInput(
+        widget=forms.PasswordInput(
             attrs={
                 'autofocus': True,
                 'id': 'userinfo-new-password1',
@@ -113,7 +102,7 @@ class UserForm(forms.ModelForm):
     )
     new_password2 = forms.CharField(
         required=False,
-        widget=forms.TextInput(
+        widget=forms.PasswordInput(
             attrs={
                 'autofocus': True,
                 'id': 'userinfo-new-password2',
@@ -121,6 +110,17 @@ class UserForm(forms.ModelForm):
                 'placeholder': '새 비밀번호 확인',
                 'aria-describedby': 'newpassword2HelpBlock',
             }),
+    )
+    old_password = forms.CharField(
+        required=False,
+        widget=forms.PasswordInput(
+            attrs={
+                'autofocus': True,
+                'id': 'userinfo-old-password',
+                'class': 'form-control',
+                'placeholder': '기존 비밀번호',
+                'aria-describedby': 'oldpasswordHelpBlock',
+            })
     )
 
     class Meta:
@@ -131,7 +131,7 @@ class UserForm(forms.ModelForm):
         ]
         widgets = {
             'username': TextInput(attrs={
-                'readonly': True,
+                # 'readonly': True,
                 'disabled': True,
                 'autofocus': True,
                 'id': 'disabledTextInput',
@@ -146,3 +146,48 @@ class UserForm(forms.ModelForm):
                 'aria-describedby': 'emailHelpBlock',
             }),
         }
+
+
+    def clean_new_password1(self):
+        if not self.cleaned_data.get('new_password1'):
+            return None
+        return self.cleaned_data['new_password1']
+
+    def clean_new_password2(self):
+        if not self.cleaned_data.get('new_password2'):
+            return None
+        return self.cleaned_data['new_password2']
+
+    def clean_old_password(self):
+        password = self.cleaned_data.get('old_password')
+        if not self.instance.check_password(password):
+            raise forms.ValidationError('정보 변경을 위해서 기존 비밀번호를 입력해 주세요')
+        return password
+
+    def clean(self):
+        test = self.instance
+        super().clean()
+        new_password1 = self.cleaned_data.get('new_password1')
+        new_password2 = self.cleaned_data.get('new_password2')
+
+        if new_password1 and new_password2:
+            if new_password1 != new_password2:
+                raise forms.ValidationError(
+                    "새 비밀번호가 일치하지 않습니다."
+                )
+        elif new_password1 is None and new_password2 is None:
+            pass
+        else:
+            raise forms.ValidationError(
+                "비밀번호 변경을 위해선 '새 비밀번호' '새 비밀번호 확인'란에 모두 입력하셔야 합니다."
+            )
+
+    def save(self, commit=True):
+        user = self.instance
+        # username = self.instance.username
+        # email = self.instance.email
+        if self.instance.email != self.cleaned_data.get('email'):
+            user.email = self.cleaned_data.get('email')
+        if self.cleaned_data['new_password2'] is not None:
+            user.set_password(self.cleaned_data.get('new_password2'))
+        user.save()

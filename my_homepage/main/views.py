@@ -12,7 +12,7 @@ from .utils import all_crawler_function
 
 # Create your views here.
 def index_page(request):
-    if NewsTitle.objects.last() is None or timedelta(minutes=30) < datetime.now(
+    if NewsTitle.objects.last() is None or timedelta(minutes=0.5) < datetime.now(
             timezone.utc) - NewsTitle.objects.last().created_time:
         NewsTitle.objects.all().delete()
         for pres, title, link in all_crawler_function():

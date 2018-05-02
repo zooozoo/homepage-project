@@ -1,10 +1,6 @@
-h6#password_update_division {
-  display: flex;
-  flex-direction: row;
-}
-h6#password_update_division:before, h6:after{
-  content: "";
-  flex: 1 1;
-  border-bottom: 1px solid #000;
-  margin: auto;
+div#password-division {
+    height: 1px;
+    background: black;
+    width: auto;
+    margin-bottom: 10px;
 }

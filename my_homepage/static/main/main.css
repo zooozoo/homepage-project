@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: white;
     position: relative;
+    padding-bottom: 50px;
 }
 
 header {
@@ -35,7 +36,7 @@ nav#nav {
 div#nav-item-wraper {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 3s linear, opacity 3s linear;
+    transition: visibility 1s linear, opacity 1s linear;
     position: relative;
 }
 
