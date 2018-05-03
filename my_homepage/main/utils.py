@@ -262,7 +262,7 @@ def sbs_news_title():
 
     # hot news
     hot_art_section = soup.find('div', class_='hot_area')
-    for item in hot_art_section.find_all('li')[:4]:
+    for item in hot_art_section.find_all('li')[:5]:
         string = re.sub('\s+', ' ', item.a.text.strip())
         link = 'https://news.sbs.co.kr' + item.a.get('href')
         tu = ('sbs', string, link)

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model, authenticate, login
-from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.forms import TextInput, PasswordInput, EmailInput
 
 User = get_user_model()
@@ -66,6 +66,7 @@ class SignUpForm(UserCreationForm):
         ]
         widgets = {
             'username': TextInput(attrs={
+                'readonly': True,
                 'autofocus': True,
                 'id': 'signup-username',
                 'class': 'form-control',
@@ -131,8 +132,7 @@ class UserForm(forms.ModelForm):
         ]
         widgets = {
             'username': TextInput(attrs={
-                # 'readonly': True,
-                'disabled': True,
+                'readonly': True,
                 'autofocus': True,
                 'id': 'disabledTextInput',
                 'class': 'form-control',
@@ -147,6 +147,10 @@ class UserForm(forms.ModelForm):
             }),
         }
 
+    def clean_email(self):
+        if self.instance.email != self.cleaned_data.get('email'):
+            return self.cleaned_data.get('email')
+        return self.instance.email
 
     def clean_new_password1(self):
         if not self.cleaned_data.get('new_password1'):
@@ -165,7 +169,6 @@ class UserForm(forms.ModelForm):
         return password
 
     def clean(self):
-        test = self.instance
         super().clean()
         new_password1 = self.cleaned_data.get('new_password1')
         new_password2 = self.cleaned_data.get('new_password2')
@@ -175,6 +178,8 @@ class UserForm(forms.ModelForm):
                 raise forms.ValidationError(
                     "새 비밀번호가 일치하지 않습니다."
                 )
+            else:
+                self.instance.set_password(new_password2)
         elif new_password1 is None and new_password2 is None:
             pass
         else:
@@ -182,12 +187,3 @@ class UserForm(forms.ModelForm):
                 "비밀번호 변경을 위해선 '새 비밀번호' '새 비밀번호 확인'란에 모두 입력하셔야 합니다."
             )
 
-    def save(self, commit=True):
-        user = self.instance
-        # username = self.instance.username
-        # email = self.instance.email
-        if self.instance.email != self.cleaned_data.get('email'):
-            user.email = self.cleaned_data.get('email')
-        if self.cleaned_data['new_password2'] is not None:
-            user.set_password(self.cleaned_data.get('new_password2'))
-        user.save()

@@ -1,26 +1,33 @@
 {% extends "base.html" %}
 
-
 {% block content %}
+
     <div class="container">
-        <div id="signup-wrapper" class="row justify-content-md-center">
-            <form class="form-horizontal col-lg-5" action="{% url 'change-user-info' %}" method="post">
-                {% csrf_token %}
-                {% for field in form %}
-                    {% if field.name == 'old_password' %}
-                        <div id="password-division"></div>
-                    {% endif %}
-                    <div class="form-group">
-                        <label for="{{ field.id_for_label }}" class="control-label">{{ field.label }}
-                        </label>
-                        {{ field }}
-                        <small class="help-block">{{ field.errors }}</small>
-                    </div>
-                {% endfor %}
-                <small id="passwordHelpBlock" class="form-text">{{ form.non_field_errors }}</small>
-                <button id="signuppage-signup-btn" type="submit" class="btn btn-primary">수정</button>
-            </form>
+        <div id="user-info-wrapper" class="row justify-content-md-center">
+            <div class="form-wrapper form-horizontal col-lg-5 ">
+                <form action="{% url 'change-user-info' %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name == 'old_password' %}
+                            <div id="password-division"></div>
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="{{ field.id_for_label }}" class="control-label">{{ field.label }}
+                            </label>
+                            {{ field }}
+                            <small class="help-block">{{ field.errors }}</small>
+                        </div>
+                    {% endfor %}
+                    <small id="passwordHelpBlock" class="form-text">{{ form.non_field_errors }}</small>
+                    <button id="user-info-btn" type="submit" class="btn btn-primary">수정</button>
+                </form>
+                <form onsubmit="return confirm('정말로 탈퇴 하시겠습니까?');" id="cancel-membership-form"
+                      action="{% url 'cancel-membership' %}"
+                      method="post">
+                    {% csrf_token %}
+                    <input id="cm-btn" type="submit" class="btn btn-danger" value="회원탈퇴">
+                </form>
+            </div>
         </div>
     </div>
-
 {% endblock %}

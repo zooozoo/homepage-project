@@ -18,7 +18,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from main.views import index_page, news_select
-from member.views import login_view, logout_view, signup_view, change_user_info
+from member.views import (
+    login_view,
+    logout_view,
+    signup_view,
+    change_user_info,
+    cancel_membership,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +34,6 @@ urlpatterns = [
     path('member/logout', logout_view, name='logout'),
     path('member/signup', signup_view, name='signup'),
     path('member/change-user-info', change_user_info, name='change-user-info'),
+    path('member/cancel-membership', cancel_membership, name='cancel-membership'),
 ]  # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # DEBUG True 에서는 자동으로 static url이 추가된다.

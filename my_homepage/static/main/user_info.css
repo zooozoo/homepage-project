@@ -4,3 +4,14 @@ div#password-division {
     width: auto;
     margin-bottom: 10px;
 }
+div#user-info-wrapper {
+    margin-top: 40px;
+}
+button#user-info-btn {
+    width: 100%;
+}
+
+input#cm-btn {
+    width: 100%;
+    margin-top: 10px;
+}

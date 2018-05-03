@@ -52,7 +52,10 @@ def signup_view(request):
 @login_required(login_url='/member/login')
 def change_user_info(request):
     if request.method == 'POST':
-        form = UserForm(request.POST, instance=request.user)
+        form = UserForm(
+            request.POST,
+            instance=request.user
+        )
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.instance)
@@ -64,3 +67,12 @@ def change_user_info(request):
         'home_button': True
     }
     return render(request, 'member/user_info.html', context)
+
+
+@login_required(login_url='/member/login')
+def cancel_membership(request):
+    if request.POST:
+        request.user.delete()
+        request.user.save()
+        return redirect('/')
+    return redirect('/')
