@@ -322,13 +322,12 @@ def all_crawler_collect():
            + ohmy_news_title() + khan_news_title() + kbs_news_title() + \
            sbs_news_title() + mbc_news_title()
 
-
 # 언론사 추가시 main의 NesSelectModel에 필드 추가 및 forms에 필드와 위젯 추가
 
 
-def ceate_news_title_objects(news_title):
-    if news_title.last() is None or timedelta(minutes=0.5) < datetime.now(
-            timezone.utc) - news_title.last().created_time:
-        news_title.delete()
-        for pres, title, link in all_crawler_collect():
-            NewsTitle.objects.create(pres=pres, title=title, link=link)
+# def create_news_title_objects(news_title):
+#     if news_title.last() is None or timedelta(minutes=0.5) < datetime.now(
+#             timezone.utc) - news_title.last().created_time:
+#         news_title.delete()
+#         for pres, title, link in all_crawler_collect():
+#             NewsTitle.objects.create(pres=pres, title=title, link=link)

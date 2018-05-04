@@ -40,6 +40,9 @@ SECRET_KEY = config_secret_common['django']['secret_key']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CELERY_BROKER_URL = 'amqp://localhost'
+
+
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'member.User'
