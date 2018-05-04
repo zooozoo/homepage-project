@@ -92,14 +92,26 @@ def joongang_news_title():
         tu = ('joongang', string, link)
         result.append(tu)
 
+    # 위의 hot뉴스 없을 경우 today's hot 가져오는 로직
+    hot_article_section = soup.find(
+        'div',
+        class_='todays_hot'
+    )
+    tu = (
+        'joongang',
+        hot_article_section.find('span', class_='text_wrap').a.text,
+        hot_article_section.find('span', class_='text_wrap').a.get('href'),
+    )
+    result.append(tu)
+
     # main_news
     main_article_section = soup.find('div', class_='clt')
-    for item in main_article_section.find_all('strong', class_='headline')[:4]:
+    for item in main_article_section.find_all('strong', class_='headline')[:10]:
         string = item.text
         link = item.a.get('href')
         tu = ('joongang', string, link)
         result.append(tu)
-    return result
+    return result[:10]
 
 
 def donga_news_title():
@@ -116,14 +128,14 @@ def donga_news_title():
 
     # main_news
     main_news = soup.find('div', class_='mNewsLi')
-    for item in main_news.find_all('a')[:10]:
-        if item.text is '':
+    for item in main_news.find_all('a')[:15]:
+        if item.text is '' or len(item.text) > 40:
             continue
         string = item.text
         link = item.get('href')
         tu = ('donga', string, link)
         result.append(tu)
-    return result
+    return result[:10]
 
 
 # 한겨레
@@ -271,6 +283,7 @@ def sbs_news_title():
         result.append(tu)
     return result
 
+
 def mbc_news_title():
     req = requests.get('http://imnews.imbc.com/index_pc.html')
     html = req.content
@@ -305,7 +318,3 @@ def all_crawler_function():
            + joongang_news_title() + donga_news_title() + hani_news_title() \
            + ohmy_news_title() + khan_news_title() + kbs_news_title() + \
            sbs_news_title() + mbc_news_title()
-
-
-
-

@@ -36,7 +36,6 @@ def daum_news_title():
     return result
 
 
-# top news관련 확인필요
 def chosun_news_title():
     req = requests.get('http://www.chosun.com/')
     html = req.content.decode('euc-kr', 'replace')
@@ -44,6 +43,7 @@ def chosun_news_title():
     news_section = soup.find(class_='sec_con')
 
     result = []
+    # top news
     top_news = news_section.find('div', id='top_news')
     if not top_news:
         news_section = soup.find('section', id='sec_headline')
@@ -61,10 +61,12 @@ def chosun_news_title():
         )
     result.append(top_news_tu)
 
+    # second_news
     second_news = news_section.find('dl', id='second_news')
     second_news_tu = ('chosun', second_news.dt.text, second_news.a.get('href'))
     result.append(second_news_tu)
 
+    # main_news
     for item in news_section.find_all('dl', class_='art_list_item')[0:8]:
         string = item.dt.a.text
         link = item.dt.a.get('href')
@@ -90,14 +92,26 @@ def joongang_news_title():
         tu = ('joongang', string, link)
         result.append(tu)
 
+    # 위의 hot뉴스 없을 경우 today's hot 가져오는 로직
+    hot_article_section = soup.find(
+        'div',
+        class_='todays_hot'
+    )
+    tu = (
+        'joongang',
+        hot_article_section.find('span', class_='text_wrap').a.text,
+        hot_article_section.find('span', class_='text_wrap').a.get('href'),
+    )
+    result.append(tu)
+
     # main_news
     main_article_section = soup.find('div', class_='clt')
-    for item in main_article_section.find_all('strong', class_='headline')[:4]:
+    for item in main_article_section.find_all('strong', class_='headline')[:10]:
         string = item.text
         link = item.a.get('href')
         tu = ('joongang', string, link)
         result.append(tu)
-    return result
+    return result[:10]
 
 
 def donga_news_title():
@@ -114,14 +128,14 @@ def donga_news_title():
 
     # main_news
     main_news = soup.find('div', class_='mNewsLi')
-    for item in main_news.find_all('a')[:10]:
-        if item.text is '':
+    for item in main_news.find_all('a')[:15]:
+        if item.text is '' or len(item.text) > 40:
             continue
         string = item.text
         link = item.get('href')
         tu = ('donga', string, link)
         result.append(tu)
-    return result
+    return result[:10]
 
 
 # 한겨레
@@ -297,6 +311,14 @@ def mbc_news_title():
         tu = ('mbc', string, link)
         result.append(tu)
     return result
+
+
+def all_crawler_function():
+    return naver_news_title() + daum_news_title() + chosun_news_title() \
+           + joongang_news_title() + donga_news_title() + hani_news_title() \
+           + ohmy_news_title() + khan_news_title() + kbs_news_title() + \
+           sbs_news_title() + mbc_news_title()
+
 
 
 def all_crawler_function():
