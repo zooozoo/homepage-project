@@ -89,23 +89,24 @@ def joongang_news_title():
         'div',
         longdesc='joongang:15re_home_showcase:showcase_type_top_news:1:Top news type'
     )
-    for item in hot_article_section.find_all('div', class_='text_area'):
-        string = item.find('span', class_='text_center').a.text.replace('\xa0', '')
-        link = item.find('span', class_='text_center').a.get('href')
-        tu = ('joongang', string, link)
+    if hot_article_section:
+        for item in hot_article_section.find_all('div', class_='text_area'):
+            string = item.find('span', class_='text_center').a.text.replace('\xa0', '')
+            link = item.find('span', class_='text_center').a.get('href')
+            tu = ('joongang', string, link)
+            result.append(tu)
+    else:
+        # 위의 hot뉴스 없을 경우 today's hot 가져오는 로직
+        hot_article_section = soup.find(
+            'div',
+            class_='todays_hot'
+        )
+        tu = (
+            'joongang',
+            hot_article_section.find('span', class_='text_wrap').a.text,
+            hot_article_section.find('span', class_='text_wrap').a.get('href'),
+        )
         result.append(tu)
-
-    # 위의 hot뉴스 없을 경우 today's hot 가져오는 로직
-    hot_article_section = soup.find(
-        'div',
-        class_='todays_hot'
-    )
-    tu = (
-        'joongang',
-        hot_article_section.find('span', class_='text_wrap').a.text,
-        hot_article_section.find('span', class_='text_wrap').a.get('href'),
-    )
-    result.append(tu)
 
     # main_news
     main_article_section = soup.find('div', class_='clt')
@@ -192,7 +193,7 @@ def ohmy_news_title():
 
 def khan_news_title():
     session = requests.Session()
-    session.max_redirects = 200
+    session.max_redirects = 1000000
     req = session.get('http://www.khan.co.kr/')
     html = req.content
     soup = BeautifulSoup(html, 'lxml')

@@ -11,7 +11,9 @@ class NewsTitle(models.Model):
     created_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.pres
+        pres_name = str(self.pres)
+        time = str(self.created_time)
+        return pres_name + ' ' + time
 
 
 class NewsSelectModel(models.Model):
