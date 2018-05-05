@@ -21,7 +21,7 @@ def index_page(request):
     # if news_title.last() is None or timedelta(minutes=0.3) < datetime.now(
     #         timezone.utc) - news_title.last().created_time:
     news_title = NewsTitle.objects.filter(
-        created_time__gte=datetime.now(timezone.utc) - timedelta(minutes=2)
+        created_time__gte=datetime.now(timezone.utc) - timedelta(minutes=1)
     )
     # news_title = NewsTitle.objects.all()
     if request.user.is_authenticated:
