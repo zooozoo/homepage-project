@@ -1,5 +1,4 @@
 import re
-from datetime import datetime, timedelta, timezone
 
 import requests
 from bs4 import BeautifulSoup
@@ -351,4 +350,3 @@ class Crawling():
                + self.joongang_news_title() + self.donga_news_title() + self.hani_news_title() \
                + self.ohmy_news_title() + self.khan_news_title() + self.kbs_news_title() + \
                self.sbs_news_title() + self.mbc_news_title()
-

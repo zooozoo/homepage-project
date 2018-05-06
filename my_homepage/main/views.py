@@ -1,13 +1,9 @@
-from datetime import datetime, timezone, timedelta
 
 from django.contrib.auth.decorators import login_required
-from django.db import transaction
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from main.forms import NewsSelectForm
 from main.models import NewsTitle
-from main.tasks import crawling
 from member.forms import LoginForm
 
 
