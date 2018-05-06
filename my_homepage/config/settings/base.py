@@ -13,7 +13,8 @@ import json
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-from celery.schedules import crontab
+from datetime import timedelta
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
@@ -47,8 +48,8 @@ CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_BEAT_SCHEDULE = {
     'crawling-task': {
         'task': 'main.tasks.crawling',
-        'schedule': 15.0,
-        # 'schedule': crontab(minute=1),
+        # 'schedule': 15.0,
+        'schedule': timedelta(minutes=1),
     },
 }
 
