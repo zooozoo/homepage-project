@@ -11,7 +11,7 @@
                                 <p class="text-uppercase font-weight-bold">{{ field.label }}</p>
                             </div>
                             <ul class="list-group list-group-flush news-title-ul">
-                                {% for news in selected_news_objects %}
+                                {% for news in news_title %}
                                     {% if field.name == news.pres %}
                                         <li class="list-group-item list-group-item-action news-title-li">
                                             <a class="news-title-link" href="{{ news.link }}">{{ news.title }}</a>

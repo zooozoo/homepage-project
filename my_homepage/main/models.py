@@ -9,9 +9,13 @@ class NewsTitle(models.Model):
     title = models.CharField(max_length=100)
     link = models.CharField(max_length=200)
     created_time = models.DateTimeField(auto_now=True)
+    version = models.BigIntegerField()
 
     def __str__(self):
-        return self.pres
+        pres_name = str(self.pres)
+        time = str(self.created_time)
+        version = str(self.version)
+        return pres_name + ' ' + time + ' / ' + version
 
 
 class NewsSelectModel(models.Model):
@@ -27,14 +31,6 @@ class NewsSelectModel(models.Model):
     kbs = models.BooleanField(default=True, verbose_name='kbs')
     sbs = models.BooleanField(default=True, verbose_name='sbs')
     mbc = models.BooleanField(default=True, verbose_name='mbc')
-
-    def get_user_news_objects(self):
-        fields_dict = dict(self.__dict__)
-        picked_list = []
-        for field, value in fields_dict.items():
-            if value is True:
-                picked_list.append(field)
-        return NewsTitle.objects.filter(pres__in=picked_list)
 
     def __str__(self):
         return f'{self.user}\'s news select list'
