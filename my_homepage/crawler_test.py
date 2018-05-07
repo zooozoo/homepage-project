@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import os
 import django
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "my_homepage.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
 
 from main.models import NewsTitle
@@ -337,3 +337,5 @@ def all_crawler_collect():
            + joongang_news_title() + donga_news_title() + hani_news_title() \
            + ohmy_news_title() + khan_news_title() + kbs_news_title() + \
            sbs_news_title() + mbc_news_title()
+
+

@@ -1,6 +1,7 @@
 from .base import *
+import urllib.parse
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -22,13 +23,18 @@ AWS_STORAGE_BUCKET_NAME = config_secret_common['aws']['AWS_STORAGE_BUCKET_NAME']
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'ap-northeast-2'
 S3_USE_SIGV4 = True
+
+aws_access_key_id = urllib.parse.quote(f'{AWS_ACCESS_KEY_ID}', safe='')
+aws_secret_access_key = urllib.parse.quote(f'{AWS_SECRET_ACCESS_KEY}', safe='')
+
+CELERY_BROKER_URL = f"sqs://{aws_access_key_id}:{aws_secret_access_key}@"
+
 # AWS_S3_OBJECT_PARAMETERS = {
 #     'CacheControl': 'max-age=86400',
 # }
 # AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 # celery broker setting
-CELERY_BROKER_URL = 'amqp://custom-homepage-project.ap-northeast-2.elasticbeanstalk.com/'
 
 # loadblancer health check 에러를 해결하기 위한 코드
 import requests
