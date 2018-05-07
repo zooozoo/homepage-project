@@ -43,15 +43,13 @@ SECRET_KEY = config_secret_common['django']['secret_key']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CELERY_BROKER_URL = 'amqp://localhost'
-
-CELERY_BEAT_SCHEDULE = {
-    'crawling-task': {
-        'task': 'main.tasks.crawling',
-        # 'schedule': 15.0,
-        'schedule': timedelta(minutes=1),
-    },
-}
+# CELERY_BEAT_SCHEDULE = {
+#     'crawling-task': {
+#         'task': 'main.tasks.crawling',
+#         # 'schedule': 15.0,
+#         'schedule': timedelta(minutes=1),
+#     },
+# }
 
 ALLOWED_HOSTS = []
 

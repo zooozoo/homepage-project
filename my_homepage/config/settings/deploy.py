@@ -7,7 +7,6 @@ ALLOWED_HOSTS = [
     '.elasticbeanstalk.com',
 ]
 
-# local의 데이터베이스
 DATABASES = config_secret_common["django"]["database-aws-rds"]
 
 STATICFILES_LOCATION = 'static'
@@ -28,6 +27,8 @@ S3_USE_SIGV4 = True
 # }
 # AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
+# celery broker setting
+CELERY_BROKER_URL = 'amqp://custom-homepage-project.ap-northeast-2.elasticbeanstalk.com/'
 
 # loadblancer health check 에러를 해결하기 위한 코드
 import requests

@@ -1,3 +1,4 @@
+from datetime import timedelta, datetime, timezone
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
@@ -6,11 +7,16 @@ from main.forms import NewsSelectForm
 from main.models import NewsTitle
 from member.forms import LoginForm
 
+from .tasks import crawling
+
 
 # from .tasks import create_news_title_objects
 
 # Create your views here.
 def index_page(request):
+    if NewsTitle.objects.last() is None or timedelta(minutes=1) < datetime.now(
+            timezone.utc) - NewsTitle.objects.last().created_time:
+        crawling.delay()
 
     latest_version = NewsTitle.objects.latest('version').version
     news_title = NewsTitle.objects.filter(version=latest_version)
