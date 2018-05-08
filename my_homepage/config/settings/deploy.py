@@ -1,7 +1,7 @@
 from .base import *
 import urllib.parse
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',

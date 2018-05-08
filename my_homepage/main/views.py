@@ -16,7 +16,7 @@ from .tasks import crawling
 
 # Create your views here.
 def index_page(request):
-    if NewsTitle.objects.last() is None or timedelta(minutes=0.5) < datetime.now(
+    if NewsTitle.objects.last() is None or timedelta(minutes=5) < datetime.now(
             timezone.utc) - NewsTitle.objects.last().created_time:
         crawling.delay()
 
