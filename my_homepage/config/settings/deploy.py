@@ -6,6 +6,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '.elasticbeanstalk.com',
+    '.news-collecter.com',
 ]
 
 DATABASES = config_secret_common["django"]["database-aws-rds"]
