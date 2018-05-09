@@ -25,10 +25,17 @@ def index_page(request):
         latest_version = NewsTitle.objects.latest('version').version
         news_title = NewsTitle.objects.filter(version=latest_version)
     except ObjectDoesNotExist:
-        c = Crawling(1)
-        NewsTitle.objects.bulk_create(c.all_crawler_collect())
-        latest_version = NewsTitle.objects.latest('version').version
-        news_title = NewsTitle.objects.filter(version=latest_version)
+        # 한번 더 요청하면 성공하는 경우를 대비해서 try문 중첩
+        try:
+            c = Crawling(1)
+            NewsTitle.objects.bulk_create(c.all_crawler_collect())
+            latest_version = NewsTitle.objects.latest('version').version
+            news_title = NewsTitle.objects.filter(version=latest_version)
+        except:
+            c = Crawling(1)
+            NewsTitle.objects.bulk_create(c.all_crawler_collect())
+            latest_version = NewsTitle.objects.latest('version').version
+            news_title = NewsTitle.objects.filter(version=latest_version)
 
     # latest_version = NewsTitle.objects.latest('version').version
     if request.user.is_authenticated:
