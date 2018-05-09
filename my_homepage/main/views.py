@@ -16,9 +16,9 @@ from .tasks import crawling
 
 # Create your views here.
 def index_page(request):
-    if NewsTitle.objects.last() is None or timedelta(minutes=5) < datetime.now(
-            timezone.utc) - NewsTitle.objects.last().created_time:
-        crawling.delay()
+    # if NewsTitle.objects.last() is None or timedelta(minutes=5) < datetime.now(
+    #         timezone.utc) - NewsTitle.objects.last().created_time:
+    #     crawling.delay()
 
     # latest version이 없을 경우 발생하는 에러를 잡기 위한 코드
     try:

@@ -25,11 +25,18 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'ap-northeast-2'
 S3_USE_SIGV4 = True
 
+# celery setting
 aws_access_key_id = urllib.parse.quote(f'{AWS_ACCESS_KEY_ID}', safe='')
 aws_secret_access_key = urllib.parse.quote(f'{AWS_SECRET_ACCESS_KEY}', safe='')
 
 CELERY_BROKER_URL = f"sqs://{aws_access_key_id}:{aws_secret_access_key}@"
 
+CELERY_BEAT_SCHEDULE = {
+    'crawling': {
+        'task': 'main.tasks.crawling',
+        'schedule': 300.0
+    },
+}
 # AWS_S3_OBJECT_PARAMETERS = {
 #     'CacheControl': 'max-age=86400',
 # }
