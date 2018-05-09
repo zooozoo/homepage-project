@@ -34,7 +34,7 @@ CELERY_RESULT_BACKEND = None # sqs는 celery backend를 지원하지 않는다.
 CELERY_BEAT_SCHEDULE = {
     'crawling': {
         'task': 'main.tasks.crawling',
-        'schedule': 300.0
+        'schedule': timedelta(minutes=5)
     },
 }
 # AWS_S3_OBJECT_PARAMETERS = {

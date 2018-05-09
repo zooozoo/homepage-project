@@ -31,12 +31,14 @@ aws_secret_access_key = urllib.parse.quote(f'{AWS_SECRET_ACCESS_KEY}', safe='')
 
 CELERY_BROKER_URL = f"sqs://{aws_access_key_id}:{aws_secret_access_key}@"
 CELERY_RESULT_BACKEND = None # sqs는 celery backend를 지원하지 않는다.
-# CELERY_BEAT_SCHEDULE = {
-#     'crawling': {
-#         'task': 'main.tasks.crawling',
-#         'schedule': 15.0
-#     },
-# }
+CELERY_BEAT_SCHEDULE = {
+    'crawling': {
+        'task': 'main.tasks.crawling',
+        'schedule': timedelta(seconds=15)
+    },
+}
+
+
 # AWS_S3_OBJECT_PARAMETERS = {
 #     'CacheControl': 'max-age=86400',
 # }
