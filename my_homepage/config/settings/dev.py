@@ -34,7 +34,7 @@ CELERY_RESULT_BACKEND = None # sqs는 celery backend를 지원하지 않는다.
 CELERY_BEAT_SCHEDULE = {
     'crawling': {
         'task': 'main.tasks.crawling',
-        'schedule': timedelta(seconds=15)
+        'schedule': timedelta(seconds=30)
     },
 }
 
