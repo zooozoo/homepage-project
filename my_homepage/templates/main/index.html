@@ -15,7 +15,7 @@
                                     {% if field.name == news.pres %}
                                         <li class="list-group-item list-group-item-action news-title-li">
                                             <a class="news-title-link" target="_blank"
-                                               href="{{ news.link }}"></a>
+                                               href="{{ news.link }}">{{ news.title }}</a>
                                         </li>
                                     {% endif %}
                                 {% endfor %}
