@@ -217,12 +217,11 @@ class Crawling():
         return result[:10]
 
     def khan_news_title(self):
-        session = requests.Session()
-        session.max_redirects = 2000000
-        req = session.get('http://www.khan.co.kr/')
+        user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'
+        headers = {'User-Agent': user_agent}
+        req = requests.get('http://www.khan.co.kr/', headers=headers)
         html = req.content
         soup = BeautifulSoup(html, 'lxml')
-
         result = []
         # top news
         top_news_tu = NewsTitle(
