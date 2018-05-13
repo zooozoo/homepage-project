@@ -69,7 +69,8 @@ div.checkbox-cover {
 
 input.search-btn {
     margin-left: 5px;
-    background-color: lightgray;
+    margin-top: 5px;
+    margin-bottom: 5px;
     color: #383d41;
 }
 
