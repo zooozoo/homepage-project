@@ -345,3 +345,4 @@ def all_crawler_collect():
            + ohmy_news_title() + khan_news_title() + kbs_news_title() + \
            sbs_news_title() + mbc_news_title()
 
+

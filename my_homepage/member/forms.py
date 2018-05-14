@@ -66,7 +66,6 @@ class SignUpForm(UserCreationForm):
         ]
         widgets = {
             'username': TextInput(attrs={
-                'readonly': True,
                 'autofocus': True,
                 'id': 'signup-username',
                 'class': 'form-control',

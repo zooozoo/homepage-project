@@ -53,6 +53,7 @@ def index_page(request):
 
 @login_required(login_url='/member/login')
 def news_select(request):
+    test = request.POST
     form = NewsSelectForm(request.POST, instance=request.user.newsselectmodel)
     if form.is_valid():
         form.save()
