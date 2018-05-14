@@ -48,15 +48,22 @@ class LoginForm(forms.ModelForm):
 class SignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        field_list = ['password1', 'password2']
-        for field in field_list:
-            self.fields[field].widget.attrs.update({
-                'autofocus': True,
-                'id': f'signup-{field}',
-                'placeholder': f'{field.upper()}',
-                'class': 'form-control',
-                'aria-describedby': f'{field}HelpBlock',
-            })
+        password1 = 'password1'
+        password2 = 'password2'
+        self.fields['password1'].widget.attrs.update({
+            'autofocus': True,
+            'id': f'signup-{password1}',
+            'placeholder': f'{password1.upper()}',
+            'class': 'form-control',
+            'aria-describedby': f'{password1}HelpBlock',
+        })
+        self.fields['password2'].widget.attrs.update({
+            'autofocus': True,
+            'id': f'signup-{password2}',
+            'placeholder': 'Password confirmation',
+            'class': 'form-control',
+            'aria-describedby': f'{password2}HelpBlock',
+        })
 
     class Meta:
         model = User
