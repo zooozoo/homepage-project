@@ -262,22 +262,37 @@ def kbs_news_title():
     soup = BeautifulSoup(html, 'lxml')
 
     result = []
-    # top news
-    top_news = soup.find('div', class_='headline_top')
-    for item in top_news.find_all('li'):
-        string = item.img['alt']
-        link = 'http://news.kbs.co.kr' + item.a.get('href')
+    # 구조가 아예 바뀐건지 확인할 수 없기에 주석처리로 임시 대기
+    # # top news
+    # top_news = soup.find('div', class_='headline_top')
+    # for item in top_news.find_all('li'):
+    #     string = item.img['alt']
+    #     link = 'http://news.kbs.co.kr' + item.a.get('href')
+    #     tu = NewsTitle(pres='kbs', title=string, link=link)
+    #     result.append(tu)
+    #
+    # # head lines
+    # head_line = soup.find('div', class_='headline_blk_list1')
+    # for item in head_line.find_all('a')[:7]:
+    #     string = item.text.strip()
+    #     link = 'http://news.kbs.co.kr' + item.get('href')
+    #     tu =NewsTitle(pres='kbs', title=string, link=link)
+    #     result.append(tu)
+
+    top_news = soup.find('div', class_='section-box')
+    for item in top_news.find_all('a'):
+        string = re.sub('\s+', ' ', item.em.text.strip())
+        link = 'http://news.kbs.co.kr' + item.get('href')
         tu = NewsTitle(pres='kbs', title=string, link=link)
         result.append(tu)
 
-    # head lines
-    head_line = soup.find('div', class_='headline_blk_list1')
-    for item in head_line.find_all('a')[:7]:
+    head_line = soup.find('div', class_='m-section main-topnews').find('ul', class_='list-type list-text')
+    for item in head_line.find_all('li'):
         string = item.text.strip()
-        link = 'http://news.kbs.co.kr' + item.get('href')
-        tu =NewsTitle(pres='kbs', title=string, link=link)
+        link = 'http://news.kbs.co.kr' + item.a.get('href')
+        tu = NewsTitle(pres='kbs', title=string, link=link)
         result.append(tu)
-    return result
+    return result[:10]
 
 
 def sbs_news_title():

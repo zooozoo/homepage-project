@@ -21,7 +21,7 @@ DATABASES = {
 # aws_secret_access_key = urllib.parse.quote(f'{AWS_SECRET_ACCESS_KEY}', safe='')
 #
 # CELERY_BROKER_URL = f"sqs://{aws_access_key_id}:{aws_secret_access_key}@"
-#
+
 # CELERY_BEAT_SCHEDULE = {
 #     'crawling': {
 #         'task': 'main.tasks.crawling',
