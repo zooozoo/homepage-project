@@ -64,7 +64,8 @@ div#search-section-wrapper div.container {
 }
 
 div.checkbox-cover {
-    margin-left: 57px;
+    margin-left: 50px;
+    margin-bottom: 7px;
 }
 
 input.search-btn {
