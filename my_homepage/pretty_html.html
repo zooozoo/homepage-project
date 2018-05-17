@@ -1,72 +1,73 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <style type="text/css">
-        body, html {
-            background-color: #CCFFCC;
-            font-family: sans-serif;
-            color: #330033;
-            text-align: center;
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #leftbox {
+            float: left;
+            width: 400px;
+            height: 250px;
+            margin: 5px;
+            border: 3px solid blue;
         }
 
-        ul {
-            margin: auto;
-            width: 20%;
-            text-align: center;
+        #rightbox {
+            float: left;
+            width: 400px;
+            height: 250px;
+            margin: 5px;
+            border: 3px solid green;
         }
-
-        li {
-            list-style-type: none;
-            padding: 5px;
-            margin: 2px;
-            background-color: #CCCCFF;
-            border: 2px double #CCCCCC;
-        }
-
-        [draggable] {
-            user-select: none;
-        }
-
     </style>
-    <script type="text/javascript">
-        var source;
-
-        function dragStarted(evt) {
-            source = evt.target;
-            evt.dataTransfer.setData("text/plain", evt.target.innerHTML);
-            evt.dataTransfer.effectAllowed = "move";
-        }
-
-        function draggingOver(evt) {
-            evt.preventDefault();
-            evt.dataTransfer.dropEffect = "move";
-        }
-
-        function dropped(evt) {
-            evt.preventDefault();
-            evt.stopPropagation();
-            source.innerHTML = evt.target.innerHTML;
-            evt.target.innerHTML = evt.dataTransfer.getData("text/plain");
-        }
-    </script>
 </head>
 <body>
-<p>
-    Sort these into your order of preference:
-</p>
-<ul>
-    <li draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
-        Apples
-    </li>
-    <li draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
-        Oranges
-    </li>
-    <li draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
-        Bananas
-    </li>
-    <li draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
-        Strawberries
-    </li>
-</ul>
+<section id="leftbox">
+    I dare you to drag an image in me!
+</section>
+<section id="rightbox">
+    <img id="facepic" src="test.jpg">
+</section>
+
+<script>
+    function doFirst() {
+        mypic = document.getElementById('facepic');
+        mypic.addEventListener("dragstart", startDrag, false);
+        mypic.addEventListener("dragend", endDrag, false); 
+        leftbox = document.getElementById('leftbox');
+        leftbox.addEventListener("dragenter", dragenter, false);
+        leftbox.addEventListener("dragleave",dragleave, false);
+        leftbox.addEventListener("dragover", function (e) {
+            e.preventDefault()
+        }, false);
+        leftbox.addEventListener("drop", dropped, false);
+    }
+    {# 이미지 옮겼을 때 원래 그림 있던자리의 이미지 지우기 #}
+    function endDrag(e) {
+        pic = e.target;
+        pic.style.visibility = 'hidden';
+    }
+    function dragenter(e) {
+        e.preventDefault();
+        leftobx.style.background = "SkyBlue";
+        leftobx.style.border = "3px solid red";
+    }
+    function startDrag(e) {
+        var code = '<img id="facepic" src="test.jpg">';
+        e.dataTransfer.setData('Text', code)
+    }
+
+    function dropped(e) {
+        e.preventDefault();
+        leftbox.innerHTML = e.dataTransfer.getData('Text')
+    }
+
+    window.addEventListener("load", doFirst, false);
+</script>
+
+
 </body>
 </html>
