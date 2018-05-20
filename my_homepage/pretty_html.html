@@ -13,6 +13,7 @@
             height: 250px;
             margin: 5px;
             border: 3px solid blue;
+            background: white;
         }
 
         #rightbox {
@@ -36,25 +37,35 @@
     function doFirst() {
         mypic = document.getElementById('facepic');
         mypic.addEventListener("dragstart", startDrag, false);
-        mypic.addEventListener("dragend", endDrag, false); 
+        mypic.addEventListener("dragend", endDrag, false);
         leftbox = document.getElementById('leftbox');
         leftbox.addEventListener("dragenter", dragenter, false);
-        leftbox.addEventListener("dragleave",dragleave, false);
+        leftbox.addEventListener("dragleave", dragleave, false);
         leftbox.addEventListener("dragover", function (e) {
             e.preventDefault()
         }, false);
         leftbox.addEventListener("drop", dropped, false);
     }
-    {# 이미지 옮겼을 때 원래 그림 있던자리의 이미지 지우기 #}
+
     function endDrag(e) {
         pic = e.target;
         pic.style.visibility = 'hidden';
     }
+
     function dragenter(e) {
         e.preventDefault();
-        leftobx.style.background = "SkyBlue";
-        leftobx.style.border = "3px solid red";
+        leftbox = document.getElementById('leftbox');
+        leftbox.style.backgroud = "SkyBlue";
+        leftbox.style.border = "3px solid red";
     }
+
+    function dragleave(e) {
+        e.preventDefault();
+        leftbox = document.getElementById('leftbox');
+        leftbox.style.backgroud = "white";
+        leftbox.style.border = "3px solid blue";
+    }
+
     function startDrag(e) {
         var code = '<img id="facepic" src="test.jpg">';
         e.dataTransfer.setData('Text', code)
@@ -71,3 +82,4 @@
 
 </body>
 </html>
+

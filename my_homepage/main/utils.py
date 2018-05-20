@@ -41,49 +41,37 @@ class Crawling():
         return result
 
     def chosun_news_title(self):
-        req = requests.get('http://www.chosun.com/')
-        html = req.content.decode('euc-kr', 'replace')
+        user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'
+        headers = {'User-Agent': user_agent}
+        req = requests.get('http://www.chosun.com/', headers=headers)
+        html = req.content
         soup = BeautifulSoup(html, 'lxml')
-        news_section = soup.find(class_='sec_con')
 
         result = []
         # top news
-        top_news = news_section.find('div', id='top_news')
-        if not top_news:
-            news_section = soup.find('section', id='sec_headline')
-            top_news = news_section.find_all('a', onclick="ga('send', 'event', 'Headline', 'news', 'Top');")[0]
-            top_news_tu = NewsTitle(
-                pres='chosun',
-                title=top_news.text,
-                link=top_news.get('href'),
-                version=self.version
-            )
-        else:
-            top_news_tu = NewsTitle(
-                pres='chosun',
-                title=top_news.find('h2').text,
-                link=top_news.find('a').get('href'),
-                version=self.version
-            )
-        result.append(top_news_tu)
-
-        # second_news
-        second_news = news_section.find('dl', id='second_news')
-        second_news_tu = NewsTitle(
+        top_news = soup.find('div', class_='top_news')
+        tu = NewsTitle(
             pres='chosun',
-            title=second_news.dt.text,
-            link=second_news.a.get('href'),
+            title=top_news.h2.text,
+            link=top_news.h2.a.get('href'),
             version=self.version
         )
-        result.append(second_news_tu)
+        result.append(tu)
 
-        # main_news
-        for item in news_section.find_all('dl', class_='art_list_item')[0:8]:
-            string = item.dt.a.text
-            link = item.dt.a.get('href')
-            tu = NewsTitle(pres='chosun', title=string, link=link, version=self.version)
+        news_section = soup.find_all('div', class_='sec_con')[1]
+        main_news = news_section.find_all('dl', class_='news_item')
+
+        for i in main_news:
+            if not i.a.text.strip():
+                continue
+            tu = NewsTitle(
+                pres='chosun',
+                title=i.a.text.strip(),
+                link=i.a.get('href'),
+                version=self.version
+            )
             result.append(tu)
-        return result
+        return result[:10]
 
     def joongang_news_title(self):
         req = requests.get('http://joongang.joins.com/')
@@ -174,7 +162,6 @@ class Crawling():
             version=self.version
         )
         result.append(tu)
-
 
         # main news
         main_news_section = soup.find('div', class_='main-top01')
