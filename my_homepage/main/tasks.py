@@ -13,8 +13,9 @@ def crawling():
         latest_version = NewsTitle.objects.latest('version').version
         c = Crawling(latest_version + 1)
         NewsTitle.objects.bulk_create(c.all_crawler_collect())
-    if latest_version > 1400:
-        NewsTitle.objects.all().delte()
+    if latest_version > 2000:
+        NewsTitle.objects.filter(version__lt=2001).delete()
+        NewsTitle.objects.filter(version=latest_version).update(version=1)
 
     # try:
     #     latest_version = NewsTitle.objects.latest('version').version
