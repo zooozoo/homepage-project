@@ -13,6 +13,9 @@ django.setup()
 from main.models import NewsTitle
 
 
+# 클롤링한 내용을 바로 확인하기 위하여 NewsTitle의 인스턴스가 아닌 tuple 형태로
+# 리스트에 추가한다.
+
 def naver_news_title():
     req = requests.get('http://news.naver.com/main/home.nhn')
     html = req.text
@@ -25,7 +28,7 @@ def naver_news_title():
             continue
         string = item.a.text
         link = item.a.get('href')
-        tu = NewsTitle(pres='naver', title=string, link=link)
+        tu = ('naver', string, link)
         result.append(tu)
     return result
 
@@ -40,7 +43,7 @@ def daum_news_title():
     for item in total_list.find_all('a', class_='link_txt')[0:10]:
         string = item.text.strip()
         link = item.get('href')
-        tu = NewsTitle(pres='daum', title=string, link=link)
+        tu = ('daum', string, link)
         result.append(tu)
     return result
 
@@ -55,9 +58,12 @@ def chosun_news_title():
     result = []
     # top news
     top_news = soup.find('div', class_='top_news')
-    top_news_tu = ('chosun', top_news.h2.text, top_news.h2.a.get('href'))
-    result.append(top_news_tu)
-
+    tu = (
+        'chosun',
+        top_news.h2.text,
+        top_news.h2.a.get('href')
+    )
+    result.append(tu)
 
     news_section = soup.find_all('div', class_='sec_con')[1]
     main_news = news_section.find_all('dl', class_='news_item')
@@ -65,8 +71,12 @@ def chosun_news_title():
     for i in main_news:
         if not i.a.text.strip():
             continue
-        main_news_tu = ('chosun', i.a.text.strip(), i.a.get('href'))
-        result.append(main_news_tu)
+        tu = NewsTitle(
+            'chosun',
+            i.a.text.strip(),
+            i.a.get('href')
+        )
+        result.append(tu)
     return result[:10]
 
 
@@ -85,7 +95,7 @@ def joongang_news_title():
         for item in hot_article_section.find_all('div', class_='text_area'):
             string = item.find('span', class_='text_center').a.text.replace('\xa0', '')
             link = item.find('span', class_='text_center').a.get('href')
-            tu = NewsTitle(pres='joongang', title=string, link=link)
+            tu = ('joongang', string, link)
             result.append(tu)
     else:
         # 위의 hot뉴스 없을 경우 today's hot 가져오는 로직
@@ -94,10 +104,10 @@ def joongang_news_title():
             class_='todays_hot'
         )
 
-        tu = NewsTitle(
-            pres='joongang',
-            title=hot_article_section.find('span', class_='text_wrap').a.text,
-            link=hot_article_section.find('span', class_='text_wrap').a.get('href'),
+        tu = (
+            'joongang',
+            hot_article_section.find('span', class_='text_wrap').a.text,
+            hot_article_section.find('span', class_='text_wrap').a.get('href'),
         )
         result.append(tu)
 
@@ -106,7 +116,7 @@ def joongang_news_title():
     for item in main_article_section.find_all('strong', class_='headline')[:10]:
         string = item.text
         link = item.a.get('href')
-        tu = NewsTitle(pres='joongang', title=string, link=link)
+        tu = ('joongang', string, link)
         result.append(tu)
     return result[:10]
 
@@ -120,7 +130,7 @@ def donga_news_title():
 
     # top_news
     head_title_news = soup.find('div', class_='head_title')
-    tu = NewsTitle(pres='donga', title=head_title_news.a.text, link=head_title_news.a.get('href'))
+    tu = ('donga', head_title_news.a.text, head_title_news.a.get('href'))
     result.append(tu)
 
     # main_news
@@ -130,7 +140,7 @@ def donga_news_title():
             continue
         string = item.text
         link = item.get('href')
-        tu = NewsTitle(pres='donga', title=string, link=link)
+        tu = ('donga', string, link)
         result.append(tu)
     return result[:10]
 
@@ -144,10 +154,10 @@ def hani_news_title():
     result = []
     # top new
     top_news_section = soup.find(class_='article-title')
-    tu = NewsTitle(
-        pres='hani',
-        title=top_news_section.a.text,
-        link='http://www.hani.co.kr' + top_news_section.a.get('href')
+    tu = (
+        'hani',
+        top_news_section.a.text,
+        'http://www.hani.co.kr' + top_news_section.a.get('href')
     )
     result.append(tu)
 
@@ -156,7 +166,7 @@ def hani_news_title():
     for item in main_news_section.find_all(class_='article-title')[:9]:
         string = item.a.text
         link = item.a.get('href')
-        tu = NewsTitle(pres='hani', title=string, link='http://www.hani.co.kr' + link)
+        tu = ('hani', string, 'http://www.hani.co.kr' + link)
         result.append(tu)
     return result
 
@@ -173,7 +183,7 @@ def ohmy_news_title():
     for item in top_section.find_all(class_='titl'):
         string = item.a.text
         link = 'http://www.ohmynews.com' + item.a.get('href')
-        tu = NewsTitle(pres='ohmy', title=string, link=link)
+        tu = ('ohmy', string, link)
         result.append(tu)
 
     # main news
@@ -183,7 +193,7 @@ def ohmy_news_title():
             continue
         string = item.text
         link = 'http://www.ohmynews.com' + item.get('href')
-        tu = NewsTitle(pres='ohmy', title=string, link=link)
+        tu = ('ohmy', string, link)
         result.append(tu)
     return result[:10]
 
@@ -204,19 +214,19 @@ def khan_news_title():
 
     result = []
     # top news
-    top_news_tu = NewsTitle(
-        pres='khan',
-        title=soup.find('div', class_='topNews').a.text,
-        link=soup.find('div', class_='topNews').a.get('href')
+    top_news_tu = (
+        'khan',
+        soup.find('div', class_='topNews').a.text,
+        soup.find('div', class_='topNews').a.get('href')
     )
     result.append(top_news_tu)
 
     # head line
     head_line = soup.find('div', class_='mArticle')
-    head_line_tu = NewsTitle(
-        pres='khan',
-        title=head_line.find('div', class_='textArea').a.text.replace('\xa0', ''),
-        link=head_line.find('div', class_='textArea').a.get('href'),
+    head_line_tu = (
+        'khan',
+        head_line.find('div', class_='textArea').a.text.replace('\xa0', ''),
+        head_line.find('div', class_='textArea').a.get('href'),
     )
     result.append(head_line_tu)
 
@@ -225,7 +235,7 @@ def khan_news_title():
     for item in head_line2.find_all('a'):
         string = item.text.replace('\xa0', '')
         link = item.get('href')
-        tu = NewsTitle(pres='khan', title=string, link=link)
+        tu = ('khan', string, link)
         result.append(tu)
 
     # main
@@ -233,7 +243,7 @@ def khan_news_title():
     for item in main_title.find_all(class_='hd_title')[:4]:
         string = item.a.text.replace('\xa0', '')
         link = item.a.get('href')
-        tu = NewsTitle(pres='khan', title=string, link=link)
+        tu = ('khan', string, link)
         result.append(tu)
     return result
 
@@ -265,14 +275,14 @@ def kbs_news_title():
     for item in top_news.find_all('a'):
         string = re.sub('\s+', ' ', item.em.text.strip())
         link = 'http://news.kbs.co.kr' + item.get('href')
-        tu = NewsTitle(pres='kbs', title=string, link=link)
+        tu = ('kbs', string, link)
         result.append(tu)
 
     head_line = soup.find('div', class_='m-section main-topnews').find('ul', class_='list-type list-text')
     for item in head_line.find_all('li'):
         string = item.text.strip()
         link = 'http://news.kbs.co.kr' + item.a.get('href')
-        tu = NewsTitle(pres='kbs', title=string, link=link)
+        tu = ('kbs', string, link)
         result.append(tu)
     return result[:10]
 
@@ -287,14 +297,14 @@ def sbs_news_title():
     for item in soup.find('div', class_='head_inner').find_all('li'):
         string = item.a.text.strip()
         link = item.a.get('href')
-        tu = NewsTitle(pres='sbs', title=string, link='https://news.sbs.co.kr' + link)
+        tu = ('sbs', string, 'https://news.sbs.co.kr' + link)
         result.append(tu)
 
     # 오늘의 기사
-    result.append(NewsTitle(
-        pres='sbs',
-        title=soup.find('div', class_='w_side_list').a.p.text.strip(),
-        link='https://news.sbs.co.kr' + soup.find('div', class_='w_side_list').a.get('href')
+    result.append((
+        'sbs',
+        soup.find('div', class_='w_side_list').a.p.text.strip(),
+        'https://news.sbs.co.kr' + soup.find('div', class_='w_side_list').a.get('href')
     ))
 
     # hot news
@@ -302,7 +312,7 @@ def sbs_news_title():
     for item in hot_art_section.find_all('li')[:5]:
         string = re.sub('\s+', ' ', item.a.text.strip())
         link = 'https://news.sbs.co.kr' + item.a.get('href')
-        tu = NewsTitle(pres='sbs', title=string, link=link)
+        tu = ('sbs', string, link)
         result.append(tu)
     return result
 
@@ -322,7 +332,7 @@ def mbc_news_title():
     for item in main_top_soup.find_all('li'):
         string = item.a.text.replace('\\', '').strip()
         link = item.a.get('href')
-        tu = NewsTitle(pres='mbc', title=string, link=link)
+        tu = ('mbc', string, link)
         result.append(tu)
 
     # main news 6개
@@ -331,7 +341,7 @@ def mbc_news_title():
     for item in main_soup.find_all('a', class_='alt_1_detail_link'):
         string = item.text.replace('\\', '')
         link = item.get('href')
-        tu = NewsTitle(pres='mbc', title=string, link=link)
+        tu = ('mbc', string, link)
         result.append(tu)
     return result
 
@@ -342,5 +352,6 @@ def all_crawler_collect():
            + ohmy_news_title() + khan_news_title() + kbs_news_title() + \
            sbs_news_title() + mbc_news_title()
 
-for i in chosun_news_title():
+
+for i in all_crawler_collect():
     print(i)
