@@ -47,7 +47,7 @@ DEBUG = True
 #     'crawling-task': {
 #         'task': 'main.tasks.crawling',
 #         # 'schedule': 15.0,
-#         'schedule': timedelta(minutes=1),
+#         'schedule': timedelta(minutes=0.3),
 #     },
 # }
 
