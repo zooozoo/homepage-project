@@ -199,13 +199,6 @@ def ohmy_news_title():
 
 
 def khan_news_title():
-    # session = requests.Session()
-    # session.max_redirects = 200
-    # req = session.get('http://www.khan.co.kr/')
-    # html = req.content
-    # soup = BeautifulSoup(html, 'lxml')
-
-    # session을 사용하지 않고도 되는지 test
     user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'
     headers = {'User-Agent': user_agent}
     req = requests.get('http://www.khan.co.kr/', headers=headers)
